@@ -15,29 +15,8 @@ namespace Login_Form
         public IMS()
         {
             InitializeComponent();
-            dropDown();
         }
 
-        private void dropDown()
-        {
-            ordersDropdown.Visible = false;
-        }
-
-        private void hideDropdown()
-        {
-            if (ordersDropdown.Visible == false)
-                ordersDropdown.Visible = true;
-        }
-        private void showDropdown(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
-            {
-                hideDropdown();
-                subMenu.Visible = true;
-            }
-            else
-                subMenu.Visible = false;
-        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -71,7 +50,12 @@ namespace Login_Form
 
         private void orders_Click_1(object sender, EventArgs e)
         {
-            showDropdown(ordersDropdown);
+  
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
