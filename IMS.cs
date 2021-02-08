@@ -57,5 +57,25 @@ namespace Login_Form
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        { 
+            openNewWinow(new Dashboard());
+        }
+
+        private Form activeForm = null;
+        private void openNewWinow(Form openMenu)
+        {
+            if (this.activeForm!=null)
+                activeForm.Close();
+            activeForm = openMenu;
+            openMenu.TopLevel = false;
+            openMenu.FormBorderStyle = FormBorderStyle.None;
+            openMenu.Dock = DockStyle.Fill;
+            panelMenu.Controls.Add(openMenu);
+            panelMenu.Tag = openMenu;
+            openMenu.BringToFront();
+            openMenu.Show();
+        }
     }
 }
