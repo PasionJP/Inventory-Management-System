@@ -53,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 505);
+            this.panel1.Size = new System.Drawing.Size(238, 614);
             this.panel1.TabIndex = 0;
             // 
             // button3
@@ -142,27 +142,29 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(238, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(767, 47);
+            this.panel3.Size = new System.Drawing.Size(953, 47);
             this.panel3.TabIndex = 1;
             // 
             // panelMenu
             // 
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenu.Location = new System.Drawing.Point(238, 47);
+            this.panelMenu.MinimumSize = new System.Drawing.Size(932, 574);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(767, 458);
+            this.panelMenu.Size = new System.Drawing.Size(953, 574);
             this.panelMenu.TabIndex = 2;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1005, 505);
+            this.ClientSize = new System.Drawing.Size(1191, 614);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(1027, 561);
+            this.MinimumSize = new System.Drawing.Size(1213, 670);
             this.Name = "IMS";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -77,5 +77,10 @@ namespace Login_Form
             openMenu.BringToFront();
             openMenu.Show();
         }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

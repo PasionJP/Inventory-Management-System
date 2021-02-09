@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Login_Form
 {
-    public partial class Dashboard : Form
+    public partial class Dashboard1 : Form
     {
-        public Dashboard()
+        public Dashboard1()
         {
             InitializeComponent();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
