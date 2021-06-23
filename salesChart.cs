@@ -1,6 +1,4 @@
-﻿using LiveCharts;
-using LiveCharts.Wpf;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,54 +7,70 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Login_Form
 {
-    public partial class salesChart : Form
+    public partial class SalesChart : Form
     {
-        public salesChart()
+        public SalesChart()
         {
             InitializeComponent();
         }
+        SqlConnection salesCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\JP\Software\Inventory Management System\Github\Login Form\Sales.mdf;Integrated Security=True");
+        private void SalesChart_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'salesDataSet.Revenue' table. You can move, or remove it, as needed.
+            this.revenueTableAdapter.Fill(this.salesDataSet.Revenue);
 
-        private void enterData_Click(object sender, EventArgs e)
-        {
-            cartesianChart1.Series.Clear();
-            SeriesCollection series = new SeriesCollection();
-            var years = (from o in chartBindingSource.DataSource as List<Chart>
-                         select new { Year = o.Year }).Distinct();
-            foreach (var year in years)
-            {
-                List<double> values = new List<double>();
-                for (int month = 1; month <= 12; month++)
-                {
-                    double value = 0;
-                    var data = from o in chartBindingSource.DataSource as List<Chart>
-                               where o.Year.Equals(year.Year) && o.Month.Equals(month)
-                               orderby o.Month ascending
-                               select new { o.Sales, o.Month };
-                    if (data.SingleOrDefault() != null)
-                        value = data.SingleOrDefault().Sales;
-                    values.Add(value);
-                }
-                series.Add(new LineSeries() { Title = year.Year.ToString(), Values = new ChartValues<double>(values) });
-            }
-            cartesianChart1.Series = series;
         }
-        private void salesChart_Load(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            chartBindingSource.DataSource = new List<Chart>();
-            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            try
             {
-                Title = "Month",
-                Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
-            });
-            cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
+                revenueBindingSource.EndEdit();
+                revenueTableAdapter.Update(this.salesDataSet.Revenue);
+                for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+                {
+                    SqlCommand salesCmd = new SqlCommand ("INSERT INTO Revenue (Day,Date,Revenue) VALUES('"+dataGridView1.Rows[i].Cells[0].Value+"','"+dataGridView1.Rows[i].Cells[1].Value+ "','" + dataGridView1.Rows[i].Cells[2].Value + "')",salesCon);
+                    salesCon.Open();
+                    salesCmd.ExecuteNonQuery();
+                    salesCon.Close();
+                }
+                MessageBox.Show("Your data is successfully saved.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception except)
             {
-                Title = "Sales",
-                LabelFormatter = value => value.ToString("C")
-            });
-            cartesianChart1.LegendLocation = LiveCharts.LegendLocation.Right;
+                MessageBox.Show(except.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Cursor.Current = Cursors.Default;
+            chart1.Series["Date"].XValueMember = "Date";
+            chart1.Series["Date"].YValueMembers = "Revenue";
+            chart1.DataSource = salesDataSet.Revenue;
+            chart1.DataBind();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'salesDataSet.Revenue' table. You can move, or remove it, as needed.
+            this.revenueTableAdapter.Fill(this.salesDataSet.Revenue);
         }
     }
 }
