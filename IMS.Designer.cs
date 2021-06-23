@@ -37,7 +37,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +44,6 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.Employees);
@@ -55,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 610);
+            this.panel1.Size = new System.Drawing.Size(238, 614);
             this.panel1.TabIndex = 0;
             // 
             // button3
@@ -69,9 +67,8 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(238, 58);
             this.button3.TabIndex = 5;
-            this.button3.Text = "Sales";
+            this.button3.Text = "Employees";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -145,43 +142,29 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(238, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(950, 48);
+            this.panel3.Size = new System.Drawing.Size(953, 47);
             this.panel3.TabIndex = 1;
             // 
             // panelMenu
             // 
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenu.Location = new System.Drawing.Point(238, 48);
-            this.panelMenu.MinimumSize = new System.Drawing.Size(950, 562);
+            this.panelMenu.Location = new System.Drawing.Point(238, 47);
+            this.panelMenu.MinimumSize = new System.Drawing.Size(932, 574);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(950, 562);
+            this.panelMenu.Size = new System.Drawing.Size(953, 574);
             this.panelMenu.TabIndex = 2;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button4.Location = new System.Drawing.Point(0, 384);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(238, 58);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Employees";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1188, 610);
+            this.ClientSize = new System.Drawing.Size(1191, 614);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(1210, 661);
+            this.MinimumSize = new System.Drawing.Size(1213, 670);
             this.Name = "IMS";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -203,6 +186,5 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button button4;
     }
 }

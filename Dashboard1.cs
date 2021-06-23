@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Login_Form
 {
-    public partial class SalesChart2 : Form
+    public partial class Dashboard1 : Form
     {
-        public SalesChart2()
+        public Dashboard1()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        private void panel8_Paint(object sender, PaintEventArgs e)
         {
 
         }

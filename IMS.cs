@@ -15,6 +15,7 @@ namespace Login_Form
         public IMS()
         {
             InitializeComponent();
+            openNewWindow(new Dashboard());
         }
 
 
@@ -50,7 +51,7 @@ namespace Login_Form
 
         private void orders_Click_1(object sender, EventArgs e)
         {
-         
+            openNewWindow(new salesChart());
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -80,12 +81,7 @@ namespace Login_Form
 
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
-            
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            openNewWindow(new SalesChart());
         }
     }
 }
