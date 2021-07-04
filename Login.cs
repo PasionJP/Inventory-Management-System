@@ -58,8 +58,8 @@ namespace Login_Form
             }
             else
             {
-                SqlConnection sc = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\johnp\Documents\Database.mdf;Integrated Security=True;Connect Timeout=30");
-                string query = "Select * From [Table] where username = '" + usernameBox.Text.Trim() + "' and password = '" + passwordBox.Text.Trim() + "'";
+                SqlConnection sc = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True");
+                string query = "Select * From [Login] where username = '" + usernameBox.Text.Trim() + "' and password = '" + passwordBox.Text.Trim() + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, sc);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

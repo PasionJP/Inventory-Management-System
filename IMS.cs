@@ -87,5 +87,10 @@ namespace Login_Form
         {
             openNewWindow(new SalesChart());
         }
+
+        private void Employees_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new Products());
+        }
     }
 }

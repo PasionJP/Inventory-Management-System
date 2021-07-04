@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Employees = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 610);
             this.panel1.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.button4.Location = new System.Drawing.Point(0, 384);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(238, 58);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Employees";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -100,6 +114,7 @@
             this.Employees.TabIndex = 5;
             this.Employees.Text = "Products";
             this.Employees.UseVisualStyleBackColor = true;
+            this.Employees.Click += new System.EventHandler(this.Employees_Click);
             // 
             // orders
             // 
@@ -158,20 +173,6 @@
             this.panelMenu.TabIndex = 2;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button4.Location = new System.Drawing.Point(0, 384);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(238, 58);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Employees";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -198,11 +199,11 @@
         private System.Windows.Forms.Button orders;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Employees;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Employees;
     }
 }

@@ -75,11 +75,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.MinimumSize = new System.Drawing.Size(950, 561);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 560);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 562);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -323,7 +324,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(944, 386);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(944, 388);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // flowLayoutPanel5
@@ -335,7 +336,7 @@
             this.flowLayoutPanel5.Location = new System.Drawing.Point(639, 10);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(10, 10, 20, 20);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(285, 356);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(285, 358);
             this.flowLayoutPanel5.TabIndex = 1;
             // 
             // tableLayoutPanel10
@@ -354,7 +355,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.35647F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.64353F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(599, 356);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(599, 358);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // label7
