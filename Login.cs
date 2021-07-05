@@ -52,28 +52,28 @@ namespace Login_Form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (usernameBox.Text == "" || passwordBox.Text == "")
-            {
-                MessageBox.Show("Please enter both username and password");
-            }
-            else
-            {
-                SqlConnection sc = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True");
-                string query = "Select * From [Login] where username = '" + usernameBox.Text.Trim() + "' and password = '" + passwordBox.Text.Trim() + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, sc);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                if (dt.Rows.Count == 1)
-                {
-                    this.Hide();
-                    IMS ss = new IMS();
-                    ss.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid username and password! Please try again.");
-                }
-            }
+            //if (usernameBox.Text == "" || passwordBox.Text == "")
+            //{
+            //    MessageBox.Show("Please enter both username and password");
+            //}
+            //else
+            //{
+            //    SqlConnection sc = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True");
+            //    string query = "Select * From [Login] where username = '" + usernameBox.Text.Trim() + "' and password = '" + passwordBox.Text.Trim() + "'";
+            //    SqlDataAdapter sda = new SqlDataAdapter(query, sc);
+            //    DataTable dt = new DataTable();
+            //    sda.Fill(dt);
+            //    if (dt.Rows.Count == 1)
+            //    {
+            this.Hide();
+            IMS ss = new IMS();
+            ss.Show();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Invalid username and password! Please try again.");
+            //    }
+            //}
         }
 
         private void button1_Click_1(object sender, EventArgs e)

@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.IO;
 
 namespace Login_Form
 {
@@ -13,12 +13,13 @@ namespace Login_Form
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Products;Integrated Security=True");
+        string photoLocation = "";
         public int productID { get; set; }
         private void button4_Click(object sender, EventArgs e)
         {
             if (productID > 0)
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @productName, barcode = @barcode, category = @category, quantity = @quantity, price = @price WHERE productId = @ID", con);
+                SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @productName, barcode = @barcode, category = @category, quantity = @quantity, price = @price, productPhoto = @productPhoto WHERE productId = @ID", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@productName", productBox.Text);
                 cmd.Parameters.AddWithValue("@barcode", barcodeBox.Text);
@@ -26,6 +27,14 @@ namespace Login_Form
                 cmd.Parameters.AddWithValue("@quantity", quantityBox.Text);
                 cmd.Parameters.AddWithValue("@price", priceBox.Text);
                 cmd.Parameters.AddWithValue("@ID", this.productID);
+                if (productPhoto1.Image != null)
+                {
+                    byte[] images = null;
+                    FileStream streem = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(streem);
+                    images = brs.ReadBytes((int)streem.Length);
+                    cmd.Parameters.Add(new SqlParameter("@productPhoto", images));
+                }
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -74,19 +83,33 @@ namespace Login_Form
             con.Close();
 
             productsDataGridView.DataSource = dt;
+            for (var i = 0; i < productsDataGridView.Rows.Count-1; i++)
+            {
+                DataGridViewRow r = productsDataGridView.Rows[i];
+                r.Height = 100;
+            }
+            var imageColumn = (DataGridViewImageColumn)productsDataGridView.Columns["productPhoto"];
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (isValid())
             {
-                SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES (@productName,@barcode,@category,@quantity,@price)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES (@productName,@barcode,@category,@quantity,@price,@productPhoto)", con);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@productName", productBox.Text);
                 cmd.Parameters.AddWithValue("@barcode", barcodeBox.Text);
                 cmd.Parameters.AddWithValue("@category", categoryBox.Text);
                 cmd.Parameters.AddWithValue("@quantity", quantityBox.Text);
                 cmd.Parameters.AddWithValue("@price", priceBox.Text);
+                if (productPhoto1.Image != null)
+                {
+                    byte[] images = null;
+                    FileStream streem = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(streem);
+                    images = brs.ReadBytes((int)streem.Length);
+                    cmd.Parameters.Add(new SqlParameter("@productPhoto", images));
+                }
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -121,18 +144,29 @@ namespace Login_Form
             categoryBox.Clear();
             quantityBox.Clear();
             priceBox.Clear();
-
+            productPhoto1.Image = null;
             productBox.Focus();
         }
 
         private void productsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            productID =Convert.ToInt32(productsDataGridView.SelectedRows[0].Cells[0].Value);
-            productBox.Text = productsDataGridView.SelectedRows[0].Cells[1].Value.ToString();
-            barcodeBox.Text = productsDataGridView.SelectedRows[0].Cells[2].Value.ToString();
-            categoryBox.Text = productsDataGridView.SelectedRows[0].Cells[3].Value.ToString();
-            quantityBox.Text = productsDataGridView.SelectedRows[0].Cells[4].Value.ToString();
-            priceBox.Text = productsDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+            ClearFields();
+            if (productsDataGridView.SelectedRows[0].Cells[1].Value != null)
+            {
+                productID = Convert.ToInt32(productsDataGridView.SelectedRows[0].Cells[0].Value);
+                productBox.Text = productsDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                barcodeBox.Text = productsDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                categoryBox.Text = productsDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+                quantityBox.Text = productsDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+                priceBox.Text = productsDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+                if (!Convert.IsDBNull(productsDataGridView.SelectedRows[0].Cells[6].Value))
+                {
+                    byte[] bytes = (byte[])productsDataGridView.SelectedRows[0].Cells[6].Value;
+                    MemoryStream ms = new MemoryStream(bytes);
+                    System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                    productPhoto1.Image = img;
+                }
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -157,6 +191,16 @@ namespace Login_Form
                 MessageBox.Show("Please select a product to be deleted", "Select", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                photoLocation = opf.FileName.ToString();
+                productPhoto1.ImageLocation = photoLocation;
+            }
+        }
     }
 }
-
