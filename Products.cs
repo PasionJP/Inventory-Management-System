@@ -202,5 +202,15 @@ namespace Login_Form
                 productPhoto1.ImageLocation = photoLocation;
             }
         }
+
+        private void productBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

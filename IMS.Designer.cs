@@ -65,7 +65,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button4.Location = new System.Drawing.Point(0, 384);
+            this.button4.Location = new System.Drawing.Point(0, 475);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(238, 58);
             this.button4.TabIndex = 6;
@@ -79,7 +79,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button3.Location = new System.Drawing.Point(0, 326);
+            this.button3.Location = new System.Drawing.Point(0, 417);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(238, 58);
             this.button3.TabIndex = 5;
@@ -94,7 +94,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button2.Location = new System.Drawing.Point(0, 268);
+            this.button2.Location = new System.Drawing.Point(0, 359);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(238, 58);
             this.button2.TabIndex = 5;
@@ -108,7 +108,7 @@
             this.Employees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Employees.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Employees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Employees.Location = new System.Drawing.Point(0, 210);
+            this.Employees.Location = new System.Drawing.Point(0, 301);
             this.Employees.Name = "Employees";
             this.Employees.Size = new System.Drawing.Size(238, 58);
             this.Employees.TabIndex = 5;
@@ -123,11 +123,11 @@
             this.orders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.orders.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.orders.Location = new System.Drawing.Point(0, 155);
+            this.orders.Location = new System.Drawing.Point(0, 246);
             this.orders.Name = "orders";
             this.orders.Size = new System.Drawing.Size(238, 55);
             this.orders.TabIndex = 3;
-            this.orders.Text = "Orders";
+            this.orders.Text = "POS";
             this.orders.UseVisualStyleBackColor = true;
             this.orders.Click += new System.EventHandler(this.orders_Click_1);
             // 
@@ -138,7 +138,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button1.Location = new System.Drawing.Point(0, 100);
+            this.button1.Location = new System.Drawing.Point(0, 191);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(238, 55);
             this.button1.TabIndex = 3;
@@ -151,7 +151,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(238, 100);
+            this.panel2.Size = new System.Drawing.Size(238, 191);
             this.panel2.TabIndex = 1;
             // 
             // panel3
