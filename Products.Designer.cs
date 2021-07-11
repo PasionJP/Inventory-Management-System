@@ -86,7 +86,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.79581F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.20419F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 187F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
@@ -126,7 +126,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(527, 232);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(526, 232);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // priceBox
@@ -166,7 +166,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 30);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Address";
+            this.label3.Text = "Quantity";
             // 
             // barcodeBox
             // 
@@ -197,7 +197,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 30);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Position";
+            this.label4.Text = "Category";
             // 
             // label5
             // 
@@ -212,7 +212,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 32);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Mobile No.";
+            this.label5.Text = "Price";
             // 
             // label2
             // 
@@ -227,7 +227,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 30);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Name";
+            this.label2.Text = "Product";
             // 
             // label1
             // 
@@ -242,7 +242,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Age";
+            this.label1.Text = "Barcode";
             // 
             // tableLayoutPanel4
             // 
@@ -301,7 +301,7 @@
             this.tableLayoutPanel5.Controls.Add(this.button3, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.button2, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(762, 6);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(761, 6);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
@@ -310,7 +310,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(176, 232);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(177, 232);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // button5
@@ -324,7 +324,7 @@
             this.button5.Location = new System.Drawing.Point(20, 121);
             this.button5.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(126, 48);
+            this.button5.Size = new System.Drawing.Size(127, 48);
             this.button5.TabIndex = 3;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = false;
@@ -341,7 +341,7 @@
             this.button4.Location = new System.Drawing.Point(20, 63);
             this.button4.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 48);
+            this.button4.Size = new System.Drawing.Size(127, 48);
             this.button4.TabIndex = 3;
             this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = false;
@@ -358,7 +358,7 @@
             this.button3.Location = new System.Drawing.Point(20, 179);
             this.button3.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 48);
+            this.button3.Size = new System.Drawing.Size(127, 48);
             this.button3.TabIndex = 3;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = false;
@@ -375,7 +375,7 @@
             this.button2.Location = new System.Drawing.Point(20, 5);
             this.button2.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 48);
+            this.button2.Size = new System.Drawing.Size(127, 48);
             this.button2.TabIndex = 2;
             this.button2.Text = "Insert";
             this.button2.UseVisualStyleBackColor = false;

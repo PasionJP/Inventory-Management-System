@@ -92,5 +92,10 @@ namespace Login_Form
         {
             openNewWindow(new Products());
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new ManageEmployees());
+        }
     }
 }
