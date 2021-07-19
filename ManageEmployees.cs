@@ -19,9 +19,9 @@ namespace Login_Form
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Employees;Integrated Security=True");
-        public int EmployeeID;
+        public int EmployeeID { get; set; }
         string photoLocation = "";
-        string sex;
+        string sex="Undefined";
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
@@ -29,10 +29,20 @@ namespace Login_Form
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            if (isValid())
+            if (isValid() && (password.Text == confirmPassword.Text))
             {
                 SqlCommand cmd = new SqlCommand("INSERT INTO Employees VALUES (@FirstName,@MiddleName,@LastName,@Sex,@Birthday,@Address,@Email,@ContactNumber,@EmployeePhoto,@UserType,@UserName,@Password)", con);
                 cmd.CommandType = CommandType.Text;
+                if (string.IsNullOrEmpty(photoLocation))
+                {
+                    photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no profile.png";
+                }
+
+                byte[] images = null;
+                FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(fstream);
+                images = brs.ReadBytes((int)fstream.Length);
+
                 cmd.Parameters.AddWithValue("@FirstName", firstName.Text);
                 cmd.Parameters.AddWithValue("@MiddleName", middleName.Text);
                 cmd.Parameters.AddWithValue("@LastName", lastName.Text);
@@ -43,28 +53,18 @@ namespace Login_Form
                 cmd.Parameters.AddWithValue("@Sex", sex);
                 cmd.Parameters.AddWithValue("@Birthday", dateTimePicker1.Text);
                 cmd.Parameters.AddWithValue("@UserType", userType.Text.ToString());
-                if (password.Text == confirmPassword.Text)
-                {
-                    cmd.Parameters.AddWithValue("@Password", password.Text);
-                }
-                else
-                {
-                    MessageBox.Show("Password does not match!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                if (employeePhoto.Image != null)
-                {
-                    byte[] images = null;
-                    FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
-                    BinaryReader brs = new BinaryReader(fstream);
-                    images = brs.ReadBytes((int)fstream.Length);
-                    cmd.Parameters.Add(new SqlParameter("@employeePhoto", images));
-                }
+                cmd.Parameters.Add(new SqlParameter("@EmployeePhoto", images));
+                cmd.Parameters.AddWithValue("@Password", password.Text);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Employee successfully registered.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show("Password does not match!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ClearFields();
             }
         }
@@ -92,7 +92,7 @@ namespace Login_Form
             userType.Items.Clear();
             MaleRadioButton.Checked = false;
             FemaleRadioButton.Checked = false;
-
+            photoLocation = "";
             employeePhoto.Image = null;
             firstName.Focus();
         }
@@ -105,6 +105,16 @@ namespace Login_Form
         private void FemaleRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             sex = "Female";
+        }
+
+        private void Upload_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
     }
 }

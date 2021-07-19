@@ -14,27 +14,29 @@ namespace Login_Form
         }
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Products;Integrated Security=True");
         string photoLocation = "";
-        public int productID { get; set; }
+        public int productID;
         private void button4_Click(object sender, EventArgs e)
         {
             if (productID > 0)
             {
                 SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @productName, barcode = @barcode, category = @category, quantity = @quantity, price = @price, productPhoto = @productPhoto WHERE productId = @ID", con);
                 cmd.CommandType = CommandType.Text;
+                if (string.IsNullOrEmpty(photoLocation))
+                {
+                    photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no image available.jpg";
+                }
+                byte[] images = null;
+                FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(fstream);
+                images = brs.ReadBytes((int)fstream.Length);
+
+                cmd.Parameters.AddWithValue("@ID", this.productID);
                 cmd.Parameters.AddWithValue("@productName", productBox.Text);
                 cmd.Parameters.AddWithValue("@barcode", barcodeBox.Text);
                 cmd.Parameters.AddWithValue("@category", categoryBox.Text);
                 cmd.Parameters.AddWithValue("@quantity", quantityBox.Text);
                 cmd.Parameters.AddWithValue("@price", priceBox.Text);
-                cmd.Parameters.AddWithValue("@ID", this.productID);
-                if (productPhoto1.Image != null)
-                {
-                    byte[] images = null;
-                    FileStream streem = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
-                    BinaryReader brs = new BinaryReader(streem);
-                    images = brs.ReadBytes((int)streem.Length);
-                    cmd.Parameters.Add(new SqlParameter("@productPhoto", images));
-                }
+                cmd.Parameters.Add(new SqlParameter("@productPhoto", images));
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -97,19 +99,23 @@ namespace Login_Form
             {
                 SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES (@productName,@barcode,@category,@quantity,@price,@productPhoto)", con);
                 cmd.CommandType = CommandType.Text;
+                if (string.IsNullOrEmpty(photoLocation))
+                {
+                    photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no image available.jpg";
+                }
+
+                byte[] images = null;
+                FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(fstream);
+                images = brs.ReadBytes((int)fstream.Length);
+
                 cmd.Parameters.AddWithValue("@productName", productBox.Text);
                 cmd.Parameters.AddWithValue("@barcode", barcodeBox.Text);
                 cmd.Parameters.AddWithValue("@category", categoryBox.Text);
                 cmd.Parameters.AddWithValue("@quantity", quantityBox.Text);
                 cmd.Parameters.AddWithValue("@price", priceBox.Text);
-                if (productPhoto1.Image != null)
-                {
-                    byte[] images = null;
-                    FileStream streem = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
-                    BinaryReader brs = new BinaryReader(streem);
-                    images = brs.ReadBytes((int)streem.Length);
-                    cmd.Parameters.Add(new SqlParameter("@productPhoto", images));
-                }
+                cmd.Parameters.Add(new SqlParameter("@productPhoto", images));
+
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -145,6 +151,7 @@ namespace Login_Form
             quantityBox.Clear();
             priceBox.Clear();
             productPhoto1.Image = null;
+            photoLocation = "";
             productBox.Focus();
         }
 
@@ -211,6 +218,12 @@ namespace Login_Form
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            photoLocation = "";
+            productPhoto1.Image = null;
         }
     }
 }

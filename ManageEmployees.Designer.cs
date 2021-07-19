@@ -173,6 +173,7 @@
             this.Upload.TabIndex = 1;
             this.Upload.Text = "Upload";
             this.Upload.UseVisualStyleBackColor = false;
+            this.Upload.Click += new System.EventHandler(this.Upload_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -461,6 +462,7 @@
             this.Clear.TabIndex = 4;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // Insert
             // 
@@ -506,6 +508,7 @@
             // 
             this.confirmPassword.Location = new System.Drawing.Point(296, 123);
             this.confirmPassword.Name = "confirmPassword";
+            this.confirmPassword.PasswordChar = '*';
             this.confirmPassword.Size = new System.Drawing.Size(218, 26);
             this.confirmPassword.TabIndex = 11;
             // 
@@ -513,6 +516,7 @@
             // 
             this.password.Location = new System.Drawing.Point(296, 83);
             this.password.Name = "password";
+            this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(218, 26);
             this.password.TabIndex = 10;
             // 
