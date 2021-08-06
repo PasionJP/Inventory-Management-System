@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login_Form.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Login_Form
 {
     public partial class IMS : Form
     {
+        private bool menuCollapsed;
+
         public IMS()
         {
             InitializeComponent();
+            openNewWindow(new Dashboard());
         }
 
 
@@ -94,6 +98,45 @@ namespace Login_Form
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new ManageEmployees());
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            if (menuCollapsed)
+            {
+                employee.Image = Resources.expand_arrow;
+                employeeDropdown.Height += 10;
+                if (employeeDropdown.Size == employeeDropdown.MaximumSize)
+                {
+                    timer1.Stop();
+                    menuCollapsed = false;
+                }
+            }
+            else
+            {
+                employee.Image = Resources.collapse_arrow;
+                employeeDropdown.Height -= 10;
+                if (employeeDropdown.Size == employeeDropdown.MinimumSize)
+                {
+                    timer1.Stop();
+                    menuCollapsed = true;
+                }
+            }
+        }
+
+        private void employeeDropdown_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new ViewEmployees());
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
         {
             openNewWindow(new ManageEmployees());
         }

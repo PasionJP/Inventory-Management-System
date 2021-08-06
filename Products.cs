@@ -14,7 +14,7 @@ namespace Login_Form
         }
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Products;Integrated Security=True");
         string photoLocation = "";
-        public int productID;
+        public int productID { get; set; }
         private void button4_Click(object sender, EventArgs e)
         {
             if (productID > 0)

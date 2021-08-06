@@ -189,6 +189,16 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeesDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +258,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SalesDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ViewEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewEmployees.Designer.cs">
+      <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,9 +295,35 @@
     <EmbeddedResource Include="SalesChart2.resx">
       <DependentUpon>SalesChart2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewEmployees.resx">
+      <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="EmployeesDataSet.xsc">
+      <DependentUpon>EmployeesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmployeesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmployeesDataSet.xss">
+      <DependentUpon>EmployeesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmployeesDataSet1.xsc">
+      <DependentUpon>EmployeesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EmployeesDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeesDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmployeesDataSet1.xss">
+      <DependentUpon>EmployeesDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Chart.datasource" />
     <None Include="Properties\DataSources\Dashboard.datasource" />
+    <None Include="Properties\DataSources\EmployeesInfo.datasource" />
     <None Include="Properties\DataSources\Sales_Chart.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -342,6 +384,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="image\expand arrow.png" />
+    <None Include="image\collapse arrow.png" />
     <Content Include="Sales.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

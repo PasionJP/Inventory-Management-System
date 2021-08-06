@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
             this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.Upload = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -95,6 +96,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.43874F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(928, 506);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label1
             // 
@@ -106,8 +108,9 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(922, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Registration Form";
+            this.label1.Text = "Employee Info";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -126,23 +129,41 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(922, 185);
             this.tableLayoutPanel2.TabIndex = 1;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label14, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.employeePhoto, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.Upload, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(742, 6);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.35545F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.64455F));
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.25806F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.74194F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(174, 173);
             this.tableLayoutPanel5.TabIndex = 3;
+            this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
+            this.label14.Location = new System.Drawing.Point(20, 155);
+            this.label14.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(131, 18);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Remove Image";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // employeePhoto
             // 
@@ -153,10 +174,11 @@
             this.employeePhoto.Location = new System.Drawing.Point(30, 10);
             this.employeePhoto.Margin = new System.Windows.Forms.Padding(30, 10, 30, 10);
             this.employeePhoto.Name = "employeePhoto";
-            this.employeePhoto.Size = new System.Drawing.Size(114, 110);
+            this.employeePhoto.Size = new System.Drawing.Size(114, 92);
             this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.employeePhoto.TabIndex = 0;
             this.employeePhoto.TabStop = false;
+            this.employeePhoto.Click += new System.EventHandler(this.employeePhoto_Click);
             // 
             // Upload
             // 
@@ -166,7 +188,7 @@
             this.Upload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(151)))), ((int)(((byte)(222)))));
             this.Upload.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Upload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Upload.Location = new System.Drawing.Point(30, 135);
+            this.Upload.Location = new System.Drawing.Point(30, 117);
             this.Upload.Margin = new System.Windows.Forms.Padding(30, 5, 30, 5);
             this.Upload.Name = "Upload";
             this.Upload.Size = new System.Drawing.Size(114, 33);
@@ -197,6 +219,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(362, 179);
             this.tableLayoutPanel4.TabIndex = 1;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // contact
             // 
@@ -204,6 +227,7 @@
             this.contact.Name = "contact";
             this.contact.Size = new System.Drawing.Size(216, 26);
             this.contact.TabIndex = 11;
+            this.contact.TextChanged += new System.EventHandler(this.contact_TextChanged);
             // 
             // label7
             // 
@@ -219,6 +243,7 @@
             this.label7.Size = new System.Drawing.Size(132, 31);
             this.label7.TabIndex = 6;
             this.label7.Text = "Contact No.";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -234,6 +259,7 @@
             this.label6.Size = new System.Drawing.Size(132, 28);
             this.label6.TabIndex = 5;
             this.label6.Text = "Email";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -249,6 +275,7 @@
             this.label5.Size = new System.Drawing.Size(132, 28);
             this.label5.TabIndex = 4;
             this.label5.Text = "Address";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label8
             // 
@@ -264,6 +291,7 @@
             this.label8.Size = new System.Drawing.Size(132, 28);
             this.label8.TabIndex = 7;
             this.label8.Text = "Birthday";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // address
             // 
@@ -271,6 +299,7 @@
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(216, 26);
             this.address.TabIndex = 9;
+            this.address.TextChanged += new System.EventHandler(this.address_TextChanged);
             // 
             // email
             // 
@@ -278,6 +307,7 @@
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(216, 26);
             this.email.TabIndex = 10;
+            this.email.TextChanged += new System.EventHandler(this.email_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -286,6 +316,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(216, 26);
             this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -309,13 +340,16 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(362, 179);
             this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // lastName
             // 
+            this.lastName.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.lastName.Location = new System.Drawing.Point(141, 91);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(218, 26);
             this.lastName.TabIndex = 9;
+            this.lastName.TextChanged += new System.EventHandler(this.lastName_TextChanged);
             // 
             // middleName
             // 
@@ -323,6 +357,7 @@
             this.middleName.Name = "middleName";
             this.middleName.Size = new System.Drawing.Size(218, 26);
             this.middleName.TabIndex = 8;
+            this.middleName.TextChanged += new System.EventHandler(this.middleName_TextChanged);
             // 
             // label9
             // 
@@ -338,6 +373,7 @@
             this.label9.Size = new System.Drawing.Size(130, 31);
             this.label9.TabIndex = 6;
             this.label9.Text = "Sex";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label2
             // 
@@ -353,6 +389,7 @@
             this.label2.Size = new System.Drawing.Size(130, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "First Name";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -368,6 +405,7 @@
             this.label3.Size = new System.Drawing.Size(130, 28);
             this.label3.TabIndex = 4;
             this.label3.Text = "Middle Name";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -383,13 +421,16 @@
             this.label4.Size = new System.Drawing.Size(130, 28);
             this.label4.TabIndex = 5;
             this.label4.Text = "Last Name";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // firstName
             // 
+            this.firstName.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.firstName.Location = new System.Drawing.Point(141, 3);
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(218, 26);
             this.firstName.TabIndex = 7;
+            this.firstName.TextChanged += new System.EventHandler(this.firstName_TextChanged);
             // 
             // tableLayoutPanel7
             // 
@@ -405,6 +446,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(218, 41);
             this.tableLayoutPanel7.TabIndex = 10;
+            this.tableLayoutPanel7.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel7_Paint);
             // 
             // FemaleRadioButton
             // 
@@ -448,6 +490,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(922, 64);
             this.tableLayoutPanel6.TabIndex = 2;
+            this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
             // Clear
             // 
@@ -483,8 +526,8 @@
             // 
             this.tableLayoutPanel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 629F));
             this.tableLayoutPanel8.Controls.Add(this.confirmPassword, 1, 3);
             this.tableLayoutPanel8.Controls.Add(this.password, 1, 2);
             this.tableLayoutPanel8.Controls.Add(this.username, 1, 1);
@@ -503,29 +546,33 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(922, 162);
             this.tableLayoutPanel8.TabIndex = 3;
+            this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel8_Paint);
             // 
             // confirmPassword
             // 
-            this.confirmPassword.Location = new System.Drawing.Point(296, 123);
+            this.confirmPassword.Location = new System.Drawing.Point(203, 123);
             this.confirmPassword.Name = "confirmPassword";
             this.confirmPassword.PasswordChar = '*';
             this.confirmPassword.Size = new System.Drawing.Size(218, 26);
             this.confirmPassword.TabIndex = 11;
+            this.confirmPassword.TextChanged += new System.EventHandler(this.confirmPassword_TextChanged);
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(296, 83);
+            this.password.Location = new System.Drawing.Point(203, 83);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(218, 26);
             this.password.TabIndex = 10;
+            this.password.TextChanged += new System.EventHandler(this.password_TextChanged);
             // 
             // username
             // 
-            this.username.Location = new System.Drawing.Point(296, 43);
+            this.username.Location = new System.Drawing.Point(203, 43);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(218, 26);
             this.username.TabIndex = 9;
+            this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
             // label13
             // 
@@ -538,9 +585,10 @@
             this.label13.Location = new System.Drawing.Point(8, 128);
             this.label13.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(285, 26);
+            this.label13.Size = new System.Drawing.Size(192, 26);
             this.label13.TabIndex = 7;
             this.label13.Text = "Confirm Password";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label10
             // 
@@ -553,9 +601,10 @@
             this.label10.Location = new System.Drawing.Point(8, 8);
             this.label10.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(285, 24);
+            this.label10.Size = new System.Drawing.Size(192, 24);
             this.label10.TabIndex = 4;
             this.label10.Text = "User Type";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -568,9 +617,10 @@
             this.label11.Location = new System.Drawing.Point(8, 48);
             this.label11.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(285, 24);
+            this.label11.Size = new System.Drawing.Size(192, 24);
             this.label11.TabIndex = 5;
             this.label11.Text = "Username";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -583,9 +633,10 @@
             this.label12.Location = new System.Drawing.Point(8, 88);
             this.label12.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(285, 24);
+            this.label12.Size = new System.Drawing.Size(192, 24);
             this.label12.TabIndex = 6;
             this.label12.Text = "Password";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // userType
             // 
@@ -593,10 +644,11 @@
             this.userType.Items.AddRange(new object[] {
             "Admin",
             "Employee"});
-            this.userType.Location = new System.Drawing.Point(296, 3);
+            this.userType.Location = new System.Drawing.Point(203, 3);
             this.userType.Name = "userType";
             this.userType.Size = new System.Drawing.Size(218, 28);
             this.userType.TabIndex = 12;
+            this.userType.SelectedIndexChanged += new System.EventHandler(this.userType_SelectedIndexChanged);
             // 
             // ManageEmployees
             // 
@@ -605,13 +657,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(928, 506);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(928, 506);
             this.Name = "ManageEmployees";
             this.Text = "ManageEmployees";
+            this.Load += new System.EventHandler(this.ManageEmployees_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -666,5 +720,6 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.ComboBox userType;
+        private System.Windows.Forms.Label label14;
     }
 }

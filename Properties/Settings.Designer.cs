@@ -44,5 +44,16 @@ namespace Login_Form.Properties {
                 return ((string)(this["revenueBindingSource"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-EVOGUQ1J\\SQLEXPRESS;Initial Catalog=Employees;Integrated Secur" +
+            "ity=True")]
+        public string EmployeesConnectionString {
+            get {
+                return ((string)(this["EmployeesConnectionString"]));
+            }
+        }
     }
 }
