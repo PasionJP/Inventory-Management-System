@@ -9,16 +9,20 @@ namespace Login_Form
 {
     public partial class ManageEmployees : Form
     {
-        public string insertOrUpdate { get; set; }
-        public int employeeID { get; set; }
-        public string fname { get; set; }
-        public string mname { get; set; }
-        public string lname { get; set; }
-        public string empSex { get; set; }
-        public string bday { get; set; }
-        public string empAddress { get; set; }
-        public string empEmail { get; set; }
-        public string empContact { get; set; }
+        public string InsertOrUpdate { get; set; }
+        public int EmployeeID { get; set; }
+        public string Fname { get; set; }
+        public string Mname { get; set; }
+        public string Lname { get; set; }
+        public string EmpSex { get; set; }
+        public string Bday { get; set; }
+        public string EmpAddress { get; set; }
+        public string EmpEmail { get; set; }
+        public string EmpContact { get; set; }
+        public string EmpUsertype { get; set; }
+        public string EmpUsername { get; set; }
+        public string EmpPassword { get; set; }
+        public Image EmpPhoto { get; set; }
 
         public ManageEmployees()
         {
@@ -34,22 +38,67 @@ namespace Login_Form
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            if (isValid())
+            if (InsertOrUpdate == "insert")
             {
-                if (password.Text == confirmPassword.Text)
+                if (isValid())
                 {
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Employees VALUES (@FirstName,@MiddleName,@LastName,@Sex,@Birthday,@Address,@Email,@ContactNumber,@EmployeePhoto,@UserType,@UserName,@Password)", con);
+                    if (password.Text == confirmPassword.Text)
+                    {
+                        SqlCommand cmd = new SqlCommand("INSERT INTO Employees VALUES (@FirstName,@MiddleName,@LastName,@Sex,@Birthday,@Address,@Email,@ContactNumber,@EmployeePhoto,@UserType,@UserName,@Password)", con);
+                        cmd.CommandType = CommandType.Text;
+                        if (string.IsNullOrEmpty(photoLocation))
+                        {
+                            photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no profile.png";
+                        }
+
+                        byte[] images = null;
+                        FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
+                        BinaryReader brs = new BinaryReader(fstream);
+                        images = brs.ReadBytes((int)fstream.Length);
+
+                        cmd.Parameters.AddWithValue("@FirstName", firstName.Text);
+                        cmd.Parameters.AddWithValue("@MiddleName", middleName.Text);
+                        cmd.Parameters.AddWithValue("@LastName", lastName.Text);
+                        cmd.Parameters.AddWithValue("@Sex", sex);
+                        cmd.Parameters.AddWithValue("@Address", address.Text);
+                        cmd.Parameters.AddWithValue("@Email", email.Text);
+                        cmd.Parameters.AddWithValue("@ContactNumber", contact.Text);
+                        cmd.Parameters.AddWithValue("@UserName", username.Text);
+                        cmd.Parameters.AddWithValue("@Password", password.Text);
+                        cmd.Parameters.AddWithValue("@Birthday", dateTimePicker1.Value.Date);
+                        cmd.Parameters.AddWithValue("@UserType", userType.Text.ToString());
+                        cmd.Parameters.Add(new SqlParameter("@EmployeePhoto", images));
+
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password does not match!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        password.Clear();
+                        confirmPassword.Clear();
+                    }
+                }
+            }
+            else if (InsertOrUpdate == "update")
+            {
+                if (EmployeeID > 0)
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Employees SET FirstName = @FirstName, MiddleName = @MiddleName, LastName = @LastName, Sex = @Sex, Address = @Address, Email = @Email, ContactNumber = @ContactNumber, UserName = @UserName, Password = @Password, Birthday = @Birthday, UserType = @UserType, EmployeePhoto = @EmployeePhoto WHERE EmployeeID = @ID", con);
                     cmd.CommandType = CommandType.Text;
                     if (string.IsNullOrEmpty(photoLocation))
                     {
                         photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no profile.png";
                     }
-
                     byte[] images = null;
                     FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
                     BinaryReader brs = new BinaryReader(fstream);
                     images = brs.ReadBytes((int)fstream.Length);
 
+                    cmd.Parameters.AddWithValue("@ID", this.EmployeeID);
                     cmd.Parameters.AddWithValue("@FirstName", firstName.Text);
                     cmd.Parameters.AddWithValue("@MiddleName", middleName.Text);
                     cmd.Parameters.AddWithValue("@LastName", lastName.Text);
@@ -63,20 +112,13 @@ namespace Login_Form
                     cmd.Parameters.AddWithValue("@UserType", userType.Text.ToString());
                     cmd.Parameters.Add(new SqlParameter("@EmployeePhoto", images));
 
-
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Employee successfully registered.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearFields();
-                }
-                else
-                {
-                    MessageBox.Show("Password does not match!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    password.Clear();
-                    confirmPassword.Clear();
+                    this.Close();
                 }
             }
+            
         }
         private bool isValid()
         {
@@ -89,7 +131,7 @@ namespace Login_Form
         }
         private void ClearFields()
         {
-            employeeID = 0;
+            EmployeeID = 0;
             firstName.Clear();
             middleName.Clear();
             lastName.Clear();
@@ -306,23 +348,28 @@ namespace Login_Form
 
         private void ManageEmployees_Load(object sender, EventArgs e)
         {
-            if (insertOrUpdate == "update")
+            if (InsertOrUpdate == "update")
             {
-                firstName.Text = fname;
-                middleName.Text = mname;
-                lastName.Text = lname;
-                if (empSex == "Male")
+                firstName.Text = Fname;
+                middleName.Text = Mname;
+                lastName.Text = Lname;
+                if (EmpSex == "Male")
                 {
                     MaleRadioButton.Checked = true;
                 }
-                else if (empSex == "Female")
+                else if (EmpSex == "Female")
                 {
                     FemaleRadioButton.Checked = true;
                 }
-                dateTimePicker1.Value = Convert.ToDateTime(bday);
-                address.Text = empAddress;
-                email.Text = empEmail;
-                contact.Text = empContact;
+                dateTimePicker1.Value = Convert.ToDateTime(Bday);
+                address.Text = EmpAddress;
+                email.Text = EmpEmail;
+                contact.Text = EmpContact;
+                userType.Text = EmpUsertype;
+                username.Text = EmpUsername;
+                password.Text = EmpPassword;
+                confirmPassword.Text = EmpPassword;
+                employeePhoto.Image = EmpPhoto;
             }
         }
     }

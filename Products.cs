@@ -225,5 +225,29 @@ namespace Login_Form
             photoLocation = "";
             productPhoto1.Image = null;
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void searchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrEmpty(searchBox.Text))
+                    GetProductsRecord();
+                else
+                {
+                    string rowFilter = string.Format("[{0}] = '{1}'", comboBox1.Text, searchBox.Text);
+                    (productsDataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+                }
+            }
+        }
     }
 }
