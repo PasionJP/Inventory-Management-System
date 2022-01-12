@@ -12,25 +12,28 @@ namespace Login_Form
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Products;Integrated Security=True");
+
+        readonly SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Products;Integrated Security=True");
         string photoLocation = "";
-        public int productID { get; set; }
-        private void button4_Click(object sender, EventArgs e)
+        public int ProductID { get; set; }
+        private void Button4_Click(object sender, EventArgs e)
         {
-            if (productID > 0)
+            if (ProductID > 0)
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @productName, barcode = @barcode, category = @category, quantity = @quantity, price = @price, productPhoto = @productPhoto WHERE productId = @ID", con);
-                cmd.CommandType = CommandType.Text;
+                SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @productName, barcode = @barcode, category = @category, quantity = @quantity, price = @price, productPhoto = @productPhoto WHERE productId = @ID", con)
+                {
+                    CommandType = CommandType.Text
+                };
                 if (string.IsNullOrEmpty(photoLocation))
                 {
                     photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no image available.jpg";
                 }
-                byte[] images = null;
+
                 FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
                 BinaryReader brs = new BinaryReader(fstream);
-                images = brs.ReadBytes((int)fstream.Length);
+                byte[] images = brs.ReadBytes((int)fstream.Length);
 
-                cmd.Parameters.AddWithValue("@ID", this.productID);
+                cmd.Parameters.AddWithValue("@ID", this.ProductID);
                 cmd.Parameters.AddWithValue("@productName", productBox.Text);
                 cmd.Parameters.AddWithValue("@barcode", barcodeBox.Text);
                 cmd.Parameters.AddWithValue("@category", categoryBox.Text);
@@ -52,17 +55,17 @@ namespace Login_Form
             }
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -93,18 +96,20 @@ namespace Login_Form
             var imageColumn = (DataGridViewImageColumn)productsDataGridView.Columns["productPhoto"];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
-            if (isValid())
+            if (IsValid())
             {
-                SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES (@productName,@barcode,@category,@quantity,@price,@productPhoto)", con);
-                cmd.CommandType = CommandType.Text;
+                SqlCommand cmd = new SqlCommand("INSERT INTO Products VALUES (@productName,@barcode,@category,@quantity,@price,@productPhoto)", con)
+                {
+                    CommandType = CommandType.Text
+                };
                 if (string.IsNullOrEmpty(photoLocation))
                 {
                     photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no image available.jpg";
                 }
 
-                byte[] images = null;
+                byte[] images;
                 FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
                 BinaryReader brs = new BinaryReader(fstream);
                 images = brs.ReadBytes((int)fstream.Length);
@@ -127,7 +132,7 @@ namespace Login_Form
             }
         }
 
-        private bool isValid()
+        private bool IsValid()
         {
             if (productBox.Text == string.Empty)
             {
@@ -137,14 +142,14 @@ namespace Login_Form
             return true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             ClearFields();
         }
 
         private void ClearFields()
         {
-            productID = 0;
+            ProductID = 0;
             productBox.Clear();
             barcodeBox.Clear();
             categoryBox.Clear();
@@ -155,12 +160,12 @@ namespace Login_Form
             productBox.Focus();
         }
 
-        private void productsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ProductsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ClearFields();
             if (productsDataGridView.SelectedRows[0].Cells[1].Value != null)
             {
-                productID = Convert.ToInt32(productsDataGridView.SelectedRows[0].Cells[0].Value);
+                ProductID = Convert.ToInt32(productsDataGridView.SelectedRows[0].Cells[0].Value);
                 productBox.Text = productsDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                 barcodeBox.Text = productsDataGridView.SelectedRows[0].Cells[2].Value.ToString();
                 categoryBox.Text = productsDataGridView.SelectedRows[0].Cells[3].Value.ToString();
@@ -176,14 +181,16 @@ namespace Login_Form
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
-            if (productID > 0)
+            if (ProductID > 0)
             {
-                SqlCommand cmd = new SqlCommand("DELETE FROM Products WHERE productId = @ID", con);
-                cmd.CommandType = CommandType.Text;
+                SqlCommand cmd = new SqlCommand("DELETE FROM Products WHERE productId = @ID", con)
+                {
+                    CommandType = CommandType.Text
+                };
 
-                cmd.Parameters.AddWithValue("@ID", this.productID);
+                cmd.Parameters.AddWithValue("@ID", this.ProductID);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -199,10 +206,12 @@ namespace Login_Form
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
+            OpenFileDialog opf = new OpenFileDialog
+            {
+                Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif"
+            };
             if (opf.ShowDialog() == DialogResult.OK)
             {
                 photoLocation = opf.FileName.ToString();
@@ -210,33 +219,33 @@ namespace Login_Form
             }
         }
 
-        private void productBox_TextChanged(object sender, EventArgs e)
+        private void ProductBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        private void TableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void Label7_Click(object sender, EventArgs e)
         {
             photoLocation = "";
             productPhoto1.Image = null;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
           
         }
 
-        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        private void ComboBox1_KeyDown(object sender, KeyEventArgs e)
         {
 
         }
 
-        private void searchBox_KeyDown(object sender, KeyEventArgs e)
+        private void SearchBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -248,6 +257,36 @@ namespace Login_Form
                     (productsDataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
                 }
             }
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,7 +52,7 @@ namespace Login_Form
 
         private void orders_Click_1(object sender, EventArgs e)
         {
-         
+            openNewWindow(new POS());
         }
 
         private void chart1_Click(object sender, EventArgs e)
