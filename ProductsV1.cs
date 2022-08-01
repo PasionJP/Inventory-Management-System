@@ -6,9 +6,9 @@ using System.IO;
 
 namespace Login_Form
 {
-    public partial class Products : Form
+    public partial class ProductsV1 : Form
     {
-        public Products()
+        public ProductsV1()
         {
             InitializeComponent();
         }
@@ -91,7 +91,7 @@ namespace Login_Form
             for (var i = 0; i < productsDataGridView.Rows.Count-1; i++)
             {
                 DataGridViewRow r = productsDataGridView.Rows[i];
-                r.Height = 100;
+                r.Height = 50;
             }
             var imageColumn = (DataGridViewImageColumn)productsDataGridView.Columns["productPhoto"];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
@@ -285,6 +285,11 @@ namespace Login_Form
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -13,9 +13,15 @@ namespace Login_Form
 {
     public partial class Login : Form
     {
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        SqlDataReader dr;
+        DatabaseConnection dbCon = new DatabaseConnection();
         public Login()
         {
             InitializeComponent();
+            cn = new SqlConnection(dbCon.DBConnection());
+            this.KeyPreview = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -58,21 +64,21 @@ namespace Login_Form
             //}
             //else
             //{
-            //    SqlConnection sc = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True");
-            //    string query = "Select * From [Login] where username = '" + usernameBox.Text.Trim() + "' and password = '" + passwordBox.Text.Trim() + "'";
-            //    SqlDataAdapter sda = new SqlDataAdapter(query, sc);
+            //    string query = "Select * From loginDB where username = '" + usernameBox.Text.Trim() + "' and password = '" + passwordBox.Text.Trim() + "'";
+            //    SqlDataAdapter sda = new SqlDataAdapter(query, cn);
             //    DataTable dt = new DataTable();
             //    sda.Fill(dt);
             //    if (dt.Rows.Count == 1)
             //    {
-            this.Hide();
-            IMS ss = new IMS();
-            ss.Show();
+                    this.Hide();
+                    IMS ss = new IMS();
+                    ss.Show();
             //    }
             //    else
             //    {
             //        MessageBox.Show("Invalid username and password! Please try again.");
             //    }
+            //    cn.Close();
             //}
         }
 

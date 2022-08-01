@@ -46,10 +46,12 @@
             // 
             // itemQty
             // 
-            this.ClientSize = new System.Drawing.Size(354, 65);
+            this.ClientSize = new System.Drawing.Size(354, 56);
             this.Controls.Add(this.itmQtyTB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "itemQty";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quantity";
             this.ResumeLayout(false);
             this.PerformLayout();
 

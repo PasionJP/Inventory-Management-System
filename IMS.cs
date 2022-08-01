@@ -92,7 +92,7 @@ namespace Login_Form
 
         private void Employees_Click(object sender, EventArgs e)
         {
-            openNewWindow(new Products());
+            openNewWindow(new Products1());
         }
 
 

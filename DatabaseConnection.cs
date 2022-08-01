@@ -10,7 +10,7 @@ namespace Login_Form
     {
         public string DBConnection() 
         {
-            string con = @"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Products;Integrated Security=True";
+            string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\JP\Software\Inventory Management System\Github\Login Form\IMSDatabase.mdf';Integrated Security=True";
             return con;
         }    
     }

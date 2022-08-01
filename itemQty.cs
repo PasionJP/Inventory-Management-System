@@ -17,7 +17,6 @@ namespace Login_Form
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
-        string title = "POS System";
         private String pcode;
         private double price;
         private String transno;
@@ -57,10 +56,12 @@ namespace Login_Form
                 cm.Parameters.AddWithValue("@price", price);
                 cm.Parameters.AddWithValue("@qty", int.Parse(itmQtyTB.Text));
                 cm.Parameters.AddWithValue("@sdate", DateTime.Now);
+                cm.ExecuteNonQuery();
                 cn.Close();
 
                 pos.searchBox.Clear();
                 pos.searchBox.Focus();
+                pos.LoadCart();
                 this.Dispose();
             }
         }

@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -172,6 +172,7 @@
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
@@ -211,6 +212,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IMSDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IMSDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="itemQty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,11 +247,17 @@
     <Compile Include="POS.Designer.cs">
       <DependentUpon>POS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products.cs">
+    <Compile Include="Products1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Products.Designer.cs">
-      <DependentUpon>Products.cs</DependentUpon>
+    <Compile Include="Products1.Designer.cs">
+      <DependentUpon>Products1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsV1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsV1.Designer.cs">
+      <DependentUpon>ProductsV1.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -286,6 +298,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SalesDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SearchItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchItem.Designer.cs">
+      <DependentUpon>SearchItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,8 +328,11 @@
     <EmbeddedResource Include="POS.resx">
       <DependentUpon>POS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Products.resx">
-      <DependentUpon>Products.cs</DependentUpon>
+    <EmbeddedResource Include="Products1.resx">
+      <DependentUpon>Products1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsV1.resx">
+      <DependentUpon>ProductsV1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -328,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesChart2.resx">
       <DependentUpon>SalesChart2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchItem.resx">
+      <DependentUpon>SearchItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployees.resx">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
@@ -353,6 +377,17 @@
     </None>
     <None Include="EmployeesDataSet1.xss">
       <DependentUpon>EmployeesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="IMSDatabaseDataSet.xsc">
+      <DependentUpon>IMSDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IMSDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IMSDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IMSDatabaseDataSet.xss">
+      <DependentUpon>IMSDatabaseDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="ProductsDataSet.xsc">
@@ -442,6 +477,13 @@
   <ItemGroup>
     <None Include="image\expand arrow.png" />
     <None Include="image\collapse arrow.png" />
+    <Content Include="IMSDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMSDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>IMSDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Sales.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

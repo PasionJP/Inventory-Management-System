@@ -1,6 +1,6 @@
 ﻿namespace Login_Form
 {
-    partial class Products
+    partial class Products1
     {
         /// <summary>
         /// Required designer variable.
@@ -62,6 +62,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPhotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -104,7 +111,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.79581F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.20419F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 227F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
@@ -135,7 +142,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(214, 6);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(211, 6);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
@@ -144,7 +151,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(503, 219);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(495, 219);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // priceBox
@@ -154,7 +161,7 @@
             this.priceBox.Location = new System.Drawing.Point(139, 180);
             this.priceBox.Margin = new System.Windows.Forms.Padding(8);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(356, 26);
+            this.priceBox.Size = new System.Drawing.Size(348, 26);
             this.priceBox.TabIndex = 9;
             // 
             // quantityBox
@@ -164,7 +171,7 @@
             this.quantityBox.Location = new System.Drawing.Point(139, 137);
             this.quantityBox.Margin = new System.Windows.Forms.Padding(8);
             this.quantityBox.Name = "quantityBox";
-            this.quantityBox.Size = new System.Drawing.Size(356, 26);
+            this.quantityBox.Size = new System.Drawing.Size(348, 26);
             this.quantityBox.TabIndex = 8;
             // 
             // categoryBox
@@ -174,7 +181,7 @@
             this.categoryBox.Location = new System.Drawing.Point(139, 94);
             this.categoryBox.Margin = new System.Windows.Forms.Padding(8);
             this.categoryBox.Name = "categoryBox";
-            this.categoryBox.Size = new System.Drawing.Size(356, 26);
+            this.categoryBox.Size = new System.Drawing.Size(348, 26);
             this.categoryBox.TabIndex = 7;
             // 
             // label3
@@ -199,7 +206,7 @@
             this.barcodeBox.Location = new System.Drawing.Point(139, 51);
             this.barcodeBox.Margin = new System.Windows.Forms.Padding(8);
             this.barcodeBox.Name = "barcodeBox";
-            this.barcodeBox.Size = new System.Drawing.Size(356, 26);
+            this.barcodeBox.Size = new System.Drawing.Size(348, 26);
             this.barcodeBox.TabIndex = 3;
             // 
             // productBox
@@ -209,7 +216,7 @@
             this.productBox.Location = new System.Drawing.Point(139, 8);
             this.productBox.Margin = new System.Windows.Forms.Padding(8);
             this.productBox.Name = "productBox";
-            this.productBox.Size = new System.Drawing.Size(356, 26);
+            this.productBox.Size = new System.Drawing.Size(348, 26);
             this.productBox.TabIndex = 1;
             // 
             // label4
@@ -289,7 +296,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.61611F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.38389F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(196, 219);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(193, 219);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // button1
@@ -302,7 +309,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(30, 5, 30, 5);
             this.button1.MaximumSize = new System.Drawing.Size(152, 62);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 45);
+            this.button1.Size = new System.Drawing.Size(133, 45);
             this.button1.TabIndex = 1;
             this.button1.Text = "Choose Image";
             this.button1.UseVisualStyleBackColor = false;
@@ -313,7 +320,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
-            this.label7.Location = new System.Drawing.Point(22, 188);
+            this.label7.Location = new System.Drawing.Point(21, 188);
             this.label7.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 21);
@@ -322,13 +329,13 @@
             // 
             // productPhoto1
             // 
+            this.productPhoto1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.productPhoto1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.productPhoto1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productPhoto1.Location = new System.Drawing.Point(30, 10);
             this.productPhoto1.Margin = new System.Windows.Forms.Padding(30, 10, 30, 10);
             this.productPhoto1.MaximumSize = new System.Drawing.Size(200, 200);
             this.productPhoto1.Name = "productPhoto1";
-            this.productPhoto1.Size = new System.Drawing.Size(136, 113);
+            this.productPhoto1.Size = new System.Drawing.Size(133, 113);
             this.productPhoto1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.productPhoto1.TabIndex = 0;
             this.productPhoto1.TabStop = false;
@@ -343,7 +350,7 @@
             this.tableLayoutPanel5.Controls.Add(this.button3, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.button2, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(729, 6);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(718, 6);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
@@ -352,7 +359,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(216, 219);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(227, 219);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // button5
@@ -366,7 +373,7 @@
             this.button5.Location = new System.Drawing.Point(20, 113);
             this.button5.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(166, 44);
+            this.button5.Size = new System.Drawing.Size(177, 44);
             this.button5.TabIndex = 3;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = false;
@@ -382,7 +389,7 @@
             this.button4.Location = new System.Drawing.Point(20, 59);
             this.button4.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(166, 44);
+            this.button4.Size = new System.Drawing.Size(177, 44);
             this.button4.TabIndex = 3;
             this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = false;
@@ -398,7 +405,7 @@
             this.button3.Location = new System.Drawing.Point(20, 167);
             this.button3.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(166, 47);
+            this.button3.Size = new System.Drawing.Size(177, 47);
             this.button3.TabIndex = 3;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = false;
@@ -414,7 +421,7 @@
             this.button2.Location = new System.Drawing.Point(20, 5);
             this.button2.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(166, 44);
+            this.button2.Size = new System.Drawing.Size(177, 44);
             this.button2.TabIndex = 2;
             this.button2.Text = "Insert";
             this.button2.UseVisualStyleBackColor = false;
@@ -521,20 +528,83 @@
             // 
             // productsDataGridView
             // 
-            this.productsDataGridView.AllowUserToAddRows = false;
-            this.productsDataGridView.AllowUserToDeleteRows = false;
+            this.productsDataGridView.AutoGenerateColumns = false;
             this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productsDataGridView.Location = new System.Drawing.Point(20, 60);
-            this.productsDataGridView.Margin = new System.Windows.Forms.Padding(20, 10, 20, 20);
+            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIdDataGridViewTextBoxColumn,
+            this.productNameDataGridViewTextBoxColumn,
+            this.barcodeDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.productPhotoDataGridViewImageColumn});
+            this.productsDataGridView.DataSource = this.productsBindingSource;
+            this.productsDataGridView.Location = new System.Drawing.Point(3, 53);
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.RowHeadersWidth = 62;
-            this.productsDataGridView.RowTemplate.Height = 100;
-            this.productsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productsDataGridView.Size = new System.Drawing.Size(911, 490);
+            this.productsDataGridView.RowTemplate.Height = 28;
+            this.productsDataGridView.Size = new System.Drawing.Size(945, 150);
             this.productsDataGridView.TabIndex = 2;
+            this.productsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick_1);
             // 
-            // Products
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "productId";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "productId";
+            this.productIdDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productIdDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "productName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "productName";
+            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // barcodeDataGridViewTextBoxColumn
+            // 
+            this.barcodeDataGridViewTextBoxColumn.DataPropertyName = "barcode";
+            this.barcodeDataGridViewTextBoxColumn.HeaderText = "barcode";
+            this.barcodeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.barcodeDataGridViewTextBoxColumn.Name = "barcodeDataGridViewTextBoxColumn";
+            this.barcodeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "category";
+            this.categoryDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // productPhotoDataGridViewImageColumn
+            // 
+            this.productPhotoDataGridViewImageColumn.DataPropertyName = "productPhoto";
+            this.productPhotoDataGridViewImageColumn.HeaderText = "productPhoto";
+            this.productPhotoDataGridViewImageColumn.MinimumWidth = 8;
+            this.productPhotoDataGridViewImageColumn.Name = "productPhotoDataGridViewImageColumn";
+            this.productPhotoDataGridViewImageColumn.Width = 150;
+            // 
+            // Products1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -543,7 +613,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(973, 562);
-            this.Name = "Products";
+            this.Name = "Products1";
             this.Text = "Products";
             this.Load += new System.EventHandler(this.Products_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productsDataSet1)).EndInit();
@@ -599,5 +669,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView productsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn productPhotoDataGridViewImageColumn;
     }
 }

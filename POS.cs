@@ -29,22 +29,22 @@ namespace Login_Form
             try
             {
                 string currDate = DateTime.Now.ToString("yyyyMMdd");
-                string transNo;
+                string transno;
                 int count;
                 cn.Open();
-                cm = new SqlCommand("SELECT TOP 1 transactNo FROM [Transaction] WHERE transactNo LIKE '%" + currDate + "'",cn);
+                cm = new SqlCommand("SELECT TOP 1 transno FROM cartTbl WHERE transno LIKE '" + currDate + "%' order by id desc", cn);
                 dr = cm.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows)
                 {
-                    transNo = dr[0].ToString();
-                    count = int.Parse(transNo.Substring(8, 4));
+                    transno = dr[0].ToString();
+                    count = int.Parse(transno.Substring(8, 4));
                     TransactNo.Text = currDate + (count + 1);
                 }
                 else
                 {
-                    transNo = currDate + "1001";
-                    TransactNo.Text = transNo;
+                    transno = currDate + "1001";
+                    TransactNo.Text = transno;
                 }
                 dr.Close();
                 cn.Close();
@@ -83,6 +83,8 @@ namespace Login_Form
                     {
                         itemQty frm = new itemQty(this);
                         frm.ProductDetails(dr["pcode"].ToString(), double.Parse(dr["price"].ToString()), TransactNo.Text);
+                        dr.Close();
+                        cn.Close();
                         frm.ShowDialog();
                     }
                     dr.Close();
@@ -97,7 +99,54 @@ namespace Login_Form
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string colName = dataGridView1.Columns[e.ColumnIndex].Name;
+            if (colName == "Remove")
+            {
+                if(MessageBox.Show("Are you sure you want to remove this item in your cart?", "Remove item from cart", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("DELETE from cartTbl where id like '" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Item has been removed from the cart successfuly", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadCart();
+                }
+            }
+        }
 
+        public void LoadCart()
+        {
+            try
+            {
+                dataGridView1.Rows.Clear();
+                int i = 0;
+                cn.Open();
+                cm = new SqlCommand("SELECT c.id, c.pcode, p.ProductName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "'", cn);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i++;
+                    dataGridView1.Rows.Add(dr["id"].ToString(), dr["ProductName"].ToString(),  dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), dr["total"].ToString()) ;
+                }
+                dr.Close();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdvSearchButton_Click(object sender, EventArgs e)
+        {
+            if (TransactNo.Text == "000000000000") { return; }
+            SearchItem frm = new SearchItem();
+            frm.ShowDialog();
         }
     }
 }
