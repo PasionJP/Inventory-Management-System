@@ -480,6 +480,8 @@
   <ItemGroup>
     <None Include="image\expand arrow.png" />
     <None Include="image\collapse arrow.png" />
+    <None Include="image\eye-unshow.png" />
+    <None Include="image\eye-show.png" />
     <Content Include="IMSDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

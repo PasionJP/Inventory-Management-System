@@ -30,6 +30,9 @@ namespace Login_Form
         private void ViewEmployees_Load(object sender, EventArgs e)
         {
             GetEmployeesRecord();
+            comboBox1.SelectedItem = null;
+            comboBox1.SelectedText = "LastName";
+            searchBox.Focus();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,7 +45,7 @@ namespace Login_Form
             {
                 con.Open();
                 //cmd = new SqlCommand("SELECT FirstName+' '+MiddleName+' '+LastName as FullName FROM Employees'", con);
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT RTRIM(LTRIM(CONCAT(COALESCE(Lastname, ''), ', ', COALESCE(FirstName + ' ', ''), COALESCE(MiddleName + ' ', '')))) AS Fullname, EmployeeID, FirstName, MiddleName, LastName, Sex, Birthday, Address, Email, ContactNumber, Usertype, EmployeePhoto FROM Employees", con);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT RTRIM(LTRIM(CONCAT(COALESCE(Lastname, ''), ', ', COALESCE(FirstName + ' ', ''), COALESCE(MiddleName + ' ', '')))) AS Fullname, EmployeeID, FirstName, MiddleName, LastName, Sex, Birthday, Address, Email, ContactNumber, Usertype, EmployeePhoto, UserName, Password FROM Employees", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 employeesDataGridView.AutoGenerateColumns = false;
@@ -60,7 +63,7 @@ namespace Login_Form
             {
                 MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            comboBox1.SelectionLength = 0;
             //SqlCommand cmd = new SqlCommand("Select * from Employees", con);
             //DataTable dt = new DataTable();
 
@@ -92,17 +95,17 @@ namespace Login_Form
                 mngEmployee.Fname = employeesDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                 mngEmployee.Mname = employeesDataGridView.SelectedRows[0].Cells[2].Value.ToString();
                 mngEmployee.Lname = employeesDataGridView.SelectedRows[0].Cells[3].Value.ToString();
-                mngEmployee.EmpSex = employeesDataGridView.SelectedRows[0].Cells[4].Value.ToString();
-                mngEmployee.Bday = employeesDataGridView.SelectedRows[0].Cells[5].Value.ToString();
-                mngEmployee.EmpAddress = employeesDataGridView.SelectedRows[0].Cells[6].Value.ToString();
-                mngEmployee.EmpEmail = employeesDataGridView.SelectedRows[0].Cells[7].Value.ToString();
-                mngEmployee.EmpContact = employeesDataGridView.SelectedRows[0].Cells[8].Value.ToString();
-                mngEmployee.EmpUsertype = employeesDataGridView.SelectedRows[0].Cells[9].Value.ToString();
-                mngEmployee.EmpUsername = employeesDataGridView.SelectedRows[0].Cells[11].Value.ToString();
-                mngEmployee.EmpPassword = employeesDataGridView.SelectedRows[0].Cells[12].Value.ToString();
+                mngEmployee.EmpSex = employeesDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+                mngEmployee.Bday = employeesDataGridView.SelectedRows[0].Cells[6].Value.ToString();
+                mngEmployee.EmpAddress = employeesDataGridView.SelectedRows[0].Cells[7].Value.ToString();
+                mngEmployee.EmpEmail = employeesDataGridView.SelectedRows[0].Cells[8].Value.ToString();
+                mngEmployee.EmpContact = employeesDataGridView.SelectedRows[0].Cells[9].Value.ToString();
+                mngEmployee.EmpUsertype = employeesDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+                mngEmployee.EmpUsername = employeesDataGridView.SelectedRows[0].Cells[12].Value.ToString();
+                mngEmployee.EmpPassword = employeesDataGridView.SelectedRows[0].Cells[13].Value.ToString();
                 if (!Convert.IsDBNull(employeesDataGridView.SelectedRows[0].Cells[6].Value))
                 {
-                    byte[] photoBytes = (byte[])employeesDataGridView.SelectedRows[0].Cells[10].Value;
+                    byte[] photoBytes = (byte[])employeesDataGridView.SelectedRows[0].Cells[11].Value;
                     MemoryStream ms = new MemoryStream(photoBytes);
                     System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
                     mngEmployee.EmpPhoto = img;
@@ -162,16 +165,27 @@ namespace Login_Form
 
         private void searchBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-                if (string.IsNullOrEmpty(searchBox.Text))
-                    GetEmployeesRecord();
-                else
+                if (e.KeyCode == Keys.Enter)
                 {
-                    string rowFilter = string.Format("[{0}] = '{1}'", comboBox1.Text, searchBox.Text);
-                    (employeesDataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+                    if (!string.IsNullOrEmpty(comboBox1.Text))
+                    {
+                        if (string.IsNullOrEmpty(searchBox.Text))
+                            GetEmployeesRecord();
+                        else
+                        {
+                            string rowFilter = string.Format("[{0}] = '{1}'", comboBox1.Text, searchBox.Text);
+                            (employeesDataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -182,6 +196,12 @@ namespace Login_Form
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(searchBox.Text))
+                GetEmployeesRecord();
         }
     }
 }

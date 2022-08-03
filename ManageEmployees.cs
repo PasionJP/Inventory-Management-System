@@ -28,6 +28,7 @@ namespace Login_Form
         DatabaseConnection dbCon = new DatabaseConnection();
         string title = "POS System";
         new bool MouseDown;
+        string pwViewState = "Hide";
         private Point offset;
         public ManageEmployees()
         {
@@ -411,6 +412,24 @@ namespace Login_Form
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (pwViewState == "Hide")
+            {
+                pwViewState = "Unhide";
+                password.PasswordChar = '\0';
+                confirmPassword.PasswordChar = '\0';
+                pictureBox1.Image = Properties.Resources.eye_show;
+            } else if (pwViewState == "Unhide")
+            {
+                pwViewState = "Hide";
+                password.PasswordChar = '*';
+                confirmPassword.PasswordChar = '*';
+                pictureBox1.Image = Properties.Resources.eye_unshow;
+            }
+            
         }
     }
 }
