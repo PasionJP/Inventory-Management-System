@@ -120,16 +120,20 @@ namespace Login_Form
             {
                 dataGridView1.Rows.Clear();
                 int i = 0;
+                double total = 0;
                 cn.Open();
                 cm = new SqlCommand("SELECT c.id, c.pcode, p.ProductName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "'", cn);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
                     i++;
-                    dataGridView1.Rows.Add(dr["id"].ToString(), dr["ProductName"].ToString(),  dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), dr["total"].ToString()) ;
+                    total += Double.Parse(dr["total"].ToString());
+                    dataGridView1.Rows.Add(dr["id"].ToString(), dr["ProductName"].ToString(),  dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00")) ;
                 }
                 dr.Close();
                 cn.Close();
+                subtotalLblValue.Text = total.ToString("#,##0.00");
+                cartTotal();
             }
             catch (Exception ex)
             {
@@ -153,6 +157,17 @@ namespace Login_Form
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public void cartTotal()
+        {
+
+            double sales = Double.Parse(subtotalLblValue.Text);
+            double discount = 0;
+            double vat = sales * dbCon.getVal();
+            double vatable = sales - vat;
+            vatLblValue.Text = vat.ToString("#,##0.00");
+            vatableLblValue.Text = vatable.ToString("#,##0.00");
+            
         }
     }
 }

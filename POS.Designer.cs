@@ -58,11 +58,11 @@
             this.subTotalLbl = new System.Windows.Forms.Label();
             this.VatLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Discount = new System.Windows.Forms.Label();
-            this.Vat = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Total = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.subtotalLblValue = new System.Windows.Forms.Label();
+            this.discountLblValue = new System.Windows.Forms.Label();
+            this.vatLblValue = new System.Windows.Forms.Label();
+            this.vatableLblValue = new System.Windows.Forms.Label();
+            this.totalLblValue = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.CancelButton = new System.Windows.Forms.Button();
             this.NewTransactButton = new System.Windows.Forms.Button();
@@ -331,11 +331,11 @@
             this.tableLayoutPanel6.Controls.Add(this.subTotalLbl, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.VatLbl, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.label3, 0, 3);
-            this.tableLayoutPanel6.Controls.Add(this.Discount, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.Vat, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label2, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.Total, 1, 3);
-            this.tableLayoutPanel6.Controls.Add(this.label1, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.subtotalLblValue, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.discountLblValue, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.vatLblValue, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.vatableLblValue, 1, 3);
+            this.tableLayoutPanel6.Controls.Add(this.totalLblValue, 1, 4);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.MaximumSize = new System.Drawing.Size(1200, 270);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -357,9 +357,9 @@
             this.Discountlbl.Location = new System.Drawing.Point(20, 45);
             this.Discountlbl.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
             this.Discountlbl.Name = "Discountlbl";
-            this.Discountlbl.Size = new System.Drawing.Size(86, 30);
+            this.Discountlbl.Size = new System.Drawing.Size(101, 30);
             this.Discountlbl.TabIndex = 15;
-            this.Discountlbl.Text = "Discount";
+            this.Discountlbl.Text = "DISCOUNT";
             this.Discountlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TotalLbl
@@ -385,9 +385,9 @@
             this.subTotalLbl.Location = new System.Drawing.Point(20, 5);
             this.subTotalLbl.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
             this.subTotalLbl.Name = "subTotalLbl";
-            this.subTotalLbl.Size = new System.Drawing.Size(89, 30);
+            this.subTotalLbl.Size = new System.Drawing.Size(101, 30);
             this.subTotalLbl.TabIndex = 17;
-            this.subTotalLbl.Text = "Sub Total";
+            this.subTotalLbl.Text = "SUB TOTAL";
             this.subTotalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VatLbl
@@ -399,9 +399,9 @@
             this.VatLbl.Location = new System.Drawing.Point(20, 85);
             this.VatLbl.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
             this.VatLbl.Name = "VatLbl";
-            this.VatLbl.Size = new System.Drawing.Size(85, 30);
+            this.VatLbl.Size = new System.Drawing.Size(48, 30);
             this.VatLbl.TabIndex = 16;
-            this.VatLbl.Text = "Tax Base";
+            this.VatLbl.Text = "VAT";
             this.VatLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -413,82 +413,82 @@
             this.label3.Location = new System.Drawing.Point(20, 125);
             this.label3.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 30);
+            this.label3.Size = new System.Drawing.Size(91, 30);
             this.label3.TabIndex = 24;
-            this.label3.Text = "VAT";
+            this.label3.Text = "VATABLE";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Discount
+            // subtotalLblValue
             // 
-            this.Discount.AutoSize = true;
-            this.Discount.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Discount.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Discount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Discount.Location = new System.Drawing.Point(220, 5);
-            this.Discount.Margin = new System.Windows.Forms.Padding(5);
-            this.Discount.Name = "Discount";
-            this.Discount.Size = new System.Drawing.Size(48, 30);
-            this.Discount.TabIndex = 19;
-            this.Discount.Text = "0.00";
-            this.Discount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subtotalLblValue.AutoSize = true;
+            this.subtotalLblValue.Dock = System.Windows.Forms.DockStyle.Right;
+            this.subtotalLblValue.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtotalLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.subtotalLblValue.Location = new System.Drawing.Point(220, 5);
+            this.subtotalLblValue.Margin = new System.Windows.Forms.Padding(5);
+            this.subtotalLblValue.Name = "subtotalLblValue";
+            this.subtotalLblValue.Size = new System.Drawing.Size(48, 30);
+            this.subtotalLblValue.TabIndex = 19;
+            this.subtotalLblValue.Text = "0.00";
+            this.subtotalLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Vat
+            // discountLblValue
             // 
-            this.Vat.AutoSize = true;
-            this.Vat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Vat.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Vat.Location = new System.Drawing.Point(220, 45);
-            this.Vat.Margin = new System.Windows.Forms.Padding(5);
-            this.Vat.Name = "Vat";
-            this.Vat.Size = new System.Drawing.Size(48, 30);
-            this.Vat.TabIndex = 20;
-            this.Vat.Text = "0.00";
-            this.Vat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.discountLblValue.AutoSize = true;
+            this.discountLblValue.Dock = System.Windows.Forms.DockStyle.Right;
+            this.discountLblValue.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.discountLblValue.Location = new System.Drawing.Point(220, 45);
+            this.discountLblValue.Margin = new System.Windows.Forms.Padding(5);
+            this.discountLblValue.Name = "discountLblValue";
+            this.discountLblValue.Size = new System.Drawing.Size(48, 30);
+            this.discountLblValue.TabIndex = 20;
+            this.discountLblValue.Text = "0.00";
+            this.discountLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // vatLblValue
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label2.Location = new System.Drawing.Point(220, 85);
-            this.label2.Margin = new System.Windows.Forms.Padding(5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 30);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "0.00";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vatLblValue.AutoSize = true;
+            this.vatLblValue.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vatLblValue.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vatLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.vatLblValue.Location = new System.Drawing.Point(220, 85);
+            this.vatLblValue.Margin = new System.Windows.Forms.Padding(5);
+            this.vatLblValue.Name = "vatLblValue";
+            this.vatLblValue.Size = new System.Drawing.Size(48, 30);
+            this.vatLblValue.TabIndex = 21;
+            this.vatLblValue.Text = "0.00";
+            this.vatLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Total
+            // vatableLblValue
             // 
-            this.Total.AutoSize = true;
-            this.Total.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Total.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Total.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Total.Location = new System.Drawing.Point(220, 125);
-            this.Total.Margin = new System.Windows.Forms.Padding(5);
-            this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(48, 30);
-            this.Total.TabIndex = 18;
-            this.Total.Text = "0.00";
-            this.Total.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vatableLblValue.AutoSize = true;
+            this.vatableLblValue.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vatableLblValue.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.vatableLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.vatableLblValue.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.vatableLblValue.Location = new System.Drawing.Point(220, 125);
+            this.vatableLblValue.Margin = new System.Windows.Forms.Padding(5);
+            this.vatableLblValue.Name = "vatableLblValue";
+            this.vatableLblValue.Size = new System.Drawing.Size(48, 30);
+            this.vatableLblValue.TabIndex = 18;
+            this.vatableLblValue.Text = "0.00";
+            this.vatableLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // totalLblValue
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(210, 165);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 44);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "0.00";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.totalLblValue.AutoSize = true;
+            this.totalLblValue.Dock = System.Windows.Forms.DockStyle.Right;
+            this.totalLblValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.totalLblValue.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.totalLblValue.Location = new System.Drawing.Point(210, 165);
+            this.totalLblValue.Margin = new System.Windows.Forms.Padding(5);
+            this.totalLblValue.Name = "totalLblValue";
+            this.totalLblValue.Size = new System.Drawing.Size(58, 44);
+            this.totalLblValue.TabIndex = 25;
+            this.totalLblValue.Text = "0.00";
+            this.totalLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel4
             // 
@@ -701,11 +701,11 @@
         private System.Windows.Forms.Label BarcodeLabel;
         public System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label Discount;
-        private System.Windows.Forms.Label Vat;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label Total;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label subtotalLblValue;
+        private System.Windows.Forms.Label discountLblValue;
+        private System.Windows.Forms.Label vatLblValue;
+        private System.Windows.Forms.Label vatableLblValue;
+        private System.Windows.Forms.Label totalLblValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barcode;
         private new System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
