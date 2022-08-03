@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Employees = new System.Windows.Forms.Button();
+            this.Sales = new System.Windows.Forms.Button();
+            this.Suppliers = new System.Windows.Forms.Button();
+            this.Products = new System.Windows.Forms.Button();
             this.orders = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Dashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -45,62 +45,18 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.Employees);
+            this.panel1.Controls.Add(this.Sales);
+            this.panel1.Controls.Add(this.Suppliers);
+            this.panel1.Controls.Add(this.Products);
             this.panel1.Controls.Add(this.orders);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.Dashboard);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 610);
             this.panel1.TabIndex = 0;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button6.Location = new System.Drawing.Point(0, 434);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(238, 58);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Employees";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button3.Location = new System.Drawing.Point(0, 376);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(238, 58);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Sales";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button2.Location = new System.Drawing.Point(0, 318);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 58);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Suppliers";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Employees
             // 
@@ -109,13 +65,57 @@
             this.Employees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Employees.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Employees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Employees.Location = new System.Drawing.Point(0, 260);
+            this.Employees.Location = new System.Drawing.Point(0, 434);
             this.Employees.Name = "Employees";
             this.Employees.Size = new System.Drawing.Size(238, 58);
-            this.Employees.TabIndex = 5;
-            this.Employees.Text = "Products";
+            this.Employees.TabIndex = 9;
+            this.Employees.Text = "Employees";
             this.Employees.UseVisualStyleBackColor = true;
-            this.Employees.Click += new System.EventHandler(this.Employees_Click);
+            this.Employees.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // Sales
+            // 
+            this.Sales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Sales.FlatAppearance.BorderSize = 0;
+            this.Sales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.Sales.Location = new System.Drawing.Point(0, 376);
+            this.Sales.Name = "Sales";
+            this.Sales.Size = new System.Drawing.Size(238, 58);
+            this.Sales.TabIndex = 5;
+            this.Sales.Text = "Sales";
+            this.Sales.UseVisualStyleBackColor = true;
+            this.Sales.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // Suppliers
+            // 
+            this.Suppliers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Suppliers.FlatAppearance.BorderSize = 0;
+            this.Suppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Suppliers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Suppliers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.Suppliers.Location = new System.Drawing.Point(0, 318);
+            this.Suppliers.Name = "Suppliers";
+            this.Suppliers.Size = new System.Drawing.Size(238, 58);
+            this.Suppliers.TabIndex = 5;
+            this.Suppliers.Text = "Suppliers";
+            this.Suppliers.UseVisualStyleBackColor = true;
+            // 
+            // Products
+            // 
+            this.Products.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Products.FlatAppearance.BorderSize = 0;
+            this.Products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Products.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Products.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.Products.Location = new System.Drawing.Point(0, 260);
+            this.Products.Name = "Products";
+            this.Products.Size = new System.Drawing.Size(238, 58);
+            this.Products.TabIndex = 5;
+            this.Products.Text = "Products";
+            this.Products.UseVisualStyleBackColor = true;
+            this.Products.Click += new System.EventHandler(this.Employees_Click);
             // 
             // orders
             // 
@@ -132,20 +132,20 @@
             this.orders.UseVisualStyleBackColor = true;
             this.orders.Click += new System.EventHandler(this.orders_Click_1);
             // 
-            // button1
+            // Dashboard
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button1.Location = new System.Drawing.Point(0, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 55);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Dashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Dashboard.FlatAppearance.BorderSize = 0;
+            this.Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Dashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.Dashboard.Location = new System.Drawing.Point(0, 150);
+            this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Size = new System.Drawing.Size(238, 55);
+            this.Dashboard.TabIndex = 3;
+            this.Dashboard.Text = "Dashboard";
+            this.Dashboard.UseVisualStyleBackColor = true;
+            this.Dashboard.Click += new System.EventHandler(this.Button1_Click);
             // 
             // panel2
             // 
@@ -198,13 +198,13 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button orders;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Dashboard;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Sales;
+        private System.Windows.Forms.Button Suppliers;
         private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button Products;
         private System.Windows.Forms.Button Employees;
-        private System.Windows.Forms.Button button6;
     }
 }

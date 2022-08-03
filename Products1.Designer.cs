@@ -111,7 +111,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.79581F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.20419F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 239F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
@@ -151,7 +151,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(495, 219);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(494, 219);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // priceBox
@@ -161,7 +161,7 @@
             this.priceBox.Location = new System.Drawing.Point(139, 180);
             this.priceBox.Margin = new System.Windows.Forms.Padding(8);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(348, 26);
+            this.priceBox.Size = new System.Drawing.Size(347, 26);
             this.priceBox.TabIndex = 9;
             // 
             // quantityBox
@@ -171,7 +171,7 @@
             this.quantityBox.Location = new System.Drawing.Point(139, 137);
             this.quantityBox.Margin = new System.Windows.Forms.Padding(8);
             this.quantityBox.Name = "quantityBox";
-            this.quantityBox.Size = new System.Drawing.Size(348, 26);
+            this.quantityBox.Size = new System.Drawing.Size(347, 26);
             this.quantityBox.TabIndex = 8;
             // 
             // categoryBox
@@ -181,7 +181,7 @@
             this.categoryBox.Location = new System.Drawing.Point(139, 94);
             this.categoryBox.Margin = new System.Windows.Forms.Padding(8);
             this.categoryBox.Name = "categoryBox";
-            this.categoryBox.Size = new System.Drawing.Size(348, 26);
+            this.categoryBox.Size = new System.Drawing.Size(347, 26);
             this.categoryBox.TabIndex = 7;
             // 
             // label3
@@ -206,7 +206,7 @@
             this.barcodeBox.Location = new System.Drawing.Point(139, 51);
             this.barcodeBox.Margin = new System.Windows.Forms.Padding(8);
             this.barcodeBox.Name = "barcodeBox";
-            this.barcodeBox.Size = new System.Drawing.Size(348, 26);
+            this.barcodeBox.Size = new System.Drawing.Size(347, 26);
             this.barcodeBox.TabIndex = 3;
             // 
             // productBox
@@ -216,7 +216,7 @@
             this.productBox.Location = new System.Drawing.Point(139, 8);
             this.productBox.Margin = new System.Windows.Forms.Padding(8);
             this.productBox.Name = "productBox";
-            this.productBox.Size = new System.Drawing.Size(348, 26);
+            this.productBox.Size = new System.Drawing.Size(347, 26);
             this.productBox.TabIndex = 1;
             // 
             // label4
@@ -350,7 +350,7 @@
             this.tableLayoutPanel5.Controls.Add(this.button3, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.button2, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(718, 6);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(717, 6);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
@@ -359,8 +359,9 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(227, 219);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(228, 219);
             this.tableLayoutPanel5.TabIndex = 3;
+            this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
             // 
             // button5
             // 
@@ -373,7 +374,7 @@
             this.button5.Location = new System.Drawing.Point(20, 113);
             this.button5.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(177, 44);
+            this.button5.Size = new System.Drawing.Size(178, 44);
             this.button5.TabIndex = 3;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = false;
@@ -389,7 +390,7 @@
             this.button4.Location = new System.Drawing.Point(20, 59);
             this.button4.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(177, 44);
+            this.button4.Size = new System.Drawing.Size(178, 44);
             this.button4.TabIndex = 3;
             this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = false;
@@ -405,7 +406,7 @@
             this.button3.Location = new System.Drawing.Point(20, 167);
             this.button3.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(177, 47);
+            this.button3.Size = new System.Drawing.Size(178, 47);
             this.button3.TabIndex = 3;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = false;
@@ -421,7 +422,7 @@
             this.button2.Location = new System.Drawing.Point(20, 5);
             this.button2.Margin = new System.Windows.Forms.Padding(20, 5, 30, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 44);
+            this.button2.Size = new System.Drawing.Size(178, 44);
             this.button2.TabIndex = 2;
             this.button2.Text = "Insert";
             this.button2.UseVisualStyleBackColor = false;

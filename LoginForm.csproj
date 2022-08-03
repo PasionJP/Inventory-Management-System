@@ -206,11 +206,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeesDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="CreateUpdateProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CreateUpdateProducts.Designer.cs">
+      <DependentUpon>CreateUpdateProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="IMSDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -310,6 +310,9 @@
     <Compile Include="ViewEmployees.Designer.cs">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateUpdateProducts.resx">
+      <DependentUpon>CreateUpdateProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>

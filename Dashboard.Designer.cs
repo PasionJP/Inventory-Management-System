@@ -39,12 +39,12 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.productsLbl = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.salesLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
@@ -194,7 +194,7 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label4, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.productsLbl, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(10, 20);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(10, 20, 0, 0);
@@ -216,18 +216,18 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Total Products";
             // 
-            // label4
+            // productsLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label4.Location = new System.Drawing.Point(0, 39);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 73);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "367";
+            this.productsLbl.AutoSize = true;
+            this.productsLbl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.productsLbl.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.productsLbl.Location = new System.Drawing.Point(0, 39);
+            this.productsLbl.Margin = new System.Windows.Forms.Padding(0);
+            this.productsLbl.Name = "productsLbl";
+            this.productsLbl.Size = new System.Drawing.Size(88, 73);
+            this.productsLbl.TabIndex = 0;
+            this.productsLbl.Text = "367";
             // 
             // pictureBox2
             // 
@@ -264,7 +264,7 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.salesLbl, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(10, 20);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(10, 20, 0, 0);
@@ -286,18 +286,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Sales";
             // 
-            // label2
+            // salesLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label2.Location = new System.Drawing.Point(0, 39);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 73);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "253,940";
+            this.salesLbl.AutoSize = true;
+            this.salesLbl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.salesLbl.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salesLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.salesLbl.Location = new System.Drawing.Point(0, 39);
+            this.salesLbl.Margin = new System.Windows.Forms.Padding(0);
+            this.salesLbl.Name = "salesLbl";
+            this.salesLbl.Size = new System.Drawing.Size(99, 73);
+            this.salesLbl.TabIndex = 0;
+            this.salesLbl.Text = "0.00";
+            this.salesLbl.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -380,6 +381,7 @@
             this.MinimumSize = new System.Drawing.Size(950, 562);
             this.Name = "Dashboard";
             this.Text = "Dash";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
@@ -410,7 +412,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label salesLbl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.Label label5;
@@ -419,7 +421,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label productsLbl;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;

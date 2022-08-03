@@ -14,12 +14,18 @@ namespace Login_Form
 {
     public partial class ViewEmployees : Form
     {
+        SqlConnection con = new SqlConnection();
+        DatabaseConnection dbCon = new DatabaseConnection();
+        SqlDataReader dr;
+        SqlCommand cmd = new SqlCommand();
+        string title = "Inventory Management System";
         public ViewEmployees()
         {
             InitializeComponent();
+            con = new SqlConnection(dbCon.DBConnection());
+            this.KeyPreview = true;
         }
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Employees;Integrated Security=True");
-        public int EmployeeID { get; set; }
+        public int EmpID { get; set; }
 
         private void ViewEmployees_Load(object sender, EventArgs e)
         {
@@ -32,26 +38,48 @@ namespace Login_Form
         }
         private void GetEmployeesRecord()
         {
-
-            SqlCommand cmd = new SqlCommand("Select * from Employees", con);
-            DataTable dt = new DataTable();
-
-            con.Open();
-
-            SqlDataReader sdr = cmd.ExecuteReader();
-            dt.Load(sdr);
-            con.Close();
-
-            employeesDataGridView.DataSource = dt;
-            for (var i = 0; i < employeesDataGridView.Rows.Count - 1; i++)
+            try
             {
-                DataGridViewRow r = employeesDataGridView.Rows[i];
-                this.employeesDataGridView.Columns["Password"].Visible = false;
-                this.employeesDataGridView.Columns["UserName"].Visible = false;
-                r.Height = 60;
+                con.Open();
+                //cmd = new SqlCommand("SELECT FirstName+' '+MiddleName+' '+LastName as FullName FROM Employees'", con);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT RTRIM(LTRIM(CONCAT(COALESCE(Lastname, ''), ', ', COALESCE(FirstName + ' ', ''), COALESCE(MiddleName + ' ', '')))) AS Fullname, EmployeeID, FirstName, MiddleName, LastName, Sex, Birthday, Address, Email, ContactNumber, Usertype, EmployeePhoto FROM Employees", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                employeesDataGridView.AutoGenerateColumns = false;
+                employeesDataGridView.DataSource = dt;
+                for (var i = 0; i < employeesDataGridView.Rows.Count; i++)
+                {
+                    DataGridViewRow r = employeesDataGridView.Rows[i];
+                    r.Height = 60;
+                }
+                var imageColumn = (DataGridViewImageColumn)employeesDataGridView.Columns["EmployeePhoto"];
+                imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                con.Close();
             }
-            var imageColumn = (DataGridViewImageColumn)employeesDataGridView.Columns["EmployeePhoto"];
-            imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            //SqlCommand cmd = new SqlCommand("Select * from Employees", con);
+            //DataTable dt = new DataTable();
+
+            //con.Open();
+
+            //SqlDataReader sdr = cmd.ExecuteReader();
+            //dt.Load(sdr);
+            //con.Close();
+
+            //employeesDataGridView.DataSource = dt;
+            //for (var i = 0; i < employeesDataGridView.Rows.Count; i++)
+            //{
+            //    DataGridViewRow r = employeesDataGridView.Rows[i];
+            //    this.employeesDataGridView.Columns["Password"].Visible = false;
+            //    this.employeesDataGridView.Columns["UserName"].Visible = false;
+            //    r.Height = 60;
+            //}
+            //var imageColumn = (DataGridViewImageColumn)employeesDataGridView.Columns["EmployeePhoto"];
+            //imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -69,12 +97,12 @@ namespace Login_Form
                 mngEmployee.EmpAddress = employeesDataGridView.SelectedRows[0].Cells[6].Value.ToString();
                 mngEmployee.EmpEmail = employeesDataGridView.SelectedRows[0].Cells[7].Value.ToString();
                 mngEmployee.EmpContact = employeesDataGridView.SelectedRows[0].Cells[8].Value.ToString();
-                mngEmployee.EmpUsertype = employeesDataGridView.SelectedRows[0].Cells[10].Value.ToString();
+                mngEmployee.EmpUsertype = employeesDataGridView.SelectedRows[0].Cells[9].Value.ToString();
                 mngEmployee.EmpUsername = employeesDataGridView.SelectedRows[0].Cells[11].Value.ToString();
                 mngEmployee.EmpPassword = employeesDataGridView.SelectedRows[0].Cells[12].Value.ToString();
                 if (!Convert.IsDBNull(employeesDataGridView.SelectedRows[0].Cells[6].Value))
                 {
-                    byte[] photoBytes = (byte[])employeesDataGridView.SelectedRows[0].Cells[9].Value;
+                    byte[] photoBytes = (byte[])employeesDataGridView.SelectedRows[0].Cells[10].Value;
                     MemoryStream ms = new MemoryStream(photoBytes);
                     System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
                     mngEmployee.EmpPhoto = img;
@@ -96,10 +124,10 @@ namespace Login_Form
 
         private void employeesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (employeesDataGridView.SelectedRows[0].Cells[1].Value != null)
-            {
-                EmployeeID = Convert.ToInt32(employeesDataGridView.SelectedRows[0].Cells[0].Value);
-            }
+            //if (employeesDataGridView.SelectedRows[0].Cells[1].Value != null)
+            //{
+            //    EmployeeID = Convert.ToInt32(employeesDataGridView.SelectedRows[0].Cells[0].Value);
+            //}
         }
 
         private void Insert_Click(object sender, EventArgs e)
@@ -112,12 +140,12 @@ namespace Login_Form
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (EmployeeID > 0)
+            if (EmpID > 0)
             {
                 SqlCommand cmd = new SqlCommand("DELETE FROM Employees WHERE EmployeeID = @ID", con);
                 cmd.CommandType = CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@ID", this.EmployeeID);
+                cmd.Parameters.AddWithValue("@ID", this.EmpID);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -147,6 +175,11 @@ namespace Login_Form
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

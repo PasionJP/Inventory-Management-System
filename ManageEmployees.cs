@@ -23,15 +23,21 @@ namespace Login_Form
         public string EmpUsername { get; set; }
         public string EmpPassword { get; set; }
         public Image EmpPhoto { get; set; }
-
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+        DatabaseConnection dbCon = new DatabaseConnection();
+        string title = "POS System";
+        new bool MouseDown;
+        private Point offset;
         public ManageEmployees()
         {
             InitializeComponent();
+            con = new SqlConnection(dbCon.DBConnection());
+            this.KeyPreview = true;
         }
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-EVOGUQ1J\SQLEXPRESS;Initial Catalog=Employees;Integrated Security=True");
         string photoLocation = "";
         string sex = "Undefined";
-        private void textBox5_TextChanged(object sender, EventArgs e)
+            private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -44,8 +50,8 @@ namespace Login_Form
                 {
                     if (password.Text == confirmPassword.Text)
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO Employees VALUES (@FirstName,@MiddleName,@LastName,@Sex,@Birthday,@Address,@Email,@ContactNumber,@EmployeePhoto,@UserType,@UserName,@Password)", con);
-                        cmd.CommandType = CommandType.Text;
+                        con.Open();
+                        cmd = new SqlCommand("INSERT INTO Employees (FirstName,MiddleName,LastName,Sex,Birthday,Address,Email,ContactNumber,EmployeePhoto,UserType,UserName,Password) VALUES (@FirstName,@MiddleName,@LastName,@Sex,@Birthday,@Address,@Email,@ContactNumber,@EmployeePhoto,@UserType,@UserName,@Password)", con);
                         if (string.IsNullOrEmpty(photoLocation))
                         {
                             photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no profile.png";
@@ -69,8 +75,6 @@ namespace Login_Form
                         cmd.Parameters.AddWithValue("@UserType", userType.Text.ToString());
                         cmd.Parameters.Add(new SqlParameter("@EmployeePhoto", images));
 
-
-                        con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
                         this.Close();
@@ -371,6 +375,37 @@ namespace Login_Form
                 confirmPassword.Text = EmpPassword;
                 employeePhoto.Image = EmpPhoto;
             }
+        }
+
+        private void tableLayoutPanel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MouseDown_Event(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            MouseDown = true;
+        }
+
+        private void MouseMove_Event(object sender, MouseEventArgs e)
+        {
+            if(MouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void MouseUp_Event(object sender, MouseEventArgs e)
+        {
+            MouseDown = false;
         }
     }
 }

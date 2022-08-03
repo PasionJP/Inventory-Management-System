@@ -60,7 +60,7 @@ namespace Login_Form
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         { 
             openNewWindow(new Dashboard());
         }
@@ -92,7 +92,7 @@ namespace Login_Form
 
         private void Employees_Click(object sender, EventArgs e)
         {
-            openNewWindow(new Products1());
+            openNewWindow(new ProductsV1());
         }
 
 

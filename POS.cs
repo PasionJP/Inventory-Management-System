@@ -148,5 +148,10 @@ namespace Login_Form
             SearchItem frm = new SearchItem();
             frm.ShowDialog();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

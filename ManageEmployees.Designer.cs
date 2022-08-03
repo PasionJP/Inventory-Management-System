@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageEmployees));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
-            this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.Upload = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.contact = new System.Windows.Forms.TextBox();
@@ -67,15 +66,21 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.userType = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.employeePhoto = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -83,36 +88,24 @@
             this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.MaximumSize = new System.Drawing.Size(1200, 660);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.21739F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.74704F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.20158F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.43874F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.73068F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.34426F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.92506F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(928, 506);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label1.Location = new System.Drawing.Point(3, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(922, 43);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Employee Info";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_Event);
+            this.tableLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Event);
+            this.tableLayoutPanel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp_Event);
             // 
             // tableLayoutPanel2
             // 
@@ -125,11 +118,11 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 80);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 63);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(922, 185);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(922, 193);
             this.tableLayoutPanel2.TabIndex = 1;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
@@ -149,7 +142,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.25806F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.74194F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(174, 173);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(174, 181);
             this.tableLayoutPanel5.TabIndex = 3;
             this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
             // 
@@ -159,28 +152,13 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
-            this.label14.Location = new System.Drawing.Point(20, 155);
+            this.label14.Location = new System.Drawing.Point(20, 163);
             this.label14.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(131, 18);
             this.label14.TabIndex = 3;
             this.label14.Text = "Remove Image";
             this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // employeePhoto
-            // 
-            this.employeePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.employeePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.employeePhoto.Location = new System.Drawing.Point(30, 10);
-            this.employeePhoto.Margin = new System.Windows.Forms.Padding(30, 10, 30, 10);
-            this.employeePhoto.Name = "employeePhoto";
-            this.employeePhoto.Size = new System.Drawing.Size(114, 92);
-            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.employeePhoto.TabIndex = 0;
-            this.employeePhoto.TabStop = false;
-            this.employeePhoto.Click += new System.EventHandler(this.employeePhoto_Click);
             // 
             // Upload
             // 
@@ -190,10 +168,10 @@
             this.Upload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(151)))), ((int)(((byte)(222)))));
             this.Upload.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Upload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Upload.Location = new System.Drawing.Point(30, 117);
+            this.Upload.Location = new System.Drawing.Point(30, 123);
             this.Upload.Margin = new System.Windows.Forms.Padding(30, 5, 30, 5);
             this.Upload.Name = "Upload";
-            this.Upload.Size = new System.Drawing.Size(114, 33);
+            this.Upload.Size = new System.Drawing.Size(114, 35);
             this.Upload.TabIndex = 1;
             this.Upload.Text = "Upload";
             this.Upload.UseVisualStyleBackColor = false;
@@ -486,11 +464,11 @@
             this.tableLayoutPanel6.Controls.Add(this.Clear, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.Insert, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 439);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 437);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(922, 64);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(922, 66);
             this.tableLayoutPanel6.TabIndex = 2;
             this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
@@ -503,7 +481,7 @@
             this.Clear.Location = new System.Drawing.Point(471, 15);
             this.Clear.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(208, 34);
+            this.Clear.Size = new System.Drawing.Size(208, 36);
             this.Clear.TabIndex = 4;
             this.Clear.Text = "Cancel";
             this.Clear.UseVisualStyleBackColor = false;
@@ -518,7 +496,7 @@
             this.Insert.Location = new System.Drawing.Point(243, 15);
             this.Insert.Margin = new System.Windows.Forms.Padding(10, 15, 10, 15);
             this.Insert.Name = "Insert";
-            this.Insert.Size = new System.Drawing.Size(208, 34);
+            this.Insert.Size = new System.Drawing.Size(208, 36);
             this.Insert.TabIndex = 3;
             this.Insert.Text = "Confirm";
             this.Insert.UseVisualStyleBackColor = false;
@@ -539,20 +517,20 @@
             this.tableLayoutPanel8.Controls.Add(this.label12, 0, 2);
             this.tableLayoutPanel8.Controls.Add(this.userType, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 271);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 262);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 4;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(922, 162);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(922, 169);
             this.tableLayoutPanel8.TabIndex = 3;
             this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel8_Paint);
             // 
             // confirmPassword
             // 
-            this.confirmPassword.Location = new System.Drawing.Point(203, 123);
+            this.confirmPassword.Location = new System.Drawing.Point(203, 129);
             this.confirmPassword.Name = "confirmPassword";
             this.confirmPassword.PasswordChar = '*';
             this.confirmPassword.Size = new System.Drawing.Size(218, 26);
@@ -561,7 +539,7 @@
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(203, 83);
+            this.password.Location = new System.Drawing.Point(203, 87);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(218, 26);
@@ -570,7 +548,7 @@
             // 
             // username
             // 
-            this.username.Location = new System.Drawing.Point(203, 43);
+            this.username.Location = new System.Drawing.Point(203, 45);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(218, 26);
             this.username.TabIndex = 9;
@@ -584,10 +562,10 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label13.Location = new System.Drawing.Point(8, 128);
+            this.label13.Location = new System.Drawing.Point(8, 134);
             this.label13.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(192, 26);
+            this.label13.Size = new System.Drawing.Size(192, 27);
             this.label13.TabIndex = 7;
             this.label13.Text = "Confirm Password";
             this.label13.Click += new System.EventHandler(this.label13_Click);
@@ -603,7 +581,7 @@
             this.label10.Location = new System.Drawing.Point(8, 8);
             this.label10.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(192, 24);
+            this.label10.Size = new System.Drawing.Size(192, 26);
             this.label10.TabIndex = 4;
             this.label10.Text = "User Type";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -616,10 +594,10 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label11.Location = new System.Drawing.Point(8, 48);
+            this.label11.Location = new System.Drawing.Point(8, 50);
             this.label11.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(192, 24);
+            this.label11.Size = new System.Drawing.Size(192, 26);
             this.label11.TabIndex = 5;
             this.label11.Text = "Username";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -632,10 +610,10 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label12.Location = new System.Drawing.Point(8, 88);
+            this.label12.Location = new System.Drawing.Point(8, 92);
             this.label12.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(192, 24);
+            this.label12.Size = new System.Drawing.Size(192, 26);
             this.label12.TabIndex = 6;
             this.label12.Text = "Password";
             this.label12.Click += new System.EventHandler(this.label12_Click);
@@ -652,24 +630,88 @@
             this.userType.TabIndex = 12;
             this.userType.SelectedIndexChanged += new System.EventHandler(this.userType_SelectedIndexChanged);
             // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel9.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.pictureBox2, 1, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(922, 54);
+            this.tableLayoutPanel9.TabIndex = 4;
+            this.tableLayoutPanel9.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel9_Paint);
+            this.tableLayoutPanel9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_Event);
+            this.tableLayoutPanel9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Event);
+            this.tableLayoutPanel9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp_Event);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(866, 43);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Employee Info";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_Event);
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Event);
+            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp_Event);
+            // 
+            // employeePhoto
+            // 
+            this.employeePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.employeePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.employeePhoto.Location = new System.Drawing.Point(30, 10);
+            this.employeePhoto.Margin = new System.Windows.Forms.Padding(30, 10, 30, 10);
+            this.employeePhoto.Name = "employeePhoto";
+            this.employeePhoto.Size = new System.Drawing.Size(114, 98);
+            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.employeePhoto.TabIndex = 0;
+            this.employeePhoto.TabStop = false;
+            this.employeePhoto.Click += new System.EventHandler(this.employeePhoto_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(875, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(44, 48);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // ManageEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(928, 506);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(928, 506);
             this.Name = "ManageEmployees";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageEmployees";
             this.Load += new System.EventHandler(this.ManageEmployees_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -679,6 +721,10 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -686,7 +732,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -724,5 +769,8 @@
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.ComboBox userType;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
