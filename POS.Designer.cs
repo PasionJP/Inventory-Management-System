@@ -697,7 +697,6 @@
         private System.Windows.Forms.Label VatLbl;
         private System.Windows.Forms.Label subTotalLbl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label TransactNo;
         private System.Windows.Forms.Label TransactNumLabel;
         private System.Windows.Forms.Label BarcodeLabel;
         public System.Windows.Forms.TextBox searchBox;
@@ -715,5 +714,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totl;
         private System.Windows.Forms.DataGridViewImageColumn Remove;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        public System.Windows.Forms.Label TransactNo;
     }
 }

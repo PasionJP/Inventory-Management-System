@@ -96,10 +96,8 @@ namespace Login_Form
             for (var i = 0; i < productsDataGridView.Rows.Count-1; i++)
             {
                 DataGridViewRow r = productsDataGridView.Rows[i];
-                r.Height = 50;
             }
-            var imageColumn = (DataGridViewImageColumn)productsDataGridView.Columns["productPhoto"];
-            imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+           
         }
         private void Button2_Click(object sender, EventArgs e)
         {

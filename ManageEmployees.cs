@@ -407,5 +407,10 @@ namespace Login_Form
         {
             MouseDown = false;
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

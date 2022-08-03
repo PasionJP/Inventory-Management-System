@@ -10,7 +10,8 @@ namespace Login_Form
     {
         public int pcode { get; set; }
         readonly SqlConnection con = new SqlConnection();
-        SqlCommand cm = new SqlCommand();
+        SqlCommand cmd = new SqlCommand();
+        SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
         string title = "POS System";
         public ProductsV1()
@@ -102,7 +103,29 @@ namespace Login_Form
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (searchBox.Text == String.Empty)
+                {
+                    LoadProducts();
+                    return;
+                }
+                else
+                {
+                    con.Open();
+                    SqlDataAdapter sda = new SqlDataAdapter ("SELECT * from Products WHERE productName like '%" + searchBox.Text + "%'", con);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    productsDataGridView.AutoGenerateColumns = false;
+                    productsDataGridView.DataSource = dt;
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                con.Close();
+                MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -123,8 +146,8 @@ namespace Login_Form
                 if (MessageBox.Show("Are you sure you want to remove this item in your cart?", "Remove item from cart", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     con.Open();
-                    cm = new SqlCommand("DELETE from Products where pcode like '" + productsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() + "'", con);
-                    cm.ExecuteNonQuery();
+                    cmd = new SqlCommand("DELETE from Products where pcode like '" + productsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() + "'", con);
+                    cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Item has been removed from the cart successfuly", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadProducts();

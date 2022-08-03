@@ -35,7 +35,7 @@ namespace Login_Form
                 cm = new SqlCommand("SELECT TOP 1 transno FROM cartTbl WHERE transno LIKE '" + currDate + "%' order by id desc", cn);
                 dr = cm.ExecuteReader();
                 dr.Read();
-                if (dr.HasRows)
+                if (dr.HasRows) 
                 {
                     transno = dr[0].ToString();
                     count = int.Parse(transno.Substring(8, 4));
@@ -145,7 +145,8 @@ namespace Login_Form
         private void AdvSearchButton_Click(object sender, EventArgs e)
         {
             if (TransactNo.Text == "000000000000") { return; }
-            SearchItem frm = new SearchItem();
+            SearchItem frm = new SearchItem(this);
+            //frm.LoadProducts();
             frm.ShowDialog();
         }
 

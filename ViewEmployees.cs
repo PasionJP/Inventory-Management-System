@@ -86,7 +86,7 @@ namespace Login_Form
         {
             ManageEmployees mngEmployee = new ManageEmployees();
             mngEmployee.InsertOrUpdate = "update";
-            if (employeesDataGridView.SelectedRows[0].Cells[1].Value != null)
+            if (employeesDataGridView.SelectedRows[0].Cells[0].Value != null)
             {
                 mngEmployee.EmployeeID = Convert.ToInt32(employeesDataGridView.SelectedRows[0].Cells[0].Value);
                 mngEmployee.Fname = employeesDataGridView.SelectedRows[0].Cells[1].Value.ToString();

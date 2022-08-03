@@ -37,13 +37,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.employeesDataGridView = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +46,13 @@
             this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usertype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeePhoto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
@@ -163,7 +163,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(151)))), ((int)(((byte)(222)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -187,6 +187,97 @@
             this.employeesDataGridView.TabIndex = 3;
             this.employeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesDataGridView_CellClick);
             this.employeesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // EmployeeID
+            // 
+            this.EmployeeID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.EmployeeID.DataPropertyName = "EmployeeID";
+            this.EmployeeID.HeaderText = "ID";
+            this.EmployeeID.MinimumWidth = 8;
+            this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.ReadOnly = true;
+            this.EmployeeID.Width = 64;
+            // 
+            // Fullname
+            // 
+            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fullname.DataPropertyName = "Fullname";
+            this.Fullname.HeaderText = "Fullname";
+            this.Fullname.MinimumWidth = 100;
+            this.Fullname.Name = "Fullname";
+            this.Fullname.ReadOnly = true;
+            // 
+            // Sex
+            // 
+            this.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Sex.DataPropertyName = "Sex";
+            this.Sex.HeaderText = "Sex";
+            this.Sex.MinimumWidth = 8;
+            this.Sex.Name = "Sex";
+            this.Sex.ReadOnly = true;
+            this.Sex.Width = 76;
+            // 
+            // Birthday
+            // 
+            this.Birthday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Birthday.DataPropertyName = "Birthday";
+            this.Birthday.HeaderText = "Birthday";
+            this.Birthday.MinimumWidth = 8;
+            this.Birthday.Name = "Birthday";
+            this.Birthday.ReadOnly = true;
+            this.Birthday.Width = 117;
+            // 
+            // Address
+            // 
+            this.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.MinimumWidth = 8;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 116;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 8;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 91;
+            // 
+            // ContactNumber
+            // 
+            this.ContactNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ContactNumber.DataPropertyName = "ContactNumber";
+            this.ContactNumber.HeaderText = "Contact Number";
+            this.ContactNumber.MinimumWidth = 8;
+            this.ContactNumber.Name = "ContactNumber";
+            this.ContactNumber.ReadOnly = true;
+            this.ContactNumber.Width = 180;
+            // 
+            // Usertype
+            // 
+            this.Usertype.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Usertype.DataPropertyName = "UserType";
+            this.Usertype.HeaderText = "Usertype";
+            this.Usertype.MinimumWidth = 8;
+            this.Usertype.Name = "Usertype";
+            this.Usertype.ReadOnly = true;
+            this.Usertype.Width = 124;
+            // 
+            // EmployeePhoto
+            // 
+            this.EmployeePhoto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.EmployeePhoto.DataPropertyName = "EmployeePhoto";
+            this.EmployeePhoto.HeaderText = "Employee Photo";
+            this.EmployeePhoto.MinimumWidth = 8;
+            this.EmployeePhoto.Name = "EmployeePhoto";
+            this.EmployeePhoto.ReadOnly = true;
+            this.EmployeePhoto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeePhoto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EmployeePhoto.Width = 177;
             // 
             // tableLayoutPanel6
             // 
@@ -303,97 +394,6 @@
             this.label6.Size = new System.Drawing.Size(335, 55);
             this.label6.TabIndex = 5;
             this.label6.Text = "Employee Info";
-            // 
-            // EmployeeID
-            // 
-            this.EmployeeID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.EmployeeID.DataPropertyName = "EmployeeID";
-            this.EmployeeID.HeaderText = "ID";
-            this.EmployeeID.MinimumWidth = 8;
-            this.EmployeeID.Name = "EmployeeID";
-            this.EmployeeID.ReadOnly = true;
-            this.EmployeeID.Width = 64;
-            // 
-            // Fullname
-            // 
-            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Fullname.DataPropertyName = "Fullname";
-            this.Fullname.HeaderText = "Fullname";
-            this.Fullname.MinimumWidth = 100;
-            this.Fullname.Name = "Fullname";
-            this.Fullname.ReadOnly = true;
-            // 
-            // Sex
-            // 
-            this.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Sex.DataPropertyName = "Sex";
-            this.Sex.HeaderText = "Sex";
-            this.Sex.MinimumWidth = 8;
-            this.Sex.Name = "Sex";
-            this.Sex.ReadOnly = true;
-            this.Sex.Width = 76;
-            // 
-            // Birthday
-            // 
-            this.Birthday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Birthday.DataPropertyName = "Birthday";
-            this.Birthday.HeaderText = "Birthday";
-            this.Birthday.MinimumWidth = 8;
-            this.Birthday.Name = "Birthday";
-            this.Birthday.ReadOnly = true;
-            this.Birthday.Width = 117;
-            // 
-            // Address
-            // 
-            this.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.MinimumWidth = 8;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 116;
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 8;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 91;
-            // 
-            // ContactNumber
-            // 
-            this.ContactNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ContactNumber.DataPropertyName = "ContactNumber";
-            this.ContactNumber.HeaderText = "Contact Number";
-            this.ContactNumber.MinimumWidth = 8;
-            this.ContactNumber.Name = "ContactNumber";
-            this.ContactNumber.ReadOnly = true;
-            this.ContactNumber.Width = 180;
-            // 
-            // Usertype
-            // 
-            this.Usertype.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Usertype.DataPropertyName = "UserType";
-            this.Usertype.HeaderText = "Usertype";
-            this.Usertype.MinimumWidth = 8;
-            this.Usertype.Name = "Usertype";
-            this.Usertype.ReadOnly = true;
-            this.Usertype.Width = 124;
-            // 
-            // EmployeePhoto
-            // 
-            this.EmployeePhoto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.EmployeePhoto.DataPropertyName = "EmployeePhoto";
-            this.EmployeePhoto.HeaderText = "Employee Photo";
-            this.EmployeePhoto.MinimumWidth = 8;
-            this.EmployeePhoto.Name = "EmployeePhoto";
-            this.EmployeePhoto.ReadOnly = true;
-            this.EmployeePhoto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeePhoto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EmployeePhoto.Width = 177;
             // 
             // ViewEmployees
             // 
