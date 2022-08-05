@@ -310,6 +310,12 @@
     <Compile Include="SearchItem.Designer.cs">
       <DependentUpon>SearchItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="SettlePaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettlePaymentForm.Designer.cs">
+      <DependentUpon>SettlePaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchItem.resx">
       <DependentUpon>SearchItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettlePaymentForm.resx">
+      <DependentUpon>SettlePaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployees.resx">
       <DependentUpon>ViewEmployees.cs</DependentUpon>

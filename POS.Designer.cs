@@ -67,6 +67,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.itemCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cartID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,14 +90,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 66);
+            this.panel1.Size = new System.Drawing.Size(950, 93);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.89474F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.10526F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel1.Controls.Add(this.TransactNo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.TransactNumLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.BarcodeLabel, 0, 1);
@@ -105,10 +106,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 66);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 93);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -119,10 +119,10 @@
             this.TransactNo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransactNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
             this.TransactNo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TransactNo.Location = new System.Drawing.Point(228, 5);
+            this.TransactNo.Location = new System.Drawing.Point(210, 5);
             this.TransactNo.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
             this.TransactNo.Name = "TransactNo";
-            this.TransactNo.Size = new System.Drawing.Size(142, 24);
+            this.TransactNo.Size = new System.Drawing.Size(142, 31);
             this.TransactNo.TabIndex = 15;
             this.TransactNo.Text = "000000000000";
             this.TransactNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -138,7 +138,7 @@
             this.TransactNumLabel.Location = new System.Drawing.Point(20, 5);
             this.TransactNumLabel.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
             this.TransactNumLabel.Name = "TransactNumLabel";
-            this.TransactNumLabel.Size = new System.Drawing.Size(159, 24);
+            this.TransactNumLabel.Size = new System.Drawing.Size(159, 31);
             this.TransactNumLabel.TabIndex = 14;
             this.TransactNumLabel.Text = "Transaction No.";
             this.TransactNumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,21 +150,24 @@
             this.BarcodeLabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BarcodeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.BarcodeLabel.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BarcodeLabel.Location = new System.Drawing.Point(20, 39);
+            this.BarcodeLabel.Location = new System.Drawing.Point(20, 46);
             this.BarcodeLabel.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
             this.BarcodeLabel.Name = "BarcodeLabel";
-            this.BarcodeLabel.Size = new System.Drawing.Size(94, 22);
+            this.BarcodeLabel.Size = new System.Drawing.Size(94, 42);
             this.BarcodeLabel.TabIndex = 13;
             this.BarcodeLabel.Text = "Barcode";
             this.BarcodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // searchBox
             // 
-            this.searchBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.searchBox.Location = new System.Drawing.Point(213, 39);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(5);
+            this.searchBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.searchBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.searchBox.Location = new System.Drawing.Point(195, 46);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(5, 5, 150, 5);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(661, 26);
+            this.searchBox.Size = new System.Drawing.Size(605, 32);
             this.searchBox.TabIndex = 12;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -176,11 +179,11 @@
             this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 66);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 93);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(950, 496);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(950, 469);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -196,7 +199,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -207,6 +210,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.itemCount,
             this.cartID,
+            this.pcode,
             this.ProductName,
             this.PriceCol,
             this.Quantity,
@@ -215,7 +219,7 @@
             this.Remove});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(151)))), ((int)(((byte)(222)))));
@@ -230,7 +234,7 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 490);
+            this.dataGridView1.Size = new System.Drawing.Size(659, 463);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -245,9 +249,9 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(668, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(279, 490);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(279, 463);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -278,19 +282,19 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.75F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.75F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(273, 214);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(273, 202);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // Discountlbl
             // 
             this.Discountlbl.AutoSize = true;
             this.Discountlbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Discountlbl.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Discountlbl.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Discountlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Discountlbl.Location = new System.Drawing.Point(20, 45);
-            this.Discountlbl.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
+            this.Discountlbl.Location = new System.Drawing.Point(15, 42);
+            this.Discountlbl.Margin = new System.Windows.Forms.Padding(15, 5, 5, 5);
             this.Discountlbl.Name = "Discountlbl";
-            this.Discountlbl.Size = new System.Drawing.Size(101, 30);
+            this.Discountlbl.Size = new System.Drawing.Size(109, 27);
             this.Discountlbl.TabIndex = 15;
             this.Discountlbl.Text = "DISCOUNT";
             this.Discountlbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,13 +302,13 @@
             // TotalLbl
             // 
             this.TotalLbl.AutoSize = true;
-            this.TotalLbl.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalLbl.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.TotalLbl.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TotalLbl.Location = new System.Drawing.Point(20, 165);
-            this.TotalLbl.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
+            this.TotalLbl.Location = new System.Drawing.Point(15, 153);
+            this.TotalLbl.Margin = new System.Windows.Forms.Padding(15, 5, 5, 5);
             this.TotalLbl.Name = "TotalLbl";
-            this.TotalLbl.Size = new System.Drawing.Size(96, 34);
+            this.TotalLbl.Size = new System.Drawing.Size(108, 38);
             this.TotalLbl.TabIndex = 14;
             this.TotalLbl.Text = "TOTAL";
             this.TotalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -313,12 +317,12 @@
             // 
             this.subTotalLbl.AutoSize = true;
             this.subTotalLbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.subTotalLbl.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subTotalLbl.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTotalLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.subTotalLbl.Location = new System.Drawing.Point(20, 5);
-            this.subTotalLbl.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
+            this.subTotalLbl.Location = new System.Drawing.Point(15, 5);
+            this.subTotalLbl.Margin = new System.Windows.Forms.Padding(15, 5, 5, 5);
             this.subTotalLbl.Name = "subTotalLbl";
-            this.subTotalLbl.Size = new System.Drawing.Size(101, 30);
+            this.subTotalLbl.Size = new System.Drawing.Size(107, 27);
             this.subTotalLbl.TabIndex = 17;
             this.subTotalLbl.Text = "SUB TOTAL";
             this.subTotalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -327,12 +331,12 @@
             // 
             this.VatLbl.AutoSize = true;
             this.VatLbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.VatLbl.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VatLbl.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VatLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.VatLbl.Location = new System.Drawing.Point(20, 85);
-            this.VatLbl.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
+            this.VatLbl.Location = new System.Drawing.Point(15, 79);
+            this.VatLbl.Margin = new System.Windows.Forms.Padding(15, 5, 5, 5);
             this.VatLbl.Name = "VatLbl";
-            this.VatLbl.Size = new System.Drawing.Size(48, 30);
+            this.VatLbl.Size = new System.Drawing.Size(48, 27);
             this.VatLbl.TabIndex = 16;
             this.VatLbl.Text = "VAT";
             this.VatLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -341,12 +345,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label3.Location = new System.Drawing.Point(20, 125);
-            this.label3.Margin = new System.Windows.Forms.Padding(20, 5, 5, 5);
+            this.label3.Location = new System.Drawing.Point(15, 116);
+            this.label3.Margin = new System.Windows.Forms.Padding(15, 5, 5, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 30);
+            this.label3.Size = new System.Drawing.Size(94, 27);
             this.label3.TabIndex = 24;
             this.label3.Text = "VATABLE";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -360,7 +364,7 @@
             this.subtotalLblValue.Location = new System.Drawing.Point(220, 5);
             this.subtotalLblValue.Margin = new System.Windows.Forms.Padding(5);
             this.subtotalLblValue.Name = "subtotalLblValue";
-            this.subtotalLblValue.Size = new System.Drawing.Size(48, 30);
+            this.subtotalLblValue.Size = new System.Drawing.Size(48, 27);
             this.subtotalLblValue.TabIndex = 19;
             this.subtotalLblValue.Text = "0.00";
             this.subtotalLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -371,10 +375,10 @@
             this.discountLblValue.Dock = System.Windows.Forms.DockStyle.Right;
             this.discountLblValue.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discountLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.discountLblValue.Location = new System.Drawing.Point(220, 45);
+            this.discountLblValue.Location = new System.Drawing.Point(220, 42);
             this.discountLblValue.Margin = new System.Windows.Forms.Padding(5);
             this.discountLblValue.Name = "discountLblValue";
-            this.discountLblValue.Size = new System.Drawing.Size(48, 30);
+            this.discountLblValue.Size = new System.Drawing.Size(48, 27);
             this.discountLblValue.TabIndex = 20;
             this.discountLblValue.Text = "0.00";
             this.discountLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -385,10 +389,10 @@
             this.vatLblValue.Dock = System.Windows.Forms.DockStyle.Right;
             this.vatLblValue.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vatLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.vatLblValue.Location = new System.Drawing.Point(220, 85);
+            this.vatLblValue.Location = new System.Drawing.Point(220, 79);
             this.vatLblValue.Margin = new System.Windows.Forms.Padding(5);
             this.vatLblValue.Name = "vatLblValue";
-            this.vatLblValue.Size = new System.Drawing.Size(48, 30);
+            this.vatLblValue.Size = new System.Drawing.Size(48, 27);
             this.vatLblValue.TabIndex = 21;
             this.vatLblValue.Text = "0.00";
             this.vatLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -400,10 +404,10 @@
             this.vatableLblValue.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.vatableLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.vatableLblValue.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.vatableLblValue.Location = new System.Drawing.Point(220, 125);
+            this.vatableLblValue.Location = new System.Drawing.Point(220, 116);
             this.vatableLblValue.Margin = new System.Windows.Forms.Padding(5);
             this.vatableLblValue.Name = "vatableLblValue";
-            this.vatableLblValue.Size = new System.Drawing.Size(48, 30);
+            this.vatableLblValue.Size = new System.Drawing.Size(48, 27);
             this.vatableLblValue.TabIndex = 18;
             this.vatableLblValue.Text = "0.00";
             this.vatableLblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -415,7 +419,7 @@
             this.totalLblValue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.totalLblValue.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.totalLblValue.Location = new System.Drawing.Point(210, 165);
+            this.totalLblValue.Location = new System.Drawing.Point(210, 153);
             this.totalLblValue.Margin = new System.Windows.Forms.Padding(5);
             this.totalLblValue.Name = "totalLblValue";
             this.totalLblValue.Size = new System.Drawing.Size(58, 44);
@@ -434,7 +438,7 @@
             this.tableLayoutPanel4.Controls.Add(this.DiscountButton, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 4);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 223);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 211);
             this.tableLayoutPanel4.MaximumSize = new System.Drawing.Size(0, 500);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 6;
@@ -444,7 +448,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(273, 264);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(273, 249);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // CancelButton
@@ -453,12 +457,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
-            this.CancelButton.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.CancelButton.Location = new System.Drawing.Point(5, 218);
+            this.CancelButton.Location = new System.Drawing.Point(5, 208);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(263, 43);
+            this.CancelButton.Size = new System.Drawing.Size(263, 38);
             this.CancelButton.TabIndex = 9;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
@@ -469,12 +473,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NewTransactButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(198)))), ((int)(((byte)(99)))));
-            this.NewTransactButton.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewTransactButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewTransactButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.NewTransactButton.Location = new System.Drawing.Point(5, 3);
             this.NewTransactButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.NewTransactButton.Name = "NewTransactButton";
-            this.NewTransactButton.Size = new System.Drawing.Size(263, 37);
+            this.NewTransactButton.Size = new System.Drawing.Size(263, 35);
             this.NewTransactButton.TabIndex = 3;
             this.NewTransactButton.Text = "New Transaction";
             this.NewTransactButton.UseVisualStyleBackColor = false;
@@ -486,15 +490,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PaymentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
-            this.PaymentButton.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentButton.Enabled = false;
+            this.PaymentButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PaymentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.PaymentButton.Location = new System.Drawing.Point(5, 46);
+            this.PaymentButton.Location = new System.Drawing.Point(5, 44);
             this.PaymentButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.PaymentButton.Name = "PaymentButton";
-            this.PaymentButton.Size = new System.Drawing.Size(263, 37);
+            this.PaymentButton.Size = new System.Drawing.Size(263, 35);
             this.PaymentButton.TabIndex = 4;
             this.PaymentButton.Text = "Payment";
             this.PaymentButton.UseVisualStyleBackColor = false;
+            this.PaymentButton.Click += new System.EventHandler(this.PaymentButton_Click);
             // 
             // AdvSearchButton
             // 
@@ -502,12 +508,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AdvSearchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(151)))), ((int)(((byte)(222)))));
-            this.AdvSearchButton.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdvSearchButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdvSearchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.AdvSearchButton.Location = new System.Drawing.Point(5, 89);
+            this.AdvSearchButton.Location = new System.Drawing.Point(5, 85);
             this.AdvSearchButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.AdvSearchButton.Name = "AdvSearchButton";
-            this.AdvSearchButton.Size = new System.Drawing.Size(263, 37);
+            this.AdvSearchButton.Size = new System.Drawing.Size(263, 35);
             this.AdvSearchButton.TabIndex = 5;
             this.AdvSearchButton.Text = "Search Product";
             this.AdvSearchButton.UseVisualStyleBackColor = false;
@@ -519,12 +525,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DiscountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(119)))), ((int)(((byte)(223)))));
-            this.DiscountButton.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiscountButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DiscountButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.DiscountButton.Location = new System.Drawing.Point(5, 132);
+            this.DiscountButton.Location = new System.Drawing.Point(5, 126);
             this.DiscountButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.DiscountButton.Name = "DiscountButton";
-            this.DiscountButton.Size = new System.Drawing.Size(263, 37);
+            this.DiscountButton.Size = new System.Drawing.Size(263, 35);
             this.DiscountButton.TabIndex = 6;
             this.DiscountButton.Text = "Discount";
             this.DiscountButton.UseVisualStyleBackColor = false;
@@ -538,11 +544,11 @@
             this.tableLayoutPanel5.Controls.Add(this.VoidButton, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.AddButton, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 175);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 167);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(267, 37);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(267, 35);
             this.tableLayoutPanel5.TabIndex = 8;
             // 
             // VoidButton
@@ -554,7 +560,7 @@
             this.VoidButton.Location = new System.Drawing.Point(138, 3);
             this.VoidButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.VoidButton.Name = "VoidButton";
-            this.VoidButton.Size = new System.Drawing.Size(124, 31);
+            this.VoidButton.Size = new System.Drawing.Size(124, 29);
             this.VoidButton.TabIndex = 9;
             this.VoidButton.Text = "Void";
             this.VoidButton.UseVisualStyleBackColor = false;
@@ -568,7 +574,7 @@
             this.AddButton.Location = new System.Drawing.Point(5, 3);
             this.AddButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(123, 31);
+            this.AddButton.Size = new System.Drawing.Size(123, 29);
             this.AddButton.TabIndex = 7;
             this.AddButton.Text = "Add Qty";
             this.AddButton.UseVisualStyleBackColor = false;
@@ -591,7 +597,7 @@
             this.itemCount.MinimumWidth = 8;
             this.itemCount.Name = "itemCount";
             this.itemCount.ReadOnly = true;
-            this.itemCount.Width = 52;
+            this.itemCount.Width = 58;
             // 
             // cartID
             // 
@@ -601,6 +607,15 @@
             this.cartID.ReadOnly = true;
             this.cartID.Visible = false;
             this.cartID.Width = 150;
+            // 
+            // pcode
+            // 
+            this.pcode.HeaderText = "pcode";
+            this.pcode.MinimumWidth = 8;
+            this.pcode.Name = "pcode";
+            this.pcode.ReadOnly = true;
+            this.pcode.Visible = false;
+            this.pcode.Width = 150;
             // 
             // ProductName
             // 
@@ -617,7 +632,7 @@
             this.PriceCol.MinimumWidth = 8;
             this.PriceCol.Name = "PriceCol";
             this.PriceCol.ReadOnly = true;
-            this.PriceCol.Width = 78;
+            this.PriceCol.Width = 91;
             // 
             // Quantity
             // 
@@ -628,7 +643,7 @@
             this.Quantity.MinimumWidth = 8;
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 102;
+            this.Quantity.Width = 127;
             // 
             // disc
             // 
@@ -639,7 +654,7 @@
             this.disc.MinimumWidth = 8;
             this.disc.Name = "disc";
             this.disc.ReadOnly = true;
-            this.disc.Width = 106;
+            this.disc.Width = 127;
             // 
             // totl
             // 
@@ -650,7 +665,7 @@
             this.totl.MinimumWidth = 8;
             this.totl.Name = "totl";
             this.totl.ReadOnly = true;
-            this.totl.Width = 78;
+            this.totl.Width = 91;
             // 
             // Remove
             // 
@@ -694,7 +709,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button NewTransactButton;
@@ -722,8 +736,10 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         public System.Windows.Forms.Label TransactNo;
         private System.Windows.Forms.Label totalLblValue;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn cartID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pcode;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;

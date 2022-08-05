@@ -26,7 +26,7 @@ namespace Login_Form
             cn = new SqlConnection(dbCon.DBConnection());
             this.KeyPreview = true;
         }
-        private void GetTransactNo()
+        public void GetTransactNo()
         {
             try
             {
@@ -124,25 +124,34 @@ namespace Login_Form
         {
             try
             {
+                Boolean hasRecord = false;
                 dataGridView1.Rows.Clear();
                 int i = 0;
                 double total = 0;
                 double disc = 0;
                 cn.Open();
-                cm = new SqlCommand("SELECT c.id, c.pcode, p.ProductName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "'", cn);
+                cm = new SqlCommand("SELECT c.id, c.pcode, p.ProductName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "' AND status like 'Pending'", cn);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
                     i++;
                     total += Double.Parse(dr["total"].ToString());
                     disc += Double.Parse(dr["disc"].ToString());
-                    dataGridView1.Rows.Add(i, dr["id"].ToString(), dr["ProductName"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
+                    dataGridView1.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["ProductName"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
+                    hasRecord = true;
                 }
                 dr.Close();
                 cn.Close();
                 subtotalLblValue.Text = total.ToString("#,##0.00");
                 discountLblValue.Text = disc.ToString("#,##0.00");
                 cartTotal();
+                if (hasRecord == true) 
+                { 
+                    PaymentButton.Enabled = true;
+                } else
+                {
+                    PaymentButton.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -193,7 +202,14 @@ namespace Login_Form
         {
             int i = dataGridView1.CurrentRow.Index;
             id = dataGridView1[1, i].Value.ToString();
-            price = dataGridView1[3, i].Value.ToString();
+            price = dataGridView1[7, i].Value.ToString();
+        }
+
+        private void PaymentButton_Click(object sender, EventArgs e)
+        {
+            SettlePaymentForm frm = new SettlePaymentForm(this);
+            frm.amountTB.Text = totalLblValue.Text;
+            frm.ShowDialog();
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.bgPicture = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.usernamelabel = new System.Windows.Forms.Label();
             this.usernameBox = new System.Windows.Forms.TextBox();
@@ -38,19 +37,9 @@
             this.signin = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.bgPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bgPicture)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bgPicture
-            // 
-            this.bgPicture.Image = ((System.Drawing.Image)(resources.GetObject("bgPicture.Image")));
-            this.bgPicture.Location = new System.Drawing.Point(-8, -5);
-            this.bgPicture.Name = "bgPicture";
-            this.bgPicture.Size = new System.Drawing.Size(416, 382);
-            this.bgPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bgPicture.TabIndex = 0;
-            this.bgPicture.TabStop = false;
-            this.bgPicture.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -78,17 +67,19 @@
             // 
             // usernameBox
             // 
+            this.usernameBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameBox.Location = new System.Drawing.Point(392, 140);
             this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(217, 26);
+            this.usernameBox.Size = new System.Drawing.Size(217, 32);
             this.usernameBox.TabIndex = 3;
             this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // passwordBox
             // 
+            this.passwordBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordBox.Location = new System.Drawing.Point(392, 217);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(217, 26);
+            this.passwordBox.Size = new System.Drawing.Size(217, 32);
             this.passwordBox.TabIndex = 5;
             this.passwordBox.UseSystemPasswordChar = true;
             // 
@@ -106,7 +97,7 @@
             // signin
             // 
             this.signin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(133)))), ((int)(((byte)(254)))));
-            this.signin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signin.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.signin.Location = new System.Drawing.Point(442, 259);
             this.signin.Name = "signin";
@@ -143,6 +134,17 @@
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // bgPicture
+            // 
+            this.bgPicture.Image = ((System.Drawing.Image)(resources.GetObject("bgPicture.Image")));
+            this.bgPicture.Location = new System.Drawing.Point(-8, -5);
+            this.bgPicture.Name = "bgPicture";
+            this.bgPicture.Size = new System.Drawing.Size(416, 382);
+            this.bgPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bgPicture.TabIndex = 0;
+            this.bgPicture.TabStop = false;
+            this.bgPicture.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Login
             // 
