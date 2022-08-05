@@ -117,53 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="itemCount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cartID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ProductName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PriceCol.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Quantity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="disc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="totl.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Remove.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Remove.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAuJAAALiQE3ycutAAAAB3RJ
-        TUUH5gEOCSULoYY+XAAAAT9JREFUOE/t0z8uRFEUx/Gno0EhzNiBhqgUmkk0M2zBCpRKi7AjyYygsAEK
-        FEY0JAxB/Pf9cu7kSt6biJabfDL3nnvOr3jvTVG1zpcamsI+3oP7SURXyfISQxiL5mQCi7hACnRvzbu8
-        dxSfWSlwBm0c4iBzghekQPfW8h5nnDWjH7iCa9yUsJ4r67mCGf3AcSyg8UvOmvHtOVrcwnamE6rOcsbZ
-        rzCXB7TwCJ/VW/wmnstq/jrjbKSxPETxGZdYwyZecY+N4N6ad/bY+4TKQJv3MIJ59OBbnQ7urXlnj73O
-        DAzcwTBm4Vs9Qi249416Z4+9/4EsD1H8o4G7sHkOBh6jHtxb887v0N6Bgf5TuljGepz9kFeDe2ve2XMW
-        58rA9F++xUPsdRfS2Tt73DvTRKSxPMDncoo09FPOOEtSUXwAJKS5nCWj2RIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="dataGridViewImageColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAuJAAALiQE3ycutAAAAB3RJ
-        TUUH5gEOCSULoYY+XAAAAT9JREFUOE/t0z8uRFEUx/Gno0EhzNiBhqgUmkk0M2zBCpRKi7AjyYygsAEK
-        FEY0JAxB/Pf9cu7kSt6biJabfDL3nnvOr3jvTVG1zpcamsI+3oP7SURXyfISQxiL5mQCi7hACnRvzbu8
-        dxSfWSlwBm0c4iBzghekQPfW8h5nnDWjH7iCa9yUsJ4r67mCGf3AcSyg8UvOmvHtOVrcwnamE6rOcsbZ
-        rzCXB7TwCJ/VW/wmnstq/jrjbKSxPETxGZdYwyZecY+N4N6ad/bY+4TKQJv3MIJ59OBbnQ7urXlnj73O
-        DAzcwTBm4Vs9Qi249416Z4+9/4EsD1H8o4G7sHkOBh6jHtxb887v0N6Bgf5TuljGepz9kFeDe2ve2XMW
-        58rA9F++xUPsdRfS2Tt73DvTRKSxPMDncoo09FPOOEtSUXwAJKS5nCWj2RIAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAASRJREFUaEPt
+        2X0KgjAYx3FPUdEV67iBdQQV9A8PUBvsFyIiTp+3yfOFURaLfdAUsfI8zztPfd8/2ra9pU214hriWtJm
+        XmHiM4xvGLUmJiHqtJZn+nh74zhewsRX/IFhGD5d193TV2I1TXPFGsJ4716DJoYMgTQw5AgkiWFDIAkM
+        OwJxYsQQiAMjjkCUGDUEosCoI9ARjBkE2oMxh0A5GLMItAVjHoHWMMUg0BKmOASa3UPE1/97CzdqWU33
+        TBrl7Ilps8Np86nZVKc4tJb+2DnXGROtnZ2KwWw5xZrH5FwnzGJyEMgcZg8CmcEcQSB1DAUCqWEoEUgc
+        w4FAYhhOBGLHSCAQG0YSgcgxGghEhtFEIBJMmHyOR2+xMLH8h6Ge53kGq6ofcAmdal7L4IcAAAAASUVO
+        RK5CYII=
 </value>
   </data>
 </root>

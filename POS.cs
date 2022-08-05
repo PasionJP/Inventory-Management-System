@@ -18,6 +18,8 @@ namespace Login_Form
         SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
         string title = "POS System";
+        string id;
+        string price;
         public POS()
         {
             InitializeComponent();
@@ -87,8 +89,12 @@ namespace Login_Form
                         cn.Close();
                         frm.ShowDialog();
                     }
-                    dr.Close();
-                    cn.Close();
+                    else
+                    {
+                        dr.Close();
+                        cn.Close();
+                    }
+                    
                 }
             }catch (Exception ex)
             {
@@ -105,7 +111,7 @@ namespace Login_Form
                 if(MessageBox.Show("Are you sure you want to remove this item in your cart?", "Remove item from cart", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("DELETE from cartTbl where id like '" + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + "'", cn);
+                    cm = new SqlCommand("DELETE from cartTbl where id like '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
                     cn.Close();
                     MessageBox.Show("Item has been removed from the cart successfuly", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -121,6 +127,7 @@ namespace Login_Form
                 dataGridView1.Rows.Clear();
                 int i = 0;
                 double total = 0;
+                double disc = 0;
                 cn.Open();
                 cm = new SqlCommand("SELECT c.id, c.pcode, p.ProductName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "'", cn);
                 dr = cm.ExecuteReader();
@@ -128,15 +135,18 @@ namespace Login_Form
                 {
                     i++;
                     total += Double.Parse(dr["total"].ToString());
-                    dataGridView1.Rows.Add(dr["id"].ToString(), dr["ProductName"].ToString(),  dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00")) ;
+                    disc += Double.Parse(dr["disc"].ToString());
+                    dataGridView1.Rows.Add(i, dr["id"].ToString(), dr["ProductName"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
                 }
                 dr.Close();
                 cn.Close();
                 subtotalLblValue.Text = total.ToString("#,##0.00");
+                discountLblValue.Text = disc.ToString("#,##0.00");
                 cartTotal();
             }
             catch (Exception ex)
             {
+                cn.Close();
                 MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -150,7 +160,7 @@ namespace Login_Form
         {
             if (TransactNo.Text == "000000000000") { return; }
             SearchItem frm = new SearchItem(this);
-            //frm.LoadProducts();
+            frm.LoadProducts();
             frm.ShowDialog();
         }
 
@@ -160,14 +170,30 @@ namespace Login_Form
         }
         public void cartTotal()
         {
-
-            double sales = Double.Parse(subtotalLblValue.Text);
-            double discount = 0;
+            double total = double.Parse(totalLblValue.Text);
+            double discount = Double.Parse(discountLblValue.Text);
+            double sales = Double.Parse(subtotalLblValue.Text) - discount;
             double vat = sales * dbCon.getVal();
             double vatable = sales - vat;
+            totalLblValue.Text = sales.ToString("#,##0.00");
             vatLblValue.Text = vat.ToString("#,##0.00");
             vatableLblValue.Text = vatable.ToString("#,##0.00");
             
+        }
+
+        private void DiscountButton_Click(object sender, EventArgs e)
+        {
+            DiscountForm frm = new DiscountForm(this);
+            frm.idLbl.Text = id;
+            frm.priceTB.Text = price;
+            frm.ShowDialog();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int i = dataGridView1.CurrentRow.Index;
+            id = dataGridView1[1, i].Value.ToString();
+            price = dataGridView1[3, i].Value.ToString();
         }
     }
 }
