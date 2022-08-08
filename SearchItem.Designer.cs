@@ -52,6 +52,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchProductsView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -299,6 +300,18 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.DataPropertyName = "Add";
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.MinimumWidth = 8;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 150;
+            // 
             // SearchItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -340,5 +353,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewImageColumn Add;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

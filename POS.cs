@@ -117,6 +117,37 @@ namespace Login_Form
                     MessageBox.Show("Item has been removed from the cart successfuly", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadCart();
                 }
+            } else if (colName == "removeQty")
+            {
+                if (int.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString()) == 1) return;
+                else
+                {
+                    cn.Open();
+                    cm = new SqlCommand("UPDATE cartTbl SET qty = (qty - " + 1 + ") WHERE pcode LIKE '" + int.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()) + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    LoadCart();
+                }
+            } else if (colName == "addQty")
+            {
+                int prodQty;
+                cn.Open();
+                cm = new SqlCommand("SELECT qty FROM Products WHERE pcode like '" + int.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()) + "'", cn);
+                dr = cm.ExecuteReader();
+                dr.Read();
+                prodQty = int.Parse(dr["qty"].ToString());
+                cn.Close();
+                if (prodQty <= int.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString()))
+                {
+                    MessageBox.Show("Sorry, we don't have enough stock. Remaining quantity on hand is only " + prodQty + ".", "Product Availability", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } else
+                {
+                    cn.Open();
+                    cm = new SqlCommand("UPDATE cartTbl SET qty = (qty + " + 1 + ") WHERE pcode LIKE '" + int.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()) + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    LoadCart();
+                }
             }
         }
 

@@ -133,6 +133,10 @@ namespace Login_Form
                         cmd.ExecuteNonQuery();
                         con.Close();
                     }
+                    ReceiptForm frm = new ReceiptForm(f);
+                    frm.LoadReport(cashTB.Text, changeTB.Text);
+                    frm.ShowDialog();
+
                     MessageBox.Show("Payment successfully saved!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     f.GetTransactNo();
                     f.LoadCart();

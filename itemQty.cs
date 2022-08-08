@@ -49,6 +49,18 @@ namespace Login_Form
         {
             if ((e.KeyChar == 13) && (itmQtyTB.Text != String.Empty))
             {
+                int prodQty;
+                cn.Open();
+                cm = new SqlCommand("SELECT qty FROM Products WHERE pcode like '"+ pcode +"'", cn);
+                dr = cm.ExecuteReader();
+                dr.Read();
+                prodQty = int.Parse(dr["qty"].ToString());
+                cn.Close();
+                if (prodQty < int.Parse(itmQtyTB.Text))
+                {
+                    MessageBox.Show("Sorry, we don't have enough stock. Remaining quantity on hand is only " + prodQty + ".", "Product Availability", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    itmQtyTB.Text = prodQty.ToString();
+                }
                 cn.Open();
                 cm = new SqlCommand("INSERT into cartTbl (transno, pcode, price, qty, sdate) VALUES (@transno, @pcode, @price, @qty, @sdate)", cn);
                 cm.Parameters.AddWithValue("@transno", transno);

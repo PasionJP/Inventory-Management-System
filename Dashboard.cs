@@ -37,6 +37,7 @@ namespace Login_Form
         {
             getTotalSales();
             getTotalProducts();
+            getTotalEmployees();
         }
         public void getTotalSales()
         {
@@ -60,6 +61,23 @@ namespace Login_Form
                 productsLbl.Text = Convert.ToString(result);
             }
             con.Close();
+        }
+        public void getTotalEmployees()
+        {
+            var query = "SELECT COUNT(EmployeeID) FROM Employees";
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.ExecuteNonQuery();
+                object result = cmd.ExecuteScalar();
+                employeeLbl.Text = Convert.ToString(result);
+            }
+            con.Close();
+        }
+
+        private void productsLbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

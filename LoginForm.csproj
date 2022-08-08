@@ -54,105 +54,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
-    </Reference>
-    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.UI.WinForms.4.1.1\lib\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\Programming\VSCode\bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -165,6 +66,18 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -174,6 +87,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -253,6 +167,12 @@
     <Compile Include="POS.Designer.cs">
       <DependentUpon>POS.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductCategoryForm.Designer.cs">
+      <DependentUpon>ProductCategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +197,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiptDataSet.cs">
+      <DependentUpon>ReceiptDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReceiptDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptForm.Designer.cs">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +250,7 @@
     <Compile Include="SettlePaymentForm.Designer.cs">
       <DependentUpon>SettlePaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ViewEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +297,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="SalesChart.resx">
       <DependentUpon>SalesChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,6 +375,7 @@
     <None Include="Properties\DataSources\Chart.datasource" />
     <None Include="Properties\DataSources\Dashboard.datasource" />
     <None Include="Properties\DataSources\EmployeesInfo.datasource" />
+    <None Include="Properties\DataSources\ReceiptDataSet.datasource" />
     <None Include="Properties\DataSources\Sales_Chart.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -446,6 +386,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ReceiptDataSet.xsc">
+      <DependentUpon>ReceiptDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReceiptDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReceiptDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReceiptDataSet.xss">
+      <DependentUpon>ReceiptDataSet.xsd</DependentUpon>
+    </None>
     <None Include="SalesDataSet.xsc">
       <DependentUpon>SalesDataSet.xsd</DependentUpon>
     </None>
@@ -496,6 +447,33 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="image\arrow-left.png" />
+    <None Include="image\arrow-right.png" />
+    <Content Include="packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="image\expand arrow.png" />
     <None Include="image\collapse arrow.png" />
     <None Include="image\eye-unshow.png" />
@@ -515,5 +493,6 @@
       <DependentUpon>Sales.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
