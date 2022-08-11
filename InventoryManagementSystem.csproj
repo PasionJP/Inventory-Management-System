@@ -167,11 +167,11 @@
     <Compile Include="POS.Designer.cs">
       <DependentUpon>POS.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductCategoryForm.cs">
+    <Compile Include="ManageCategories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductCategoryForm.Designer.cs">
-      <DependentUpon>ProductCategoryForm.cs</DependentUpon>
+    <Compile Include="ManageCategories.Designer.cs">
+      <DependentUpon>ManageCategories.cs</DependentUpon>
     </Compile>
     <Compile Include="Products1.cs">
       <SubType>Form</SubType>
@@ -251,6 +251,12 @@
       <DependentUpon>SettlePaymentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ViewCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCategories.Designer.cs">
+      <DependentUpon>ViewCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POS.resx">
       <DependentUpon>POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCategories.resx">
+      <DependentUpon>ManageCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products1.resx">
       <DependentUpon>Products1.cs</DependentUpon>
@@ -312,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettlePaymentForm.resx">
       <DependentUpon>SettlePaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCategories.resx">
+      <DependentUpon>ViewCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployees.resx">
       <DependentUpon>ViewEmployees.cs</DependentUpon>

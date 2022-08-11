@@ -13,6 +13,7 @@ namespace Login_Form
 {
     public partial class IMS : Form
     {
+        private bool isCollapsed;
         public IMS()
         {
             InitializeComponent();
@@ -99,6 +100,50 @@ namespace Login_Form
         private void button6_Click(object sender, EventArgs e)
         {
             openNewWindow(new ViewEmployees());
+        }
+
+        private void Suppliers_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new ViewCategories());
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            if (isCollapsed)
+            {
+                Products.Image = Resources.collapse_arrow;
+                productsPanel.Height += 10;
+                if (productsPanel.Size == productsPanel.MaximumSize)
+                {
+                    timer1.Stop();
+                    isCollapsed = false;
+                }
+            } else
+            {
+                Products.Image = Resources.expand_arrow;
+                productsPanel.Height -= 10;
+                if (productsPanel.Size == productsPanel.MinimumSize)
+                {
+                    timer1.Stop();
+                    isCollapsed = true;
+                }
+            }
+        }
+
+        private void Products_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            openNewWindow(new ProductsV1());
+        }
+
+        private void prodInStock_Click_1(object sender, EventArgs e)
+        {
+            openNewWindow(new ProductsV1());
+        }
+
+        private void prodCategories_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new ViewCategories());
         }
     }
 }

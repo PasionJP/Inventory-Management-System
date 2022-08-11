@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Employees = new System.Windows.Forms.Button();
             this.Sales = new System.Windows.Forms.Button();
-            this.Suppliers = new System.Windows.Forms.Button();
+            this.productsPanel = new System.Windows.Forms.Panel();
+            this.prodCategories = new System.Windows.Forms.Button();
+            this.allProducts = new System.Windows.Forms.Button();
+            this.prodInStock = new System.Windows.Forms.Button();
             this.Products = new System.Windows.Forms.Button();
             this.orders = new System.Windows.Forms.Button();
             this.Dashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            this.productsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -47,15 +53,14 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.Employees);
             this.panel1.Controls.Add(this.Sales);
-            this.panel1.Controls.Add(this.Suppliers);
-            this.panel1.Controls.Add(this.Products);
+            this.panel1.Controls.Add(this.productsPanel);
             this.panel1.Controls.Add(this.orders);
             this.panel1.Controls.Add(this.Dashboard);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 610);
+            this.panel1.Size = new System.Drawing.Size(238, 718);
             this.panel1.TabIndex = 0;
             // 
             // Employees
@@ -65,7 +70,7 @@
             this.Employees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Employees.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Employees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Employees.Location = new System.Drawing.Point(0, 434);
+            this.Employees.Location = new System.Drawing.Point(0, 550);
             this.Employees.Name = "Employees";
             this.Employees.Size = new System.Drawing.Size(238, 58);
             this.Employees.TabIndex = 9;
@@ -80,7 +85,7 @@
             this.Sales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Sales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Sales.Location = new System.Drawing.Point(0, 376);
+            this.Sales.Location = new System.Drawing.Point(0, 492);
             this.Sales.Name = "Sales";
             this.Sales.Size = new System.Drawing.Size(238, 58);
             this.Sales.TabIndex = 5;
@@ -88,19 +93,63 @@
             this.Sales.UseVisualStyleBackColor = true;
             this.Sales.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Suppliers
+            // productsPanel
             // 
-            this.Suppliers.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Suppliers.FlatAppearance.BorderSize = 0;
-            this.Suppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Suppliers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Suppliers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Suppliers.Location = new System.Drawing.Point(0, 318);
-            this.Suppliers.Name = "Suppliers";
-            this.Suppliers.Size = new System.Drawing.Size(238, 58);
-            this.Suppliers.TabIndex = 5;
-            this.Suppliers.Text = "Suppliers";
-            this.Suppliers.UseVisualStyleBackColor = true;
+            this.productsPanel.Controls.Add(this.prodCategories);
+            this.productsPanel.Controls.Add(this.allProducts);
+            this.productsPanel.Controls.Add(this.prodInStock);
+            this.productsPanel.Controls.Add(this.Products);
+            this.productsPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.productsPanel.Location = new System.Drawing.Point(0, 260);
+            this.productsPanel.MaximumSize = new System.Drawing.Size(238, 232);
+            this.productsPanel.MinimumSize = new System.Drawing.Size(238, 58);
+            this.productsPanel.Name = "productsPanel";
+            this.productsPanel.Size = new System.Drawing.Size(238, 232);
+            this.productsPanel.TabIndex = 0;
+            // 
+            // prodCategories
+            // 
+            this.prodCategories.Dock = System.Windows.Forms.DockStyle.Top;
+            this.prodCategories.FlatAppearance.BorderSize = 0;
+            this.prodCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prodCategories.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prodCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.prodCategories.Location = new System.Drawing.Point(0, 174);
+            this.prodCategories.Name = "prodCategories";
+            this.prodCategories.Size = new System.Drawing.Size(238, 58);
+            this.prodCategories.TabIndex = 10;
+            this.prodCategories.Text = "Product Categories";
+            this.prodCategories.UseVisualStyleBackColor = true;
+            this.prodCategories.Click += new System.EventHandler(this.prodCategories_Click);
+            // 
+            // allProducts
+            // 
+            this.allProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.allProducts.FlatAppearance.BorderSize = 0;
+            this.allProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.allProducts.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.allProducts.Location = new System.Drawing.Point(0, 116);
+            this.allProducts.Name = "allProducts";
+            this.allProducts.Size = new System.Drawing.Size(238, 58);
+            this.allProducts.TabIndex = 9;
+            this.allProducts.Text = "All Products";
+            this.allProducts.UseVisualStyleBackColor = true;
+            // 
+            // prodInStock
+            // 
+            this.prodInStock.Dock = System.Windows.Forms.DockStyle.Top;
+            this.prodInStock.FlatAppearance.BorderSize = 0;
+            this.prodInStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prodInStock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prodInStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.prodInStock.Location = new System.Drawing.Point(0, 58);
+            this.prodInStock.Name = "prodInStock";
+            this.prodInStock.Size = new System.Drawing.Size(238, 58);
+            this.prodInStock.TabIndex = 8;
+            this.prodInStock.Text = "Products in Stock";
+            this.prodInStock.UseVisualStyleBackColor = true;
+            this.prodInStock.Click += new System.EventHandler(this.prodInStock_Click_1);
             // 
             // Products
             // 
@@ -109,13 +158,16 @@
             this.Products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Products.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Products.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Products.Location = new System.Drawing.Point(0, 260);
+            this.Products.Image = global::Login_Form.Properties.Resources.collapse_arrow;
+            this.Products.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Products.Location = new System.Drawing.Point(0, 0);
             this.Products.Name = "Products";
+            this.Products.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.Products.Size = new System.Drawing.Size(238, 58);
-            this.Products.TabIndex = 5;
+            this.Products.TabIndex = 7;
             this.Products.Text = "Products";
             this.Products.UseVisualStyleBackColor = true;
-            this.Products.Click += new System.EventHandler(this.Employees_Click);
+            this.Products.Click += new System.EventHandler(this.Products_Click);
             // 
             // orders
             // 
@@ -170,16 +222,21 @@
             this.panelMenu.Location = new System.Drawing.Point(238, 48);
             this.panelMenu.MinimumSize = new System.Drawing.Size(950, 562);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(950, 562);
+            this.panelMenu.Size = new System.Drawing.Size(950, 670);
             this.panelMenu.TabIndex = 2;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 15;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1188, 610);
+            this.ClientSize = new System.Drawing.Size(1188, 718);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -190,6 +247,7 @@
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
+            this.productsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -202,9 +260,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button Sales;
-        private System.Windows.Forms.Button Suppliers;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button Products;
         private System.Windows.Forms.Button Employees;
+        private System.Windows.Forms.Panel productsPanel;
+        private System.Windows.Forms.Button prodCategories;
+        private System.Windows.Forms.Button allProducts;
+        private System.Windows.Forms.Button prodInStock;
+        private System.Windows.Forms.Button Products;
+        private System.Windows.Forms.Timer timer1;
     }
 }

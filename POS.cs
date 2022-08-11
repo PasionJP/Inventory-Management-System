@@ -13,17 +13,17 @@ namespace Login_Form
 {
     public partial class POS : Form
     {
-        SqlConnection cn = new SqlConnection();
-        SqlCommand cm = new SqlCommand();
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
         string title = "POS System";
         string id;
-        string price;
+        public decimal price;
         public POS()
         {
             InitializeComponent();
-            cn = new SqlConnection(dbCon.DBConnection());
+            con = new SqlConnection(dbCon.DBConnection());
             this.KeyPreview = true;
         }
         public void GetTransactNo()
@@ -33,9 +33,9 @@ namespace Login_Form
                 string currDate = DateTime.Now.ToString("yyyyMMdd");
                 string transno;
                 int count;
-                cn.Open();
-                cm = new SqlCommand("SELECT TOP 1 transno FROM cartTbl WHERE transno LIKE '" + currDate + "%' order by id desc", cn);
-                dr = cm.ExecuteReader();
+                con.Open();
+                cmd = new SqlCommand("SELECT TOP 1 transno FROM cartTbl WHERE transno LIKE '" + currDate + "%' order by id desc", con);
+                dr = cmd.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows) 
                 {
@@ -49,10 +49,10 @@ namespace Login_Form
                     TransactNo.Text = transno;
                 }
                 dr.Close();
-                cn.Close();
+                con.Close();
             } catch (Exception ex)
             {
-                cn.Close();
+                con.Close();
                 MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
@@ -77,28 +77,28 @@ namespace Login_Form
                 {
                     return;
                 } else {
-                    cn.Open();
-                    cm = new SqlCommand("SELECT * from Products WHERE Barcode like '" + searchBox.Text + "'", cn);
-                    dr = cm.ExecuteReader();
+                    con.Open();
+                    cmd = new SqlCommand("SELECT * from Products WHERE Barcode like '" + searchBox.Text + "'", con);
+                    dr = cmd.ExecuteReader();
                     dr.Read();
                     if (dr.HasRows)
                     {
                         itemQty frm = new itemQty(this);
                         frm.ProductDetails(dr["pcode"].ToString(), double.Parse(dr["price"].ToString()), TransactNo.Text);
                         dr.Close();
-                        cn.Close();
+                        con.Close();
                         frm.ShowDialog();
                     }
                     else
                     {
                         dr.Close();
-                        cn.Close();
+                        con.Close();
                     }
                     
                 }
             }catch (Exception ex)
             {
-                cn.Close();
+                con.Close();
                 MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -110,10 +110,10 @@ namespace Login_Form
             {
                 if(MessageBox.Show("Are you sure you want to remove this item in your cart?", "Remove item from cart", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cn.Open();
-                    cm = new SqlCommand("DELETE from cartTbl where id like '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn);
-                    cm.ExecuteNonQuery();
-                    cn.Close();
+                    con.Open();
+                    cmd = new SqlCommand("DELETE from cartTbl where id like '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
                     MessageBox.Show("Item has been removed from the cart successfuly", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadCart();
                 }
@@ -122,30 +122,30 @@ namespace Login_Form
                 if (int.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString()) == 1) return;
                 else
                 {
-                    cn.Open();
-                    cm = new SqlCommand("UPDATE cartTbl SET qty = (qty - " + 1 + ") WHERE pcode LIKE '" + int.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()) + "'", cn);
-                    cm.ExecuteNonQuery();
-                    cn.Close();
+                    con.Open();
+                    cmd = new SqlCommand("UPDATE cartTbl SET qty = (qty - " + 1 + ") WHERE id LIKE '" + int.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()) + "'", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
                     LoadCart();
                 }
             } else if (colName == "addQty")
             {
                 int prodQty;
-                cn.Open();
-                cm = new SqlCommand("SELECT qty FROM Products WHERE pcode like '" + int.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()) + "'", cn);
-                dr = cm.ExecuteReader();
+                con.Open();
+                cmd = new SqlCommand("SELECT qty FROM Products WHERE pcode like '" + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", con);
+                dr = cmd.ExecuteReader();
                 dr.Read();
                 prodQty = int.Parse(dr["qty"].ToString());
-                cn.Close();
+                con.Close();
                 if (prodQty <= int.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString()))
                 {
                     MessageBox.Show("Sorry, we don't have enough stock. Remaining quantity on hand is only " + prodQty + ".", "Product Availability", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 } else
                 {
-                    cn.Open();
-                    cm = new SqlCommand("UPDATE cartTbl SET qty = (qty + " + 1 + ") WHERE pcode LIKE '" + int.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()) + "'", cn);
-                    cm.ExecuteNonQuery();
-                    cn.Close();
+                    con.Open();
+                    cmd = new SqlCommand("UPDATE cartTbl SET qty = (qty + " + 1 + ") WHERE id LIKE '" + int.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()) + "'", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
                     LoadCart();
                 }
             }
@@ -160,9 +160,9 @@ namespace Login_Form
                 int i = 0;
                 double total = 0;
                 double disc = 0;
-                cn.Open();
-                cm = new SqlCommand("SELECT c.id, c.pcode, p.ProductName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "' AND status like 'Pending'", cn);
-                dr = cm.ExecuteReader();
+                con.Open();
+                cmd = new SqlCommand("SELECT c.id, c.pcode, p.ProductName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "' AND status like 'Pending'", con);
+                dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     i++;
@@ -172,8 +172,8 @@ namespace Login_Form
                     hasRecord = true;
                 }
                 dr.Close();
-                cn.Close();
-                subtotalLblValue.Text = total.ToString("#,##0.00");
+                con.Close();
+                subtotalLblValue.Text = (total+disc).ToString("#,##0.00");
                 discountLblValue.Text = disc.ToString("#,##0.00");
                 cartTotal();
                 if (hasRecord == true) 
@@ -186,7 +186,7 @@ namespace Login_Form
             }
             catch (Exception ex)
             {
-                cn.Close();
+                con.Close();
                 MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -225,15 +225,17 @@ namespace Login_Form
         {
             DiscountForm frm = new DiscountForm(this);
             frm.idLbl.Text = id;
-            frm.priceTB.Text = price;
+            frm.selectedItemCost = price;
+            frm.totalItemsCost = subtotalLblValue.Text;
             frm.ShowDialog();
+            LoadCart();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             int i = dataGridView1.CurrentRow.Index;
             id = dataGridView1[1, i].Value.ToString();
-            price = dataGridView1[7, i].Value.ToString();
+            price = Decimal.Parse(dataGridView1[7, i].Value.ToString());
         }
 
         private void PaymentButton_Click(object sender, EventArgs e)

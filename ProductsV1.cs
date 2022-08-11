@@ -8,7 +8,6 @@ namespace Login_Form
 {
     public partial class ProductsV1 : Form
     {
-        public int pcode { get; set; }
         readonly SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
@@ -42,24 +41,6 @@ namespace Login_Form
         {
             LoadProducts();
         }
-
-        //private void GetProductsRecord()
-        //{
-        //    SqlCommand cmd = new SqlCommand("Select * from Products", con);
-        //    DataTable dt = new DataTable();
-
-        //    con.Open();
-
-        //    SqlDataReader sdr = cmd.ExecuteReader();
-        //    dt.Load(sdr);
-        //    con.Close();
-
-        //    productsDataGridView.DataSource = dt;
-        //    for (var i = 0; i < productsDataGridView.Rows.Count-1; i++)
-        //    {
-        //        DataGridViewRow r = productsDataGridView.Rows[i];
-        //    }
-        //}
 
         private void ProductBox_TextChanged(object sender, EventArgs e)
         {
@@ -140,13 +121,14 @@ namespace Login_Form
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            
             string colName = productsDataGridView.Columns[e.ColumnIndex].Name;
             if (colName == "Remove")
             {
                 if (MessageBox.Show("Are you sure you want to remove this item in your cart?", "Remove item from cart", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     con.Open();
-                    cmd = new SqlCommand("DELETE from Products where pcode like '" + productsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() + "'", con);
+                    cmd = new SqlCommand("DELETE from Products where id like '" + productsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString() + "'", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Item has been removed from the cart successfuly", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -157,14 +139,15 @@ namespace Login_Form
             {
                 CreateUpdateProducts CUPfrm = new CreateUpdateProducts();
                 CUPfrm.CreateOrUpdate = "update";
-                if (productsDataGridView.SelectedRows[0].Cells[1].Value != null)
+                if (productsDataGridView.SelectedRows[0].Cells[0].Value != null)
                 {
-                    CUPfrm.pcode = Convert.ToInt32(productsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-                    CUPfrm.productName = productsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    CUPfrm.barcode = productsDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    CUPfrm.category = productsDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    CUPfrm.quantity = productsDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-                    CUPfrm.price = productsDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    CUPfrm.id = int.Parse(productsDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    CUPfrm.pcodeNew = productsDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    CUPfrm.productName = productsDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    CUPfrm.barcode = productsDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    CUPfrm.category = productsDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    CUPfrm.quantity = productsDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    CUPfrm.price = productsDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
                 }
                 CUPfrm.ShowDialog();
                 LoadProducts();

@@ -185,7 +185,6 @@ namespace Login_Form
             {
                 MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -13,8 +13,8 @@ namespace Login_Form
 {
     public partial class CreateUpdateProducts : Form
     {
+        public int id { get; set; }
         public string CreateOrUpdate { get; set; }
-        public int pcode { get; set; }
         public string productName { get; set; }
         public string barcode { get; set; }
         public string category { get; set; }
@@ -22,8 +22,10 @@ namespace Login_Form
         public string price { get; set; }
         new bool MouseDown;
         private Point offset;
+        public string pcodeNew = "";
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
+        SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
         public CreateUpdateProducts()
         {
@@ -76,33 +78,38 @@ namespace Login_Form
                 quantityTB.Text = quantity;
                 priceTB.Text = price;
             }
+            categoryBoxFill();
+            GenerateNewPcode();
         }
 
         private void Insert_Click(object sender, EventArgs e)
         {
             if (CreateOrUpdate == "update")
             {
-                if (pcode > 0)
+                if (id > 0)
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @pName, barcode = @bCode, qty = @quantity, price = @price WHERE pcode = @pcode", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @pName, barcode = @bCode, qty = @quantity, price = @price WHERE id = @id", con);
                     cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@pCode", this.pcode);
+                    cmd.Parameters.AddWithValue("@pCode", pcodeNew);
                     cmd.Parameters.AddWithValue("@pName", pNameTB.Text);
                     cmd.Parameters.AddWithValue("@bCode", bCodeTB.Text);
                     cmd.Parameters.AddWithValue("@category", categoryCB.Text.ToString());
                     cmd.Parameters.AddWithValue("@quantity", quantityTB.Text);
                     cmd.Parameters.AddWithValue("@price", priceTB.Text);
-                    
+                    cmd.Parameters.AddWithValue("@id", id);
+
                     con.Open();
                     cmd.ExecuteNonQuery();
                     con.Close();
                     this.Close();
-                }   
+                }
             } else if (CreateOrUpdate == "insert")
             {
+                GenerateNewPcode();
                 con.Open();
-                cmd = new SqlCommand("INSERT INTO Products (productName, barcode, category, qty, price) VALUES (@pName, @bCode, @category, @quantity, @price)", con);
+                cmd = new SqlCommand("INSERT INTO Products (productName, pcode, barcode, category, qty, price) VALUES (@pName, @pcode, @bCode, @category, @quantity, @price)", con);
                 cmd.Parameters.AddWithValue("@pName", pNameTB.Text);
+                cmd.Parameters.AddWithValue("@pcode", pcodeNew);
                 cmd.Parameters.AddWithValue("@bCode", bCodeTB.Text);
                 cmd.Parameters.AddWithValue("@category", categoryCB.Text.ToString());
                 cmd.Parameters.AddWithValue("@quantity", quantityTB.Text);
@@ -112,6 +119,50 @@ namespace Login_Form
                 con.Close();
                 this.Close();
             }
+        }
+
+        private void pNameTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void categoryBoxFill()
+        {
+            con.Open();
+            cmd = new SqlCommand("SELECT Id, prodCategory FROM prodCategory", con);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+
+            DataRow item = dt.NewRow();
+            item[1] = "Select a Category";
+            dt.Rows.InsertAt(item, 0);
+
+            categoryCB.DataSource = dt;
+            categoryCB.DisplayMember = "prodCategory";
+            categoryCB.ValueMember = "Id";
+
+        }
+
+        private void categoryCB_DropDownClosed(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new Action(() => { categoryCB.Select(0, 0); }));
+        }
+        public string GenerateNewPcode()
+        {
+            int pID;
+            con.Open();
+            cmd = new SqlCommand("SELECT max(id) FROM Products", con);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                pID = int.Parse(dr[0].ToString());
+                pcodeNew = "P00" + (pID + 1).ToString();
+            }
+            con.Close();
+            return pcodeNew;
         }
     }
 }

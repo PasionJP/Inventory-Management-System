@@ -213,21 +213,24 @@
             this.pNameTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pNameTB.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pNameTB.Location = new System.Drawing.Point(223, 10);
             this.pNameTB.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.pNameTB.Name = "pNameTB";
-            this.pNameTB.Size = new System.Drawing.Size(656, 26);
+            this.pNameTB.Size = new System.Drawing.Size(656, 30);
             this.pNameTB.TabIndex = 15;
+            this.pNameTB.TextChanged += new System.EventHandler(this.pNameTB_TextChanged);
             // 
             // bCodeTB
             // 
             this.bCodeTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.bCodeTB.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCodeTB.Location = new System.Drawing.Point(223, 72);
             this.bCodeTB.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.bCodeTB.Name = "bCodeTB";
-            this.bCodeTB.Size = new System.Drawing.Size(656, 26);
+            this.bCodeTB.Size = new System.Drawing.Size(656, 30);
             this.bCodeTB.TabIndex = 16;
             // 
             // quantityTB
@@ -235,10 +238,11 @@
             this.quantityTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.quantityTB.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantityTB.Location = new System.Drawing.Point(223, 196);
             this.quantityTB.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.quantityTB.Name = "quantityTB";
-            this.quantityTB.Size = new System.Drawing.Size(656, 26);
+            this.quantityTB.Size = new System.Drawing.Size(656, 30);
             this.quantityTB.TabIndex = 17;
             // 
             // priceTB
@@ -246,20 +250,23 @@
             this.priceTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.priceTB.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceTB.Location = new System.Drawing.Point(223, 258);
             this.priceTB.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.priceTB.Name = "priceTB";
-            this.priceTB.Size = new System.Drawing.Size(656, 26);
+            this.priceTB.Size = new System.Drawing.Size(656, 30);
             this.priceTB.TabIndex = 18;
             // 
             // categoryCB
             // 
             this.categoryCB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryCB.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryCB.FormattingEnabled = true;
             this.categoryCB.Location = new System.Drawing.Point(223, 127);
             this.categoryCB.Name = "categoryCB";
-            this.categoryCB.Size = new System.Drawing.Size(656, 28);
+            this.categoryCB.Size = new System.Drawing.Size(656, 29);
             this.categoryCB.TabIndex = 19;
+            this.categoryCB.DropDownClosed += new System.EventHandler(this.categoryCB_DropDownClosed);
             // 
             // tableLayoutPanel9
             // 

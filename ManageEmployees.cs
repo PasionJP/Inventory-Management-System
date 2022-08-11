@@ -9,7 +9,6 @@ namespace Login_Form
 {
     public partial class ManageEmployees : Form
     {
-        public string InsertOrUpdate { get; set; }
         public int EmployeeID { get; set; }
         public string Fname { get; set; }
         public string Mname { get; set; }
@@ -29,6 +28,7 @@ namespace Login_Form
         string title = "POS System";
         new bool MouseDown;
         string pwViewState = "Hide";
+        public string InsertOrUpdate;
         private Point offset;
         public ManageEmployees()
         {

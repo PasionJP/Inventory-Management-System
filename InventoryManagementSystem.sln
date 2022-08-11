@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginForm", "LoginForm.csproj", "{20C3B68C-CFA8-4F34-9F68-8A14AA996EA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagementSystem", "InventoryManagementSystem.csproj", "{20C3B68C-CFA8-4F34-9F68-8A14AA996EA0}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Products", "..\Products\Products.sqlproj", "{4008DC4F-E314-47DA-A562-49DB62AA283C}"
 EndProject
