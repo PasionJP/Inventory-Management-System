@@ -38,12 +38,14 @@ namespace Login_Form
             getTotalSales();
             getTotalProducts();
             getTotalEmployees();
+            getSalesChart();
         }
         public void getTotalSales()
         {
             var query = "SELECT SUM(CAST(total as decimal(18, 2))) FROM cartTbl";
             con.Open();
-            using (SqlCommand cmd = new SqlCommand(query, con)){
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
                 cmd.ExecuteNonQuery();
                 object result = cmd.ExecuteScalar();
                 salesLbl.Text = Convert.ToString(result);
@@ -78,6 +80,15 @@ namespace Login_Form
         private void productsLbl_Click(object sender, EventArgs e)
         {
 
+        }
+        public void getSalesChart()
+        {
+            SalesChart sc = new SalesChart();
+            sc.TopLevel = false;
+            salesChartPanel.Controls.Add(sc);
+            sc.Dock = DockStyle.Fill;
+            sc.BringToFront();
+            sc.Show();
         }
     }
 }

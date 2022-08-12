@@ -43,6 +43,17 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.itemCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cartID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.removeQty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.addQty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.Discountlbl = new System.Windows.Forms.Label();
@@ -67,17 +78,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.itemCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cartID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.removeQty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.addQty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -245,6 +245,116 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // itemCount
+            // 
+            this.itemCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.itemCount.HeaderText = "#";
+            this.itemCount.MinimumWidth = 8;
+            this.itemCount.Name = "itemCount";
+            this.itemCount.ReadOnly = true;
+            this.itemCount.Width = 58;
+            // 
+            // cartID
+            // 
+            this.cartID.DataPropertyName = "id";
+            this.cartID.HeaderText = "";
+            this.cartID.MinimumWidth = 8;
+            this.cartID.Name = "cartID";
+            this.cartID.ReadOnly = true;
+            this.cartID.Visible = false;
+            this.cartID.Width = 150;
+            // 
+            // pcode
+            // 
+            this.pcode.HeaderText = "pcode";
+            this.pcode.MinimumWidth = 8;
+            this.pcode.Name = "pcode";
+            this.pcode.ReadOnly = true;
+            this.pcode.Visible = false;
+            this.pcode.Width = 150;
+            // 
+            // ProductName
+            // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductName.HeaderText = "Item";
+            this.ProductName.MinimumWidth = 8;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // PriceCol
+            // 
+            this.PriceCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.PriceCol.HeaderText = "Price";
+            this.PriceCol.MinimumWidth = 8;
+            this.PriceCol.Name = "PriceCol";
+            this.PriceCol.ReadOnly = true;
+            this.PriceCol.Width = 91;
+            // 
+            // Quantity
+            // 
+            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Quantity.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 8;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            this.Quantity.Width = 127;
+            // 
+            // disc
+            // 
+            this.disc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.disc.DefaultCellStyle = dataGridViewCellStyle4;
+            this.disc.HeaderText = "Discount";
+            this.disc.MinimumWidth = 8;
+            this.disc.Name = "disc";
+            this.disc.ReadOnly = true;
+            this.disc.Width = 127;
+            // 
+            // totl
+            // 
+            this.totl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.totl.DefaultCellStyle = dataGridViewCellStyle5;
+            this.totl.HeaderText = "Total";
+            this.totl.MinimumWidth = 8;
+            this.totl.Name = "totl";
+            this.totl.ReadOnly = true;
+            this.totl.Width = 91;
+            // 
+            // removeQty
+            // 
+            this.removeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.removeQty.HeaderText = "";
+            this.removeQty.Image = global::Login_Form.Properties.Resources.arrow_left;
+            this.removeQty.MinimumWidth = 8;
+            this.removeQty.Name = "removeQty";
+            this.removeQty.ReadOnly = true;
+            this.removeQty.Width = 8;
+            // 
+            // addQty
+            // 
+            this.addQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.addQty.HeaderText = "";
+            this.addQty.Image = global::Login_Form.Properties.Resources.arrow_right;
+            this.addQty.MinimumWidth = 8;
+            this.addQty.Name = "addQty";
+            this.addQty.ReadOnly = true;
+            this.addQty.Width = 8;
+            // 
+            // Remove
+            // 
+            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Remove.HeaderText = "";
+            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
+            this.Remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Remove.MinimumWidth = 8;
+            this.Remove.Name = "Remove";
+            this.Remove.ReadOnly = true;
+            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Remove.Width = 8;
             // 
             // tableLayoutPanel3
             // 
@@ -616,116 +726,6 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewImageColumn3.Width = 150;
-            // 
-            // itemCount
-            // 
-            this.itemCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.itemCount.HeaderText = "#";
-            this.itemCount.MinimumWidth = 8;
-            this.itemCount.Name = "itemCount";
-            this.itemCount.ReadOnly = true;
-            this.itemCount.Width = 58;
-            // 
-            // cartID
-            // 
-            this.cartID.DataPropertyName = "id";
-            this.cartID.HeaderText = "";
-            this.cartID.MinimumWidth = 8;
-            this.cartID.Name = "cartID";
-            this.cartID.ReadOnly = true;
-            this.cartID.Visible = false;
-            this.cartID.Width = 150;
-            // 
-            // pcode
-            // 
-            this.pcode.HeaderText = "pcode";
-            this.pcode.MinimumWidth = 8;
-            this.pcode.Name = "pcode";
-            this.pcode.ReadOnly = true;
-            this.pcode.Visible = false;
-            this.pcode.Width = 150;
-            // 
-            // ProductName
-            // 
-            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ProductName.HeaderText = "Item";
-            this.ProductName.MinimumWidth = 8;
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // PriceCol
-            // 
-            this.PriceCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.PriceCol.HeaderText = "Price";
-            this.PriceCol.MinimumWidth = 8;
-            this.PriceCol.Name = "PriceCol";
-            this.PriceCol.ReadOnly = true;
-            this.PriceCol.Width = 91;
-            // 
-            // Quantity
-            // 
-            this.Quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Quantity.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 8;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 127;
-            // 
-            // disc
-            // 
-            this.disc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.disc.DefaultCellStyle = dataGridViewCellStyle4;
-            this.disc.HeaderText = "Discount";
-            this.disc.MinimumWidth = 8;
-            this.disc.Name = "disc";
-            this.disc.ReadOnly = true;
-            this.disc.Width = 127;
-            // 
-            // totl
-            // 
-            this.totl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.totl.DefaultCellStyle = dataGridViewCellStyle5;
-            this.totl.HeaderText = "Total";
-            this.totl.MinimumWidth = 8;
-            this.totl.Name = "totl";
-            this.totl.ReadOnly = true;
-            this.totl.Width = 91;
-            // 
-            // removeQty
-            // 
-            this.removeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.removeQty.HeaderText = "";
-            this.removeQty.Image = global::Login_Form.Properties.Resources.arrow_left;
-            this.removeQty.MinimumWidth = 8;
-            this.removeQty.Name = "removeQty";
-            this.removeQty.ReadOnly = true;
-            this.removeQty.Width = 8;
-            // 
-            // addQty
-            // 
-            this.addQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.addQty.HeaderText = "";
-            this.addQty.Image = global::Login_Form.Properties.Resources.arrow_right;
-            this.addQty.MinimumWidth = 8;
-            this.addQty.Name = "addQty";
-            this.addQty.ReadOnly = true;
-            this.addQty.Width = 8;
-            // 
-            // Remove
-            // 
-            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Remove.HeaderText = "";
-            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
-            this.Remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Remove.MinimumWidth = 8;
-            this.Remove.Name = "Remove";
-            this.Remove.ReadOnly = true;
-            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Remove.Width = 8;
             // 
             // POS
             // 
