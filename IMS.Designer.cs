@@ -43,6 +43,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.topSellingBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.productsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.topSellingBtn);
             this.panel1.Controls.Add(this.Employees);
             this.panel1.Controls.Add(this.Sales);
             this.panel1.Controls.Add(this.productsPanel);
@@ -231,6 +233,21 @@
             this.timer1.Interval = 15;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
+            // topSellingBtn
+            // 
+            this.topSellingBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topSellingBtn.FlatAppearance.BorderSize = 0;
+            this.topSellingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.topSellingBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topSellingBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.topSellingBtn.Location = new System.Drawing.Point(0, 608);
+            this.topSellingBtn.Name = "topSellingBtn";
+            this.topSellingBtn.Size = new System.Drawing.Size(238, 58);
+            this.topSellingBtn.TabIndex = 10;
+            this.topSellingBtn.Text = "Top Selling";
+            this.topSellingBtn.UseVisualStyleBackColor = true;
+            this.topSellingBtn.Click += new System.EventHandler(this.topSellingBtn_Click);
+            // 
             // IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -268,5 +285,6 @@
         private System.Windows.Forms.Button prodInStock;
         private System.Windows.Forms.Button Products;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button topSellingBtn;
     }
 }

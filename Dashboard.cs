@@ -15,7 +15,10 @@ namespace Login_Form
     public partial class Dashboard : Form
     {
         SqlConnection con = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+        SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
+        string title = "POS System";
         public Dashboard()
         {
             InitializeComponent();
@@ -39,6 +42,7 @@ namespace Login_Form
             getTotalProducts();
             getTotalEmployees();
             getSalesChart();
+            displayTopSellingItems();
         }
         public void getTotalSales()
         {
@@ -48,7 +52,7 @@ namespace Login_Form
             {
                 cmd.ExecuteNonQuery();
                 object result = cmd.ExecuteScalar();
-                salesLbl.Text = Convert.ToString(result);
+                salesLbl.Text = Double.Parse(Convert.ToString(result)).ToString("₱#,##0.00");
             }
             con.Close();
         }
@@ -89,6 +93,35 @@ namespace Login_Form
             sc.Dock = DockStyle.Fill;
             sc.BringToFront();
             sc.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void displayTopSellingItems()
+        {
+            DateTime currdate = DateTime.Now;
+            currdate = currdate.AddDays(-30);
+            DateTime currdate1 = DateTime.Now;
+
+            int i = 0;
+            con.Open();
+            cmd = new SqlCommand("SELECT TOP 10 pcode, productName, ISNULL(SUM(qty),0) AS qty, ISNULL(SUM(total),0) AS total, price from soldItemsView WHERE sdate BETWEEN '" + currdate.ToString("MM/dd/yyyy") + "' AND '" + currdate1.ToString("MM/dd/yyyy") + "' AND status like 'Sold' GROUP BY pcode, productName, price ORDER BY qty DESC", con);
+            dr = cmd.ExecuteReader();
+            TopSellingControl[] tsControl = new TopSellingControl[10];
+
+            while (dr.Read())
+            {
+                i++;
+                tsControl[i] = new TopSellingControl();
+                tsControl[i].ProdName = dr["productName"].ToString();
+                tsControl[i].Price = Double.Parse(dr["price"].ToString()).ToString("₱#,##0.00");
+                tsControl[i].Units = dr["qty"].ToString();
+                panelTopSellingItems.Controls.Add(tsControl[i]);
+            }
+            dr.Close();
+            con.Close();
         }
     }
 }

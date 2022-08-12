@@ -146,5 +146,10 @@ namespace Login_Form
         {
             openNewWindow(new ViewCategories());
         }
+
+        private void topSellingBtn_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new SoldItemsForm());
+        }
     }
 }

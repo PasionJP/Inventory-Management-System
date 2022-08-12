@@ -47,14 +47,14 @@
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
@@ -158,7 +158,7 @@
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
-            this.id.Width = 66;
+            this.id.Width = 64;
             // 
             // pcode
             // 
@@ -227,30 +227,6 @@
             this.price.ReadOnly = true;
             this.price.Width = 91;
             // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.MinimumWidth = 8;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Edit.Width = 27;
-            // 
-            // Remove
-            // 
-            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Remove.HeaderText = "";
-            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
-            this.Remove.MinimumWidth = 8;
-            this.Remove.Name = "Remove";
-            this.Remove.ReadOnly = true;
-            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Remove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Remove.Width = 27;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
@@ -298,6 +274,52 @@
             this.label2.Text = "Products List";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.MinimumWidth = 8;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 27;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.MinimumWidth = 8;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 27;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.MinimumWidth = 8;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.Width = 27;
+            // 
+            // Remove
+            // 
+            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Remove.HeaderText = "";
+            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
+            this.Remove.MinimumWidth = 8;
+            this.Remove.Name = "Remove";
+            this.Remove.ReadOnly = true;
+            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Remove.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Remove.Width = 27;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -312,28 +334,6 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.MinimumWidth = 8;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn1.Width = 150;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.MinimumWidth = 8;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn2.Width = 150;
             // 
             // ProductsV1
             // 

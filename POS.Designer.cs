@@ -51,9 +51,6 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.removeQty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.addQty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.Discountlbl = new System.Windows.Forms.Label();
@@ -78,6 +75,9 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.removeQty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.addQty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -323,38 +323,6 @@
             this.totl.Name = "totl";
             this.totl.ReadOnly = true;
             this.totl.Width = 91;
-            // 
-            // removeQty
-            // 
-            this.removeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.removeQty.HeaderText = "";
-            this.removeQty.Image = global::Login_Form.Properties.Resources.arrow_left;
-            this.removeQty.MinimumWidth = 8;
-            this.removeQty.Name = "removeQty";
-            this.removeQty.ReadOnly = true;
-            this.removeQty.Width = 8;
-            // 
-            // addQty
-            // 
-            this.addQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.addQty.HeaderText = "";
-            this.addQty.Image = global::Login_Form.Properties.Resources.arrow_right;
-            this.addQty.MinimumWidth = 8;
-            this.addQty.Name = "addQty";
-            this.addQty.ReadOnly = true;
-            this.addQty.Width = 8;
-            // 
-            // Remove
-            // 
-            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Remove.HeaderText = "";
-            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
-            this.Remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Remove.MinimumWidth = 8;
-            this.Remove.Name = "Remove";
-            this.Remove.ReadOnly = true;
-            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Remove.Width = 8;
             // 
             // tableLayoutPanel3
             // 
@@ -705,7 +673,7 @@
             this.dataGridViewImageColumn1.MinimumWidth = 8;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn1.Width = 150;
+            this.dataGridViewImageColumn1.Width = 8;
             // 
             // dataGridViewImageColumn2
             // 
@@ -714,7 +682,7 @@
             this.dataGridViewImageColumn2.Image = global::Login_Form.Properties.Resources.arrow_right;
             this.dataGridViewImageColumn2.MinimumWidth = 8;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 150;
+            this.dataGridViewImageColumn2.Width = 8;
             // 
             // dataGridViewImageColumn3
             // 
@@ -725,7 +693,39 @@
             this.dataGridViewImageColumn3.MinimumWidth = 8;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn3.Width = 150;
+            this.dataGridViewImageColumn3.Width = 8;
+            // 
+            // removeQty
+            // 
+            this.removeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.removeQty.HeaderText = "";
+            this.removeQty.Image = global::Login_Form.Properties.Resources.arrow_left;
+            this.removeQty.MinimumWidth = 8;
+            this.removeQty.Name = "removeQty";
+            this.removeQty.ReadOnly = true;
+            this.removeQty.Width = 8;
+            // 
+            // addQty
+            // 
+            this.addQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.addQty.HeaderText = "";
+            this.addQty.Image = global::Login_Form.Properties.Resources.arrow_right;
+            this.addQty.MinimumWidth = 8;
+            this.addQty.Name = "addQty";
+            this.addQty.ReadOnly = true;
+            this.addQty.Width = 8;
+            // 
+            // Remove
+            // 
+            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Remove.HeaderText = "";
+            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
+            this.Remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Remove.MinimumWidth = 8;
+            this.Remove.Name = "Remove";
+            this.Remove.ReadOnly = true;
+            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Remove.Width = 8;
             // 
             // POS
             // 
