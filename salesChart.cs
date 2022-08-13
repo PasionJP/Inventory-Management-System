@@ -27,7 +27,7 @@ namespace Login_Form
         private void SalesChart_Load(object sender, EventArgs e)
         {
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT CAST(MONTH(sdate) AS VARCHAR(2)) + '-' + CAST(YEAR(sdate) AS VARCHAR(4)) AS IMSsales, ISNULL(SUM(total), 0.00) as total from cartTbl GROUP BY CAST(MONTH(sdate) AS VARCHAR(2)) + '-' + CAST(YEAR(sdate) AS VARCHAR(4))", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT CAST(MONTH(sdate) AS VARCHAR(2)) + '-' + CAST(YEAR(sdate) AS VARCHAR(4)) AS IMSsales, ISNULL(SUM(total), 0.00) as total from cartTbl WHERE status = 'Sold' GROUP BY CAST(MONTH(sdate) AS VARCHAR(2)) + '-' + CAST(YEAR(sdate) AS VARCHAR(4))", con);
             DataSet ds = new DataSet();
 
             da.Fill(ds, "Sales");

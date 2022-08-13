@@ -458,6 +458,7 @@ namespace Login_Form
             this.restockCB.Name = "restockCB";
             this.restockCB.Size = new System.Drawing.Size(296, 29);
             this.restockCB.TabIndex = 1;
+            this.restockCB.DropDownClosed += new System.EventHandler(this.restockCB_DropDownClosed);
             // 
             // tableLayoutPanel14
             // 

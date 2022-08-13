@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Drawing.Imaging;
+
 
 namespace Login_Form
 {
@@ -58,28 +61,45 @@ namespace Login_Form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (usernameBox.Text == "" || passwordBox.Text == "")
-            //{
-            //    MessageBox.Show("Please enter both username and password");
-            //}
-            //else
-            //{
-            //    string query = "Select * From loginDB where username = '" + usernameBox.Text.Trim() + "' and password = '" + passwordBox.Text.Trim() + "'";
-            //    SqlDataAdapter sda = new SqlDataAdapter(query, cn);
-            //    DataTable dt = new DataTable();
-            //    sda.Fill(dt);
-            //    if (dt.Rows.Count == 1)
-            //    {
+            if (usernameBox.Text == "" || passwordBox.Text == "")
+            {
+                MessageBox.Show("Please enter both username and password");
+            }
+            else
+            {
+                string query = "SELECT RTRIM(LTRIM(CONCAT(COALESCE(Lastname, ''), ', ', COALESCE(FirstName + ' ', ''), COALESCE(MiddleName + ' ', '')))) AS Fullname, EmployeeID, FirstName, MiddleName, LastName, Sex, Birthday, Address, Email, ContactNumber, Usertype, EmployeePhoto, UserName, Password FROM Employees WHERE UserName = '" + usernameBox.Text.Trim() + "' and Password = '" + passwordBox.Text.Trim() + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, cn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count == 1)
+                {
                     this.Hide();
                     IMS ss = new IMS();
-                    ss.Show();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Invalid username and password! Please try again.");
-            //    }
-            //    cn.Close();
-            //}
+
+                    Byte[] byteBLOBData = new Byte[0];
+                    byteBLOBData = (Byte[])(dt.Rows[0]["EmployeePhoto"]);
+                    MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                    ss.employeePhoto.Image = Image.FromStream(stmBLOBData);
+
+                    ss.nameEmployeeLbl.Text = dt.Rows[0]["Fullname"].ToString();
+                    ss.userTypeLbl.Text = dt.Rows[0]["Usertype"].ToString();
+
+                    if (dt.Rows[0]["Usertype"].ToString() == "Admin")
+                    {
+                        ss.Show();
+                    } else if (dt.Rows[0]["Usertype"].ToString() == "Employee")
+                    {
+                        ss.employeesBtn.Visible = false;
+                        ss.Show();
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username and password! Please try again.");
+                }
+                cn.Close();
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)

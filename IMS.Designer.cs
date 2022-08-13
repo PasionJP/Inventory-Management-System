@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Employees = new System.Windows.Forms.Button();
+            this.employeesBtn = new System.Windows.Forms.Button();
             this.productsPanel = new System.Windows.Forms.Panel();
             this.prodCategories = new System.Windows.Forms.Button();
             this.allProducts = new System.Windows.Forms.Button();
@@ -48,9 +48,16 @@
             this.salesOverviewBtn = new System.Windows.Forms.Button();
             this.panelAnalytics = new System.Windows.Forms.Panel();
             this.salesChartBtn = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.nameEmployeeLbl = new System.Windows.Forms.Label();
+            this.userTypeLbl = new System.Windows.Forms.Label();
+            this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.productsPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelAnalytics.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,7 +65,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.panel1.Controls.Add(this.panelAnalytics);
-            this.panel1.Controls.Add(this.Employees);
+            this.panel1.Controls.Add(this.employeesBtn);
             this.panel1.Controls.Add(this.productsPanel);
             this.panel1.Controls.Add(this.orders);
             this.panel1.Controls.Add(this.Dashboard);
@@ -69,22 +76,22 @@
             this.panel1.Size = new System.Drawing.Size(238, 840);
             this.panel1.TabIndex = 0;
             // 
-            // Employees
+            // employeesBtn
             // 
-            this.Employees.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Employees.FlatAppearance.BorderSize = 0;
-            this.Employees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Employees.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Employees.Location = new System.Drawing.Point(0, 492);
-            this.Employees.Name = "Employees";
-            this.Employees.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.Employees.Size = new System.Drawing.Size(238, 58);
-            this.Employees.TabIndex = 9;
-            this.Employees.Text = "Employees";
-            this.Employees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Employees.UseVisualStyleBackColor = true;
-            this.Employees.Click += new System.EventHandler(this.button6_Click);
+            this.employeesBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.employeesBtn.FlatAppearance.BorderSize = 0;
+            this.employeesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.employeesBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.employeesBtn.Location = new System.Drawing.Point(0, 492);
+            this.employeesBtn.Name = "employeesBtn";
+            this.employeesBtn.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.employeesBtn.Size = new System.Drawing.Size(238, 58);
+            this.employeesBtn.TabIndex = 9;
+            this.employeesBtn.Text = "Employees";
+            this.employeesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.employeesBtn.UseVisualStyleBackColor = true;
+            this.employeesBtn.Click += new System.EventHandler(this.button6_Click);
             // 
             // productsPanel
             // 
@@ -187,6 +194,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -325,6 +333,59 @@
             this.salesChartBtn.UseVisualStyleBackColor = true;
             this.salesChartBtn.Click += new System.EventHandler(this.salesChartBtn_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.nameEmployeeLbl, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.userTypeLbl, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.employeePhoto, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(238, 150);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // nameEmployeeLbl
+            // 
+            this.nameEmployeeLbl.AutoSize = true;
+            this.nameEmployeeLbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameEmployeeLbl.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameEmployeeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.nameEmployeeLbl.Location = new System.Drawing.Point(3, 90);
+            this.nameEmployeeLbl.Name = "nameEmployeeLbl";
+            this.nameEmployeeLbl.Size = new System.Drawing.Size(232, 30);
+            this.nameEmployeeLbl.TabIndex = 0;
+            this.nameEmployeeLbl.Text = "Name";
+            this.nameEmployeeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // userTypeLbl
+            // 
+            this.userTypeLbl.AutoSize = true;
+            this.userTypeLbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userTypeLbl.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userTypeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.userTypeLbl.Location = new System.Drawing.Point(3, 120);
+            this.userTypeLbl.Name = "userTypeLbl";
+            this.userTypeLbl.Size = new System.Drawing.Size(232, 30);
+            this.userTypeLbl.TabIndex = 1;
+            this.userTypeLbl.Text = "User Type";
+            this.userTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // employeePhoto
+            // 
+            this.employeePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeePhoto.Location = new System.Drawing.Point(3, 3);
+            this.employeePhoto.Name = "employeePhoto";
+            this.employeePhoto.Size = new System.Drawing.Size(232, 84);
+            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.employeePhoto.TabIndex = 2;
+            this.employeePhoto.TabStop = false;
+            // 
             // IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -342,7 +403,11 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.productsPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelAnalytics.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -355,7 +420,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button Employees;
         private System.Windows.Forms.Panel productsPanel;
         private System.Windows.Forms.Button prodCategories;
         private System.Windows.Forms.Button allProducts;
@@ -368,5 +432,10 @@
         private System.Windows.Forms.Button salesOverviewBtn;
         private System.Windows.Forms.Button topSellingBtn;
         private System.Windows.Forms.Button analyticsBtn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.Label nameEmployeeLbl;
+        public System.Windows.Forms.Label userTypeLbl;
+        public System.Windows.Forms.PictureBox employeePhoto;
+        public System.Windows.Forms.Button employeesBtn;
     }
 }

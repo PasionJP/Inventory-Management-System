@@ -77,7 +77,7 @@
             // passwordBox
             // 
             this.passwordBox.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordBox.Location = new System.Drawing.Point(392, 217);
+            this.passwordBox.Location = new System.Drawing.Point(392, 221);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(217, 32);
             this.passwordBox.TabIndex = 5;

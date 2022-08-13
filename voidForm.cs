@@ -124,5 +124,10 @@ namespace Login_Form
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        private void restockCB_DropDownClosed(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new Action(() => { restockCB.Select(0, 0); }));
+        }
     }
 }
