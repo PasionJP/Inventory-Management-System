@@ -157,7 +157,7 @@ namespace Login_Form
 
         private void topSellingBtn_Click(object sender, EventArgs e)
         {
-            openNewWindow(new SoldItemsForm());
+            openNewWindow(new TopSellingForm());
         }
 
         private void allProducts_Click(object sender, EventArgs e)
@@ -169,6 +169,11 @@ namespace Login_Form
             products.Dock = DockStyle.Fill;
             products.BringToFront();
             products.Show();
+        }
+
+        private void salesOverviewBtn_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new SalesAnalyticsForm());
         }
     }
 }

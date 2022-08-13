@@ -11,14 +11,14 @@ using System.Data.SqlClient;
 
 namespace Login_Form
 {
-    public partial class SoldItemsForm : Form
+    public partial class TopSellingForm : Form
     {
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
         string title = "POS System";
-        public SoldItemsForm()
+        public TopSellingForm()
         {
             InitializeComponent();
             con = new SqlConnection(dbCon.DBConnection());

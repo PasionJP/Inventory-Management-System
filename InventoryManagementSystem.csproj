@@ -211,6 +211,12 @@
     <Compile Include="ReceiptForm.Designer.cs">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesAnalyticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesAnalyticsForm.Designer.cs">
+      <DependentUpon>SalesAnalyticsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,11 +256,11 @@
     <Compile Include="SettlePaymentForm.Designer.cs">
       <DependentUpon>SettlePaymentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SoldItemsForm.cs">
+    <Compile Include="TopSellingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SoldItemsForm.Designer.cs">
-      <DependentUpon>SoldItemsForm.cs</DependentUpon>
+    <Compile Include="TopSellingForm.Designer.cs">
+      <DependentUpon>TopSellingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TopSellingControl.cs">
@@ -322,6 +328,9 @@
       <DependentUpon>ReceiptForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="SalesAnalyticsForm.resx">
+      <DependentUpon>SalesAnalyticsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesChart.resx">
       <DependentUpon>SalesChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,8 +343,8 @@
     <EmbeddedResource Include="SettlePaymentForm.resx">
       <DependentUpon>SettlePaymentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SoldItemsForm.resx">
-      <DependentUpon>SoldItemsForm.cs</DependentUpon>
+    <EmbeddedResource Include="TopSellingForm.resx">
+      <DependentUpon>TopSellingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TopSellingControl.resx">
       <DependentUpon>TopSellingControl.cs</DependentUpon>

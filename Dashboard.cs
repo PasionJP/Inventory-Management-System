@@ -46,7 +46,7 @@ namespace Login_Form
         }
         public void getTotalSales()
         {
-            var query = "SELECT SUM(CAST(total as decimal(18, 2))) FROM cartTbl";
+            var query = "SELECT SUM(CAST(total as decimal(18, 2))) FROM cartTbl WHERE status = 'Sold'";
             con.Open();
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -125,6 +125,11 @@ namespace Login_Form
         }
 
         private void salesChartPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelTopSellingItems_Paint(object sender, PaintEventArgs e)
         {
 
         }

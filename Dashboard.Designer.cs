@@ -388,6 +388,7 @@
             this.panelTopSellingItems.Name = "panelTopSellingItems";
             this.panelTopSellingItems.Size = new System.Drawing.Size(271, 298);
             this.panelTopSellingItems.TabIndex = 2;
+            this.panelTopSellingItems.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTopSellingItems_Paint);
             // 
             // label4
             // 

@@ -1,7 +1,7 @@
 ﻿
 namespace Login_Form
 {
-    partial class SoldItemsForm
+    partial class TopSellingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,19 +35,19 @@ namespace Login_Form
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.sortSelect = new System.Windows.Forms.ComboBox();
-            this.datePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.filterLbl = new System.Windows.Forms.Label();
-            this.AdvSearchButton = new System.Windows.Forms.Button();
             this.datePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.AdvSearchButton = new System.Windows.Forms.Button();
+            this.filterLbl = new System.Windows.Forms.Label();
+            this.datePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.sortSelect = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.soldItemsDataGridView = new System.Windows.Forms.DataGridView();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -77,44 +77,16 @@ namespace Login_Form
             this.tableLayoutPanel2.Size = new System.Drawing.Size(759, 54);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
-            // sortSelect
+            // datePicker2
             // 
-            this.sortSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sortSelect.FormattingEnabled = true;
-            this.sortSelect.Items.AddRange(new object[] {
-            "Sort by Quantity",
-            "Sort by Sales Total"});
-            this.sortSelect.Location = new System.Drawing.Point(444, 3);
-            this.sortSelect.Name = "sortSelect";
-            this.sortSelect.Size = new System.Drawing.Size(150, 28);
-            this.sortSelect.TabIndex = 19;
-            this.sortSelect.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sortSelect_KeyPress);
-            // 
-            // datePicker1
-            // 
-            this.datePicker1.CustomFormat = "MM/dd/yyyy";
-            this.datePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker1.Location = new System.Drawing.Point(114, 3);
-            this.datePicker1.Name = "datePicker1";
-            this.datePicker1.Size = new System.Drawing.Size(159, 30);
-            this.datePicker1.TabIndex = 15;
-            this.datePicker1.Value = new System.DateTime(2022, 8, 12, 21, 26, 51, 0);
-            // 
-            // filterLbl
-            // 
-            this.filterLbl.AutoSize = true;
-            this.filterLbl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.filterLbl.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filterLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.filterLbl.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.filterLbl.Location = new System.Drawing.Point(20, 3);
-            this.filterLbl.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.filterLbl.Name = "filterLbl";
-            this.filterLbl.Size = new System.Drawing.Size(82, 48);
-            this.filterLbl.TabIndex = 14;
-            this.filterLbl.Text = "Filter By";
-            this.filterLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.datePicker2.CustomFormat = "MM/dd/yyyy";
+            this.datePicker2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker2.Location = new System.Drawing.Point(279, 3);
+            this.datePicker2.Name = "datePicker2";
+            this.datePicker2.Size = new System.Drawing.Size(159, 30);
+            this.datePicker2.TabIndex = 18;
+            this.datePicker2.Value = new System.DateTime(2022, 8, 12, 21, 26, 51, 0);
             // 
             // AdvSearchButton
             // 
@@ -131,16 +103,44 @@ namespace Login_Form
             this.AdvSearchButton.UseVisualStyleBackColor = false;
             this.AdvSearchButton.Click += new System.EventHandler(this.AdvSearchButton_Click);
             // 
-            // datePicker2
+            // filterLbl
             // 
-            this.datePicker2.CustomFormat = "MM/dd/yyyy";
-            this.datePicker2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker2.Location = new System.Drawing.Point(279, 3);
-            this.datePicker2.Name = "datePicker2";
-            this.datePicker2.Size = new System.Drawing.Size(159, 30);
-            this.datePicker2.TabIndex = 18;
-            this.datePicker2.Value = new System.DateTime(2022, 8, 12, 21, 26, 51, 0);
+            this.filterLbl.AutoSize = true;
+            this.filterLbl.Dock = System.Windows.Forms.DockStyle.Left;
+            this.filterLbl.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.filterLbl.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.filterLbl.Location = new System.Drawing.Point(20, 3);
+            this.filterLbl.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.filterLbl.Name = "filterLbl";
+            this.filterLbl.Size = new System.Drawing.Size(82, 48);
+            this.filterLbl.TabIndex = 14;
+            this.filterLbl.Text = "Filter By";
+            this.filterLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // datePicker1
+            // 
+            this.datePicker1.CustomFormat = "MM/dd/yyyy";
+            this.datePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker1.Location = new System.Drawing.Point(114, 3);
+            this.datePicker1.Name = "datePicker1";
+            this.datePicker1.Size = new System.Drawing.Size(159, 30);
+            this.datePicker1.TabIndex = 15;
+            this.datePicker1.Value = new System.DateTime(2022, 8, 12, 21, 26, 51, 0);
+            // 
+            // sortSelect
+            // 
+            this.sortSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sortSelect.FormattingEnabled = true;
+            this.sortSelect.Items.AddRange(new object[] {
+            "Sort by Quantity",
+            "Sort by Sales Total"});
+            this.sortSelect.Location = new System.Drawing.Point(444, 3);
+            this.sortSelect.Name = "sortSelect";
+            this.sortSelect.Size = new System.Drawing.Size(150, 28);
+            this.sortSelect.TabIndex = 19;
+            this.sortSelect.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sortSelect_KeyPress);
             // 
             // tableLayoutPanel9
             // 
@@ -228,15 +228,34 @@ namespace Login_Form
             this.soldItemsDataGridView.TabIndex = 5;
             this.soldItemsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick);
             // 
-            // Total
+            // id
             // 
-            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Total.DataPropertyName = "total";
-            this.Total.HeaderText = "Total Sales";
-            this.Total.MinimumWidth = 8;
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            this.Total.Width = 147;
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "i";
+            this.id.HeaderText = "";
+            this.id.MinimumWidth = 8;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 27;
+            // 
+            // pcode
+            // 
+            this.pcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pcode.DataPropertyName = "pcode";
+            this.pcode.HeaderText = "Item Code";
+            this.pcode.MinimumWidth = 8;
+            this.pcode.Name = "pcode";
+            this.pcode.ReadOnly = true;
+            this.pcode.Width = 150;
+            // 
+            // productName
+            // 
+            this.productName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.productName.DataPropertyName = "productName";
+            this.productName.HeaderText = "Product Name";
+            this.productName.MinimumWidth = 8;
+            this.productName.Name = "productName";
+            this.productName.ReadOnly = true;
             // 
             // qty
             // 
@@ -250,34 +269,15 @@ namespace Login_Form
             this.qty.ReadOnly = true;
             this.qty.Width = 127;
             // 
-            // productName
+            // Total
             // 
-            this.productName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.productName.DataPropertyName = "productName";
-            this.productName.HeaderText = "Product Name";
-            this.productName.MinimumWidth = 8;
-            this.productName.Name = "productName";
-            this.productName.ReadOnly = true;
-            // 
-            // pcode
-            // 
-            this.pcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pcode.DataPropertyName = "pcode";
-            this.pcode.HeaderText = "Item Code";
-            this.pcode.MinimumWidth = 8;
-            this.pcode.Name = "pcode";
-            this.pcode.ReadOnly = true;
-            this.pcode.Width = 150;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.id.DataPropertyName = "i";
-            this.id.HeaderText = "";
-            this.id.MinimumWidth = 8;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 27;
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Total.DataPropertyName = "total";
+            this.Total.HeaderText = "Total Sales";
+            this.Total.MinimumWidth = 8;
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 147;
             // 
             // tableLayoutPanel1
             // 
@@ -296,7 +296,7 @@ namespace Login_Form
             this.tableLayoutPanel1.Size = new System.Drawing.Size(765, 423);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // SoldItemsForm
+            // TopSellingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -305,7 +305,7 @@ namespace Login_Form
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(765, 423);
-            this.Name = "SoldItemsForm";
+            this.Name = "TopSellingForm";
             this.Text = "SoldItemsForm";
             this.Load += new System.EventHandler(this.SoldItemsForm_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
