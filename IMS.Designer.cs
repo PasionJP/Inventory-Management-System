@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.topSellingBtn = new System.Windows.Forms.Button();
             this.Employees = new System.Windows.Forms.Button();
             this.Sales = new System.Windows.Forms.Button();
             this.productsPanel = new System.Windows.Forms.Panel();
@@ -43,7 +44,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.topSellingBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.productsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,23 @@
             this.panel1.Size = new System.Drawing.Size(238, 718);
             this.panel1.TabIndex = 0;
             // 
+            // topSellingBtn
+            // 
+            this.topSellingBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topSellingBtn.FlatAppearance.BorderSize = 0;
+            this.topSellingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.topSellingBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topSellingBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.topSellingBtn.Location = new System.Drawing.Point(0, 608);
+            this.topSellingBtn.Name = "topSellingBtn";
+            this.topSellingBtn.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.topSellingBtn.Size = new System.Drawing.Size(238, 58);
+            this.topSellingBtn.TabIndex = 10;
+            this.topSellingBtn.Text = "Top Selling";
+            this.topSellingBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.topSellingBtn.UseVisualStyleBackColor = true;
+            this.topSellingBtn.Click += new System.EventHandler(this.topSellingBtn_Click);
+            // 
             // Employees
             // 
             this.Employees.Dock = System.Windows.Forms.DockStyle.Top;
@@ -74,9 +91,11 @@
             this.Employees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.Employees.Location = new System.Drawing.Point(0, 550);
             this.Employees.Name = "Employees";
+            this.Employees.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.Employees.Size = new System.Drawing.Size(238, 58);
             this.Employees.TabIndex = 9;
             this.Employees.Text = "Employees";
+            this.Employees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Employees.UseVisualStyleBackColor = true;
             this.Employees.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -89,9 +108,11 @@
             this.Sales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.Sales.Location = new System.Drawing.Point(0, 492);
             this.Sales.Name = "Sales";
+            this.Sales.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.Sales.Size = new System.Drawing.Size(238, 58);
             this.Sales.TabIndex = 5;
             this.Sales.Text = "Sales";
+            this.Sales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Sales.UseVisualStyleBackColor = true;
             this.Sales.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -115,12 +136,14 @@
             this.prodCategories.FlatAppearance.BorderSize = 0;
             this.prodCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prodCategories.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prodCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.prodCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.prodCategories.Location = new System.Drawing.Point(0, 174);
             this.prodCategories.Name = "prodCategories";
+            this.prodCategories.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.prodCategories.Size = new System.Drawing.Size(238, 58);
             this.prodCategories.TabIndex = 10;
-            this.prodCategories.Text = "Product Categories";
+            this.prodCategories.Text = "Categories";
+            this.prodCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.prodCategories.UseVisualStyleBackColor = true;
             this.prodCategories.Click += new System.EventHandler(this.prodCategories_Click);
             // 
@@ -130,13 +153,16 @@
             this.allProducts.FlatAppearance.BorderSize = 0;
             this.allProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.allProducts.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.allProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.allProducts.Location = new System.Drawing.Point(0, 116);
             this.allProducts.Name = "allProducts";
+            this.allProducts.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.allProducts.Size = new System.Drawing.Size(238, 58);
             this.allProducts.TabIndex = 9;
             this.allProducts.Text = "All Products";
+            this.allProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.allProducts.UseVisualStyleBackColor = true;
+            this.allProducts.Click += new System.EventHandler(this.allProducts_Click);
             // 
             // prodInStock
             // 
@@ -144,12 +170,14 @@
             this.prodInStock.FlatAppearance.BorderSize = 0;
             this.prodInStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prodInStock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prodInStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.prodInStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.prodInStock.Location = new System.Drawing.Point(0, 58);
             this.prodInStock.Name = "prodInStock";
+            this.prodInStock.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.prodInStock.Size = new System.Drawing.Size(238, 58);
             this.prodInStock.TabIndex = 8;
-            this.prodInStock.Text = "Products in Stock";
+            this.prodInStock.Text = "Products Stock";
+            this.prodInStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.prodInStock.UseVisualStyleBackColor = true;
             this.prodInStock.Click += new System.EventHandler(this.prodInStock_Click_1);
             // 
@@ -164,10 +192,11 @@
             this.Products.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Products.Location = new System.Drawing.Point(0, 0);
             this.Products.Name = "Products";
-            this.Products.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.Products.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.Products.Size = new System.Drawing.Size(238, 58);
             this.Products.TabIndex = 7;
             this.Products.Text = "Products";
+            this.Products.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Products.UseVisualStyleBackColor = true;
             this.Products.Click += new System.EventHandler(this.Products_Click);
             // 
@@ -180,9 +209,11 @@
             this.orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.orders.Location = new System.Drawing.Point(0, 205);
             this.orders.Name = "orders";
+            this.orders.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.orders.Size = new System.Drawing.Size(238, 55);
             this.orders.TabIndex = 3;
             this.orders.Text = "POS";
+            this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.orders.UseVisualStyleBackColor = true;
             this.orders.Click += new System.EventHandler(this.orders_Click_1);
             // 
@@ -195,9 +226,11 @@
             this.Dashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.Dashboard.Location = new System.Drawing.Point(0, 150);
             this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.Dashboard.Size = new System.Drawing.Size(238, 55);
             this.Dashboard.TabIndex = 3;
             this.Dashboard.Text = "Dashboard";
+            this.Dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Dashboard.UseVisualStyleBackColor = true;
             this.Dashboard.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -232,21 +265,6 @@
             // 
             this.timer1.Interval = 15;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
-            // topSellingBtn
-            // 
-            this.topSellingBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topSellingBtn.FlatAppearance.BorderSize = 0;
-            this.topSellingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.topSellingBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.topSellingBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.topSellingBtn.Location = new System.Drawing.Point(0, 608);
-            this.topSellingBtn.Name = "topSellingBtn";
-            this.topSellingBtn.Size = new System.Drawing.Size(238, 58);
-            this.topSellingBtn.TabIndex = 10;
-            this.topSellingBtn.Text = "Top Selling";
-            this.topSellingBtn.UseVisualStyleBackColor = true;
-            this.topSellingBtn.Click += new System.EventHandler(this.topSellingBtn_Click);
             // 
             // IMS
             // 

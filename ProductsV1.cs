@@ -13,6 +13,7 @@ namespace Login_Form
         SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
         string title = "POS System";
+        public int stockQty { get; set; }
         public ProductsV1()
         {
             InitializeComponent();
@@ -122,6 +123,10 @@ namespace Login_Form
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             
+
+
+
+
             string colName = productsDataGridView.Columns[e.ColumnIndex].Name;
             if (colName == "Remove")
             {
@@ -158,7 +163,7 @@ namespace Login_Form
             try
             {
                 con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Products", con);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Products WHERE qty > '" + stockQty.ToString() + "'", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 productsDataGridView.AutoGenerateColumns = false;

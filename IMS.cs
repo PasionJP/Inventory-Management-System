@@ -134,12 +134,20 @@ namespace Login_Form
         private void Products_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            openNewWindow(new ProductsV1());
         }
 
         private void prodInStock_Click_1(object sender, EventArgs e)
         {
-            openNewWindow(new ProductsV1());
+            ProductsV1 products = new ProductsV1();
+            products.productsDataGridView.Columns["Remove"].Visible = false;
+            products.productsDataGridView.Columns["Edit"].Visible = false;
+            products.addProduct.Visible = false;
+            products.stockQty = 0;
+            products.TopLevel = false;
+            panelMenu.Controls.Add(products);
+            products.Dock = DockStyle.Fill;
+            products.BringToFront();
+            products.Show();
         }
 
         private void prodCategories_Click(object sender, EventArgs e)
@@ -150,6 +158,17 @@ namespace Login_Form
         private void topSellingBtn_Click(object sender, EventArgs e)
         {
             openNewWindow(new SoldItemsForm());
+        }
+
+        private void allProducts_Click(object sender, EventArgs e)
+        {
+            ProductsV1 products = new ProductsV1();
+            products.stockQty = -1;
+            products.TopLevel = false;
+            panelMenu.Controls.Add(products);
+            products.Dock = DockStyle.Fill;
+            products.BringToFront();
+            products.Show();
         }
     }
 }

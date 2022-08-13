@@ -123,5 +123,10 @@ namespace Login_Form
             dr.Close();
             con.Close();
         }
+
+        private void salesChartPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
