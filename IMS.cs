@@ -87,17 +87,6 @@ namespace Login_Form
             
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            openNewWindow(new SalesChart());
-        }
-
-        private void Employees_Click(object sender, EventArgs e)
-        {
-            openNewWindow(new ProductsV1());
-        }
-
-
         private void button6_Click(object sender, EventArgs e)
         {
             openNewWindow(new ViewEmployees());
@@ -174,6 +163,50 @@ namespace Login_Form
         private void salesOverviewBtn_Click(object sender, EventArgs e)
         {
             openNewWindow(new SalesAnalyticsForm());
+        }
+
+        private void topSellingBtn_Click_1(object sender, EventArgs e)
+        {
+            openNewWindow(new TopSellingForm());
+        }
+
+        private void salesOverviewBtn_Click_1(object sender, EventArgs e)
+        {
+            openNewWindow(new SalesAnalyticsForm());
+        }
+
+        private void analyticsBtn_Click(object sender, EventArgs e)
+        {
+            timer2.Start();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (isCollapsed)
+            {
+                analyticsBtn.Image = Resources.collapse_arrow;
+                panelAnalytics.Height += 10;
+                if (panelAnalytics.Size == panelAnalytics.MaximumSize)
+                {
+                    timer2.Stop();
+                    isCollapsed = false;
+                }
+            }
+            else
+            {
+                analyticsBtn.Image = Resources.expand_arrow;
+                panelAnalytics.Height -= 10;
+                if (panelAnalytics.Size == panelAnalytics.MinimumSize)
+                {
+                    timer2.Stop();
+                    isCollapsed = true;
+                }
+            }
+        }
+
+        private void salesChartBtn_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new SalesChart());
         }
     }
 }

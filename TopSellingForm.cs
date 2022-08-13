@@ -22,8 +22,6 @@ namespace Login_Form
         {
             InitializeComponent();
             con = new SqlConnection(dbCon.DBConnection());
-            //datePicker1.Value = DateTime.Now;
-            //datePicker2.Value = DateTime.Now;
         }
 
         private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -71,6 +69,12 @@ namespace Login_Form
         private void SoldItemsForm_Load(object sender, EventArgs e)
         {
             sortSelect.SelectedIndex = 1;
+            DateTime currdate = DateTime.Now;
+            currdate = currdate.AddDays(-30);
+            DateTime currdate1 = DateTime.Now;
+            datePicker1.Value = currdate;
+            datePicker2.Value = currdate1;
+            LoadTopSold();
         }
     }
 }
