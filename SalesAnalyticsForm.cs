@@ -37,7 +37,21 @@ namespace Login_Form
 
         private void soldItemsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            string colName = salesOverviewDataGridView.Columns[e.ColumnIndex].Name;
+            if (colName == "cancel")
+            {
+                voidForm voidF = new voidForm();
+                voidF.idTB.Text = salesOverviewDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                voidF.transacnoTB.Text = salesOverviewDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                voidF.pcodeTB.Text = salesOverviewDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                voidF.pNameTB.Text = salesOverviewDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                voidF.priceTB.Text = salesOverviewDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                voidF.qtyTB.Text = salesOverviewDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                voidF.discTB.Text = salesOverviewDataGridView.Rows[e.RowIndex].Cells[7].Value.ToString();
+                voidF.totalTB.Text = salesOverviewDataGridView.Rows[e.RowIndex].Cells[8].Value.ToString();
+                voidF.ShowDialog();
+                LoadSalesOverview();
+            }
         }
         public void LoadSalesOverview()
         {
@@ -55,6 +69,7 @@ namespace Login_Form
                 }
                 dr.Close();
                 con.Close();
+
             }
             catch (Exception ex)
             {

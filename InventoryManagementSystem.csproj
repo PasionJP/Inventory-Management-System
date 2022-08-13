@@ -281,6 +281,12 @@
     <Compile Include="ViewEmployees.Designer.cs">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="voidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voidForm.Designer.cs">
+      <DependentUpon>voidForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateUpdateProducts.resx">
       <DependentUpon>CreateUpdateProducts.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployees.resx">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voidForm.resx">
+      <DependentUpon>voidForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="EmployeesDataSet.xsc">
       <DependentUpon>EmployeesDataSet.xsd</DependentUpon>

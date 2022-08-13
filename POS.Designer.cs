@@ -51,9 +51,6 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.removeQty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.addQty = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.Discountlbl = new System.Windows.Forms.Label();
@@ -72,12 +69,13 @@
             this.PaymentButton = new System.Windows.Forms.Button();
             this.AdvSearchButton = new System.Windows.Forms.Button();
             this.DiscountButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.VoidButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.removeQty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.addQty = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -85,7 +83,6 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -324,38 +321,6 @@
             this.totl.ReadOnly = true;
             this.totl.Width = 91;
             // 
-            // removeQty
-            // 
-            this.removeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.removeQty.HeaderText = "";
-            this.removeQty.Image = global::Login_Form.Properties.Resources.arrow_left;
-            this.removeQty.MinimumWidth = 8;
-            this.removeQty.Name = "removeQty";
-            this.removeQty.ReadOnly = true;
-            this.removeQty.Width = 8;
-            // 
-            // addQty
-            // 
-            this.addQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.addQty.HeaderText = "";
-            this.addQty.Image = global::Login_Form.Properties.Resources.arrow_right;
-            this.addQty.MinimumWidth = 8;
-            this.addQty.Name = "addQty";
-            this.addQty.ReadOnly = true;
-            this.addQty.Width = 8;
-            // 
-            // Remove
-            // 
-            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Remove.HeaderText = "";
-            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
-            this.Remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Remove.MinimumWidth = 8;
-            this.Remove.Name = "Remove";
-            this.Remove.ReadOnly = true;
-            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Remove.Width = 8;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -548,32 +513,31 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.CancelButton, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.VoidButton, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.CancelButton, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.NewTransactButton, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.PaymentButton, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.AdvSearchButton, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.DiscountButton, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 4);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 188);
             this.tableLayoutPanel4.MaximumSize = new System.Drawing.Size(0, 500);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 6;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel4.RowCount = 5;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66611F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66611F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66611F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66611F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66611F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66944F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(273, 272);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // CancelButton
             // 
-            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
+            this.CancelButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CancelButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.CancelButton.Location = new System.Drawing.Point(5, 228);
@@ -653,48 +617,17 @@
             this.DiscountButton.UseVisualStyleBackColor = false;
             this.DiscountButton.Click += new System.EventHandler(this.DiscountButton_Click);
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.VoidButton, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.AddButton, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 183);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(267, 39);
-            this.tableLayoutPanel5.TabIndex = 8;
-            // 
             // VoidButton
             // 
             this.VoidButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(110)))), ((int)(((byte)(174)))));
-            this.VoidButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.VoidButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VoidButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.VoidButton.Location = new System.Drawing.Point(138, 3);
-            this.VoidButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.VoidButton.Location = new System.Drawing.Point(3, 183);
             this.VoidButton.Name = "VoidButton";
-            this.VoidButton.Size = new System.Drawing.Size(124, 33);
-            this.VoidButton.TabIndex = 9;
+            this.VoidButton.Size = new System.Drawing.Size(263, 35);
+            this.VoidButton.TabIndex = 12;
             this.VoidButton.Text = "Void";
             this.VoidButton.UseVisualStyleBackColor = false;
-            // 
-            // AddButton
-            // 
-            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(110)))), ((int)(((byte)(174)))));
-            this.AddButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.AddButton.Location = new System.Drawing.Point(5, 3);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(123, 33);
-            this.AddButton.TabIndex = 7;
-            this.AddButton.Text = "Add Qty";
-            this.AddButton.UseVisualStyleBackColor = false;
             // 
             // dataGridViewImageColumn1
             // 
@@ -705,7 +638,7 @@
             this.dataGridViewImageColumn1.MinimumWidth = 8;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn1.Width = 150;
+            this.dataGridViewImageColumn1.Width = 8;
             // 
             // dataGridViewImageColumn2
             // 
@@ -714,7 +647,7 @@
             this.dataGridViewImageColumn2.Image = global::Login_Form.Properties.Resources.arrow_right;
             this.dataGridViewImageColumn2.MinimumWidth = 8;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 150;
+            this.dataGridViewImageColumn2.Width = 8;
             // 
             // dataGridViewImageColumn3
             // 
@@ -725,7 +658,39 @@
             this.dataGridViewImageColumn3.MinimumWidth = 8;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn3.Width = 150;
+            this.dataGridViewImageColumn3.Width = 8;
+            // 
+            // removeQty
+            // 
+            this.removeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.removeQty.HeaderText = "";
+            this.removeQty.Image = global::Login_Form.Properties.Resources.arrow_left;
+            this.removeQty.MinimumWidth = 8;
+            this.removeQty.Name = "removeQty";
+            this.removeQty.ReadOnly = true;
+            this.removeQty.Width = 8;
+            // 
+            // addQty
+            // 
+            this.addQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.addQty.HeaderText = "";
+            this.addQty.Image = global::Login_Form.Properties.Resources.arrow_right;
+            this.addQty.MinimumWidth = 8;
+            this.addQty.Name = "addQty";
+            this.addQty.ReadOnly = true;
+            this.addQty.Width = 8;
+            // 
+            // Remove
+            // 
+            this.Remove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Remove.HeaderText = "";
+            this.Remove.Image = ((System.Drawing.Image)(resources.GetObject("Remove.Image")));
+            this.Remove.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Remove.MinimumWidth = 8;
+            this.Remove.Name = "Remove";
+            this.Remove.ReadOnly = true;
+            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Remove.Width = 8;
             // 
             // POS
             // 
@@ -748,7 +713,6 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -764,9 +728,6 @@
         private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button AdvSearchButton;
         private System.Windows.Forms.Button DiscountButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button VoidButton;
-        private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label TotalLbl;
         private System.Windows.Forms.Label Discountlbl;
@@ -798,5 +759,6 @@
         private System.Windows.Forms.DataGridViewImageColumn removeQty;
         private System.Windows.Forms.DataGridViewImageColumn addQty;
         private System.Windows.Forms.DataGridViewImageColumn Remove;
+        private System.Windows.Forms.Button VoidButton;
     }
 }

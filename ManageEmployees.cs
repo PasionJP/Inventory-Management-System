@@ -26,9 +26,9 @@ namespace Login_Form
         SqlCommand cmd = new SqlCommand();
         DatabaseConnection dbCon = new DatabaseConnection();
         string title = "POS System";
-        new bool MouseDown;
         string pwViewState = "Hide";
         public string InsertOrUpdate;
+        new bool MouseDown;
         private Point offset;
         public ManageEmployees()
         {
