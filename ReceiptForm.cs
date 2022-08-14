@@ -19,8 +19,6 @@ namespace Login_Form
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
-        string storeName = "JP store";
-        string storeAddress = "Quezon City";
         public ReceiptForm(POS frm)
         {
             InitializeComponent();
@@ -51,12 +49,12 @@ namespace Login_Form
                 SqlDataAdapter da = new SqlDataAdapter();
 
                 con.Open();
-                da.SelectCommand = new SqlCommand("SELECT c.id, c.transno, c.pcode, c.price, c.qty, c.disc, c.total, c.sdate, c.status, p.productName from cartTbl as c INNER JOIN Products AS p ON p.pcode = c.pcode WHERE  transno like '" + f.TransactNo.Text + "'", con);
+                da.SelectCommand = new SqlCommand("SELECT c.id, c.transno, c.pcode, c.price, c.qty, c.disc, c.total, c.sdate, c.status, c.cashier, p.productName from cartTbl as c INNER JOIN Products AS p ON p.pcode = c.pcode WHERE  transno like '" + f.TransactNo.Text + "'", con);
                 da.Fill(ds.Tables["dtSold"]);
                 con.Close();
-
-                ReportParameter pStore = new ReportParameter("pStore", storeName);
-                ReportParameter pAddress = new ReportParameter("pAddress", storeAddress);
+                
+                ReportParameter pStore = new ReportParameter("pStore", dbCon.storeName);
+                ReportParameter pAddress = new ReportParameter("pAddress", dbCon.storeAddress);
                 ReportParameter pTransaction = new ReportParameter("pTransaction", "Invoice #: " + f.TransactNo.Text);
                 ReportParameter pVatable = new ReportParameter("pVatable", f.vatableLblValue.Text);
                 ReportParameter pVat = new ReportParameter("pVat", f.vatLblValue.Text);
@@ -75,7 +73,6 @@ namespace Login_Form
                 reportViewer1.LocalReport.SetParameters(pCash);
                 reportViewer1.LocalReport.SetParameters(pChange);
 
-
                 reportDS = new ReportDataSource("ReceiptDataSet", ds.Tables["dtSold"]);
                 reportViewer1.LocalReport.DataSources.Add(reportDS);
                 reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
@@ -91,6 +88,19 @@ namespace Login_Form
         private void reportViewer1_Load_1(object sender, EventArgs e)
         {
 
+        }
+        public string getCashierName()
+        {
+            string cashierName = "";
+            string query = "SELECT RTRIM(LTRIM(CONCAT(COALESCE(Lastname, ''), ', ', COALESCE(FirstName + ' ', ''), COALESCE(MiddleName + ' ', '')))) AS Fullname, EmployeeID FROM Employees WHERE EmployeeID = '" + f.cashierName.Text + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                cashierName = dt.Rows[0]["Fullname"].ToString();
+            }
+            return cashierName;
         }
     }
 }

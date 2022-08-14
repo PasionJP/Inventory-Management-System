@@ -134,6 +134,7 @@ namespace Login_Form
                         con.Close();
                     }
                     ReceiptForm frm = new ReceiptForm(f);
+                    String.Format("#,##0.00", cashTB.Text);
                     frm.LoadReport(cashTB.Text, changeTB.Text);
                     frm.ShowDialog();
 

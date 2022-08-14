@@ -25,6 +25,7 @@
               <xs:element name="sdate" msprop:Generator_ColumnVarNameInTable="columnsdate" msprop:Generator_ColumnPropNameInRow="sdate" msprop:Generator_ColumnPropNameInTable="sdateColumn" msprop:Generator_UserColumnName="sdate" type="xs:string" minOccurs="0" />
               <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
               <xs:element name="productName" msprop:Generator_ColumnVarNameInTable="columnproductName" msprop:Generator_ColumnPropNameInRow="productName" msprop:Generator_ColumnPropNameInTable="productNameColumn" msprop:Generator_UserColumnName="productName" type="xs:string" minOccurs="0" />
+              <xs:element name="cashier" msprop:Generator_ColumnVarNameInTable="columncashier" msprop:Generator_ColumnPropNameInRow="cashier" msprop:Generator_ColumnPropNameInTable="cashierColumn" msprop:Generator_UserColumnName="cashier" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

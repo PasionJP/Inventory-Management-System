@@ -13,8 +13,8 @@ namespace Login_Form
 {
     public partial class itemQty : Form
     {
-        SqlConnection cn = new SqlConnection();
-        SqlCommand cm = new SqlCommand();
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
         private String pcode;
@@ -24,7 +24,7 @@ namespace Login_Form
         public itemQty(POS posfrm)
         {
             InitializeComponent();
-            cn = new SqlConnection(dbCon.DBConnection());
+            con = new SqlConnection(dbCon.DBConnection());
             pos = posfrm;
         }
 
@@ -50,26 +50,27 @@ namespace Login_Form
             if ((e.KeyChar == 13) && (itmQtyTB.Text != String.Empty))
             {
                 int prodQty;
-                cn.Open();
-                cm = new SqlCommand("SELECT qty FROM Products WHERE pcode like '"+ pcode +"'", cn);
-                dr = cm.ExecuteReader();
+                con.Open();
+                cmd = new SqlCommand("SELECT qty FROM Products WHERE pcode like '"+ pcode +"'", con);
+                dr = cmd.ExecuteReader();
                 dr.Read();
                 prodQty = int.Parse(dr["qty"].ToString());
-                cn.Close();
+                con.Close();
                 if (prodQty < int.Parse(itmQtyTB.Text))
                 {
                     MessageBox.Show("Sorry, we don't have enough stock. Remaining quantity on hand is only " + prodQty + ".", "Product Availability", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     itmQtyTB.Text = prodQty.ToString();
                 }
-                cn.Open();
-                cm = new SqlCommand("INSERT into cartTbl (transno, pcode, price, qty, sdate) VALUES (@transno, @pcode, @price, @qty, @sdate)", cn);
-                cm.Parameters.AddWithValue("@transno", transno);
-                cm.Parameters.AddWithValue("@pcode", pcode);
-                cm.Parameters.AddWithValue("@price", price);
-                cm.Parameters.AddWithValue("@qty", int.Parse(itmQtyTB.Text));
-                cm.Parameters.AddWithValue("@sdate", DateTime.Now);
-                cm.ExecuteNonQuery();
-                cn.Close();
+                con.Open();
+                cmd = new SqlCommand("INSERT into cartTbl (transno, pcode, price, qty, sdate, cashier) VALUES (@transno, @pcode, @price, @qty, @sdate, @cashier)", con);
+                cmd.Parameters.AddWithValue("@transno", transno);
+                cmd.Parameters.AddWithValue("@pcode", pcode);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@qty", int.Parse(itmQtyTB.Text));
+                cmd.Parameters.AddWithValue("@sdate", DateTime.Now);
+                cmd.Parameters.AddWithValue("@cashier", pos.cashierName.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
 
                 pos.searchBox.Clear();
                 pos.searchBox.Focus();

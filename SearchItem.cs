@@ -38,7 +38,7 @@ namespace Login_Form
             try
             {
                 con.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Products", con);
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Products WHERE qty > 0", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 searchProductsView.AutoGenerateColumns = false;

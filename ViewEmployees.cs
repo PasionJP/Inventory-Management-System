@@ -30,8 +30,8 @@ namespace Login_Form
         private void ViewEmployees_Load(object sender, EventArgs e)
         {
             GetEmployeesRecord();
-            comboBox1.SelectedItem = null;
-            comboBox1.SelectedText = "LastName";
+            columnSelectCB.SelectedItem = null;
+            columnSelectCB.SelectedText = "LastName";
             searchBox.Focus();
         }
 
@@ -63,7 +63,7 @@ namespace Login_Form
             {
                 MessageBox.Show(ex.Message, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            comboBox1.SelectionLength = 0;
+            columnSelectCB.SelectionLength = 0;
             //SqlCommand cmd = new SqlCommand("Select * from Employees", con);
             //DataTable dt = new DataTable();
 
@@ -120,17 +120,9 @@ namespace Login_Form
             GetEmployeesRecord();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void employeesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (employeesDataGridView.SelectedRows[0].Cells[1].Value != null)
-            //{
-            //    EmployeeID = Convert.ToInt32(employeesDataGridView.SelectedRows[0].Cells[0].Value);
-            //}
+            
         }
 
         private void Insert_Click(object sender, EventArgs e)
@@ -169,13 +161,13 @@ namespace Login_Form
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    if (!string.IsNullOrEmpty(comboBox1.Text))
+                    if (!string.IsNullOrEmpty(columnSelectCB.Text))
                     {
                         if (string.IsNullOrEmpty(searchBox.Text))
                             GetEmployeesRecord();
                         else
                         {
-                            string rowFilter = string.Format("[{0}] = '{1}'", comboBox1.Text, searchBox.Text);
+                            string rowFilter = string.Format("[{0}] = '{1}'", columnSelectCB.Text, searchBox.Text);
                             (employeesDataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
                         }
                     }
@@ -187,20 +179,15 @@ namespace Login_Form
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(searchBox.Text))
                 GetEmployeesRecord();
+        }
+
+        private void columnSelectCB_DropDownClosed(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new Action(() => { columnSelectCB.Select(0, 0); }));
         }
     }
 }

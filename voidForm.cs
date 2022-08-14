@@ -75,8 +75,8 @@ namespace Login_Form
 
         private void cancelOrderButton_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if ((restockCB.Text != String.Empty) && (cancelQtyTB.Text != String.Empty) && (reasonTB.Text != String.Empty))
                 {
                     if (int.Parse(qtyTB.Text) >= int.Parse(cancelQtyTB.Text))
@@ -91,11 +91,12 @@ namespace Login_Form
                         this.Dispose();
                     }
                 }
-            //} catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {

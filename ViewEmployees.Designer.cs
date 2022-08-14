@@ -55,7 +55,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.columnSelectCB = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
@@ -75,26 +75,28 @@
             this.tableLayoutPanel2.Controls.Add(this.Insert, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button5, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.UpdateButton, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 485);
-            this.tableLayoutPanel2.MaximumSize = new System.Drawing.Size(1000, 200);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(65, 495);
+            this.tableLayoutPanel2.MaximumSize = new System.Drawing.Size(1200, 300);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(944, 74);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(819, 64);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // Insert
             // 
-            this.Insert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.Insert.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Insert.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
             this.Insert.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Insert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Insert.Location = new System.Drawing.Point(30, 15);
-            this.Insert.Margin = new System.Windows.Forms.Padding(30, 15, 30, 15);
-            this.Insert.MaximumSize = new System.Drawing.Size(280, 80);
+            this.Insert.Location = new System.Drawing.Point(5, 10);
+            this.Insert.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.Insert.MaximumSize = new System.Drawing.Size(350, 100);
             this.Insert.Name = "Insert";
-            this.Insert.Size = new System.Drawing.Size(254, 44);
+            this.Insert.Size = new System.Drawing.Size(263, 44);
             this.Insert.TabIndex = 3;
             this.Insert.Text = "Insert";
             this.Insert.UseVisualStyleBackColor = false;
@@ -102,15 +104,17 @@
             // 
             // button5
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(96)))), ((int)(((byte)(112)))));
             this.button5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.button5.Location = new System.Drawing.Point(658, 15);
-            this.button5.Margin = new System.Windows.Forms.Padding(30, 15, 30, 15);
-            this.button5.MaximumSize = new System.Drawing.Size(280, 80);
+            this.button5.Location = new System.Drawing.Point(551, 10);
+            this.button5.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.button5.MaximumSize = new System.Drawing.Size(350, 100);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(256, 44);
+            this.button5.Size = new System.Drawing.Size(263, 44);
             this.button5.TabIndex = 5;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = false;
@@ -118,16 +122,18 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.UpdateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.UpdateButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(119)))), ((int)(((byte)(223)))));
             this.UpdateButton.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.UpdateButton.Location = new System.Drawing.Point(344, 15);
-            this.UpdateButton.Margin = new System.Windows.Forms.Padding(30, 15, 30, 15);
-            this.UpdateButton.MaximumSize = new System.Drawing.Size(280, 80);
+            this.UpdateButton.Location = new System.Drawing.Point(278, 10);
+            this.UpdateButton.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.UpdateButton.MaximumSize = new System.Drawing.Size(350, 100);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(254, 44);
+            this.UpdateButton.Size = new System.Drawing.Size(263, 44);
             this.UpdateButton.TabIndex = 4;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = false;
@@ -191,7 +197,7 @@
             this.employeesDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.employeesDataGridView.RowTemplate.Height = 28;
             this.employeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeesDataGridView.Size = new System.Drawing.Size(944, 316);
+            this.employeesDataGridView.Size = new System.Drawing.Size(944, 326);
             this.employeesDataGridView.TabIndex = 3;
             this.employeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesDataGridView_CellClick);
             this.employeesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -348,7 +354,7 @@
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.searchBox, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.label2, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.comboBox1, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.columnSelectCB, 3, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(6, 106);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(6);
@@ -399,26 +405,26 @@
             this.label2.Text = "Column";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
+            // columnSelectCB
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.columnSelectCB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.columnSelectCB.FormattingEnabled = true;
+            this.columnSelectCB.Items.AddRange(new object[] {
             "EmployeeID",
             "FirstName",
             "MiddleName",
             "LastName",
             "Sex",
-            "Birthday",
             "UserType"});
-            this.comboBox1.Location = new System.Drawing.Point(737, 11);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 11, 3, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 28);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.columnSelectCB.Location = new System.Drawing.Point(737, 11);
+            this.columnSelectCB.Margin = new System.Windows.Forms.Padding(3, 11, 3, 3);
+            this.columnSelectCB.Name = "columnSelectCB";
+            this.columnSelectCB.Size = new System.Drawing.Size(198, 28);
+            this.columnSelectCB.TabIndex = 2;
+            this.columnSelectCB.SelectedIndexChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.columnSelectCB.DropDownClosed += new System.EventHandler(this.columnSelectCB_DropDownClosed);
             // 
             // tableLayoutPanel1
             // 
@@ -441,7 +447,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 562);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // label6
             // 
@@ -489,7 +494,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox columnSelectCB;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
