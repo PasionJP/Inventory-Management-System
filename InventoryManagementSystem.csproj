@@ -116,16 +116,6 @@
     <Compile Include="DiscountForm.Designer.cs">
       <DependentUpon>DiscountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeesDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeesDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="CreateUpdateProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,16 +174,6 @@
     </Compile>
     <Compile Include="ProductsV1.Designer.cs">
       <DependentUpon>ProductsV1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ProductsDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -364,28 +344,6 @@
     <EmbeddedResource Include="voidForm.resx">
       <DependentUpon>voidForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="EmployeesDataSet.xsc">
-      <DependentUpon>EmployeesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EmployeesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EmployeesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="EmployeesDataSet.xss">
-      <DependentUpon>EmployeesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EmployeesDataSet1.xsc">
-      <DependentUpon>EmployeesDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="EmployeesDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EmployeesDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="EmployeesDataSet1.xss">
-      <DependentUpon>EmployeesDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="IMSDatabaseDataSet.xsc">
       <DependentUpon>IMSDatabaseDataSet.xsd</DependentUpon>
     </None>
@@ -398,28 +356,6 @@
       <DependentUpon>IMSDatabaseDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="ProductsDataSet.xsc">
-      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ProductsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProductsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ProductsDataSet.xss">
-      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ProductsDataSet1.xsc">
-      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="ProductsDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProductsDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ProductsDataSet1.xss">
-      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="Properties\DataSources\Chart.datasource" />
     <None Include="Properties\DataSources\Dashboard.datasource" />
     <None Include="Properties\DataSources\EmployeesInfo.datasource" />

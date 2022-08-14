@@ -12,6 +12,8 @@ namespace Login_Form
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
+        public string storeName = "JP store";
+        public string storeAddress = "Quezon City";
         public string DBConnection() 
         {
             string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D:\JP\Software\Inventory Management System\Github\Login Form\IMSDatabase.mdf';Integrated Security=True";

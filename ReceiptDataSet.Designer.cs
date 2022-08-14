@@ -299,6 +299,8 @@ namespace Login_Form {
             
             private global::System.Data.DataColumn columnproductName;
             
+            private global::System.Data.DataColumn columncashier;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public dtSoldDataTable() {
@@ -414,6 +416,14 @@ namespace Login_Form {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn cashierColumn {
+                get {
+                    return this.columncashier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +459,7 @@ namespace Login_Form {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dtSoldRow AdddtSoldRow(string id, string transno, string pcode, string price, string qty, string disc, string total, string sdate, string status, string productName) {
+            public dtSoldRow AdddtSoldRow(string id, string transno, string pcode, string price, string qty, string disc, string total, string sdate, string status, string productName, string cashier) {
                 dtSoldRow rowdtSoldRow = ((dtSoldRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -461,7 +471,8 @@ namespace Login_Form {
                         total,
                         sdate,
                         status,
-                        productName};
+                        productName,
+                        cashier};
                 rowdtSoldRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtSoldRow);
                 return rowdtSoldRow;
@@ -494,6 +505,7 @@ namespace Login_Form {
                 this.columnsdate = base.Columns["sdate"];
                 this.columnstatus = base.Columns["status"];
                 this.columnproductName = base.Columns["productName"];
+                this.columncashier = base.Columns["cashier"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -519,6 +531,8 @@ namespace Login_Form {
                 base.Columns.Add(this.columnstatus);
                 this.columnproductName = new global::System.Data.DataColumn("productName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproductName);
+                this.columncashier = new global::System.Data.DataColumn("cashier", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncashier);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -821,6 +835,22 @@ namespace Login_Form {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string cashier {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtSold.cashierColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cashier\' in table \'dtSold\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtSold.cashierColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsidNull() {
                 return this.IsNull(this.tabledtSold.idColumn);
             }
@@ -937,6 +967,18 @@ namespace Login_Form {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetproductNameNull() {
                 this[this.tabledtSold.productNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IscashierNull() {
+                return this.IsNull(this.tabledtSold.cashierColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetcashierNull() {
+                this[this.tabledtSold.cashierColumn] = global::System.Convert.DBNull;
             }
         }
         

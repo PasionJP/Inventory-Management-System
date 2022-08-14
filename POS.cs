@@ -20,11 +20,13 @@ namespace Login_Form
         string title = "POS System";
         string id;
         public decimal price;
-        public POS()
+        IMS f;
+        public POS(IMS frm)
         {
             InitializeComponent();
             con = new SqlConnection(dbCon.DBConnection());
             this.KeyPreview = true;
+            f = frm;
         }
         public void GetTransactNo()
         {
@@ -243,6 +245,11 @@ namespace Login_Form
             SettlePaymentForm frm = new SettlePaymentForm(this);
             frm.amountTB.Text = totalLblValue.Text;
             frm.ShowDialog();
+        }
+
+        private void POS_Load(object sender, EventArgs e)
+        {
+            cashierName.Text = f.nameEmployeeLbl.Text;
         }
     }
 }

@@ -8,63 +8,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace Login_Form
 {
     public partial class IMS : Form
     {
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+        SqlDataReader dr;
+        DatabaseConnection dbCon = new DatabaseConnection();
         private bool isCollapsed;
-        public IMS()
+        public static string cashierFullname = "";
+        Login f;
+        public IMS(Login frm)
         {
             InitializeComponent();
             openNewWindow(new Dashboard());
+            con = new SqlConnection(dbCon.DBConnection());
+            f = frm;
         }
 
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Orders_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void orders_Click_1(object sender, EventArgs e)
-        {
-            openNewWindow(new POS());
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        { 
-            openNewWindow(new Dashboard());
+           
         }
 
         private Form activeForm = null;
@@ -80,21 +49,6 @@ namespace Login_Form
             panelMenu.Tag = openMenu;
             openMenu.BringToFront();
             openMenu.Show();
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            openNewWindow(new ViewEmployees());
-        }
-
-        private void Suppliers_Click(object sender, EventArgs e)
-        {
-            openNewWindow(new ViewCategories());
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -118,11 +72,6 @@ namespace Login_Form
                     isCollapsed = true;
                 }
             }
-        }
-
-        private void Products_Click(object sender, EventArgs e)
-        {
-            timer1.Start();
         }
 
         private void prodInStock_Click_1(object sender, EventArgs e)
@@ -207,6 +156,74 @@ namespace Login_Form
         private void salesChartBtn_Click(object sender, EventArgs e)
         {
             openNewWindow(new SalesChart());
+        }
+
+        private void mouseHover_Event(object sender, EventArgs e)
+        {
+            //this.BackColor = Color.FromArgb(61, 62, 64);
+        }
+
+        private void mouseLeave_Event(object sender, EventArgs e)
+        {
+            //this.BackColor = Color.FromArgb(51, 52, 54);
+        }
+        private void employeesBtn_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new ViewEmployees());
+        }
+
+        private void orders_Click_2(object sender, EventArgs e)
+        {
+            openNewWindow(new POS(this));
+        }
+
+        private void Dashboard_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new Dashboard());
+        }
+
+        private void analyticsBtn_Click_1(object sender, EventArgs e)
+        {
+            timer2.Start();
+        }
+
+        private void Products_Click_1(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void prodInStock_Click(object sender, EventArgs e)
+        {
+            ProductsV1 products = new ProductsV1();
+            products.productsDataGridView.Columns["Remove"].Visible = false;
+            products.productsDataGridView.Columns["Edit"].Visible = false;
+            products.addProduct.Visible = false;
+            products.stockQty = 0;
+            products.TopLevel = false;
+            panelMenu.Controls.Add(products);
+            products.Dock = DockStyle.Fill;
+            products.BringToFront();
+            products.Show();
+        }
+
+        private void allProducts_Click_1(object sender, EventArgs e)
+        {
+            ProductsV1 products = new ProductsV1();
+            products.stockQty = -1;
+            products.TopLevel = false;
+            panelMenu.Controls.Add(products);
+            products.Dock = DockStyle.Fill;
+            products.BringToFront();
+            products.Show();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            f.dateLog = DateTime.Now.ToString("MM/dd/yyyy");
+            f.timeLog = DateTime.Now.ToString("HH:mm:ss");
+            f.status = "Logged out";
+            f.userLoginSave(f.empID, f.firstname, f.lastname, f.usertype, f.username, f.dateLog, f.timeLog, f.status);
+            Application.Exit();
         }
     }
 }
