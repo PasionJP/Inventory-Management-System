@@ -225,5 +225,10 @@ namespace Login_Form
             f.userLoginSave(f.empID, f.firstname, f.lastname, f.usertype, f.username, f.dateLog, f.timeLog, f.status);
             Application.Exit();
         }
+
+        private void userLogBtn_Click(object sender, EventArgs e)
+        {
+            openNewWindow(new analyticsUserLog());
+        }
     }
 }

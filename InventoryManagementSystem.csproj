@@ -103,6 +103,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="analyticsUserLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="analyticsUserLog.Designer.cs">
+      <DependentUpon>analyticsUserLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     <Compile Include="voidForm.Designer.cs">
       <DependentUpon>voidForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="analyticsUserLog.resx">
+      <DependentUpon>analyticsUserLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUpdateProducts.resx">
       <DependentUpon>CreateUpdateProducts.cs</DependentUpon>
     </EmbeddedResource>

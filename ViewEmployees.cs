@@ -167,7 +167,7 @@ namespace Login_Form
                             GetEmployeesRecord();
                         else
                         {
-                            string rowFilter = string.Format("[{0}] = '{1}'", columnSelectCB.Text, searchBox.Text);
+                            string rowFilter = "[" + columnSelectCB.Text + "] LIKE '%" + searchBox.Text + "%'";
                             (employeesDataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
                         }
                     }
@@ -181,8 +181,16 @@ namespace Login_Form
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(searchBox.Text))
-                GetEmployeesRecord();
+            if (!string.IsNullOrEmpty(columnSelectCB.Text))
+            {
+                if (string.IsNullOrEmpty(searchBox.Text))
+                    GetEmployeesRecord();
+                else
+                {
+                    string rowFilter = "[" + columnSelectCB.Text + "] LIKE '%" + searchBox.Text + "%'";
+                    (employeesDataGridView.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+                }
+            }
         }
 
         private void columnSelectCB_DropDownClosed(object sender, EventArgs e)

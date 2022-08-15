@@ -35,12 +35,6 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.userID = new System.Windows.Forms.Label();
-            this.nameEmployeeLbl = new System.Windows.Forms.Label();
-            this.userTypeLbl = new System.Windows.Forms.Label();
-            this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelAnalytics = new System.Windows.Forms.Panel();
             this.salesChartBtn = new System.Windows.Forms.Button();
@@ -55,15 +49,22 @@
             this.Products = new System.Windows.Forms.Button();
             this.orders = new System.Windows.Forms.Button();
             this.Dashboard = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.userID = new System.Windows.Forms.Label();
+            this.nameEmployeeLbl = new System.Windows.Forms.Label();
+            this.userTypeLbl = new System.Windows.Forms.Label();
+            this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.logoutBtn = new System.Windows.Forms.Button();
+            this.userLogBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelAnalytics.SuspendLayout();
             this.productsPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -72,7 +73,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(238, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1104, 48);
+            this.panel3.Size = new System.Drawing.Size(1120, 48);
             this.panel3.TabIndex = 1;
             // 
             // panelMenu
@@ -81,7 +82,7 @@
             this.panelMenu.Location = new System.Drawing.Point(238, 48);
             this.panelMenu.MinimumSize = new System.Drawing.Size(800, 600);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1104, 825);
+            this.panelMenu.Size = new System.Drawing.Size(1120, 837);
             this.panelMenu.TabIndex = 2;
             // 
             // timer1
@@ -102,7 +103,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 873);
+            this.panel1.Size = new System.Drawing.Size(238, 885);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -117,87 +118,8 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.46808F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.53191F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(238, 873);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(238, 885);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.tableLayoutPanel2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.MaximumSize = new System.Drawing.Size(232, 278);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(232, 207);
-            this.panel4.TabIndex = 2;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.userID, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.nameEmployeeLbl, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.userTypeLbl, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.employeePhoto, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(232, 207);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // userID
-            // 
-            this.userID.AutoSize = true;
-            this.userID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userID.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.userID.Location = new System.Drawing.Point(3, 187);
-            this.userID.Name = "userID";
-            this.userID.Size = new System.Drawing.Size(226, 20);
-            this.userID.TabIndex = 3;
-            this.userID.Text = "0";
-            this.userID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.userID.Visible = false;
-            // 
-            // nameEmployeeLbl
-            // 
-            this.nameEmployeeLbl.AutoSize = true;
-            this.nameEmployeeLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nameEmployeeLbl.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameEmployeeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.nameEmployeeLbl.Location = new System.Drawing.Point(3, 127);
-            this.nameEmployeeLbl.Name = "nameEmployeeLbl";
-            this.nameEmployeeLbl.Size = new System.Drawing.Size(226, 30);
-            this.nameEmployeeLbl.TabIndex = 0;
-            this.nameEmployeeLbl.Text = "Name";
-            this.nameEmployeeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // userTypeLbl
-            // 
-            this.userTypeLbl.AutoSize = true;
-            this.userTypeLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userTypeLbl.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userTypeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.userTypeLbl.Location = new System.Drawing.Point(3, 157);
-            this.userTypeLbl.Name = "userTypeLbl";
-            this.userTypeLbl.Size = new System.Drawing.Size(226, 30);
-            this.userTypeLbl.TabIndex = 1;
-            this.userTypeLbl.Text = "User Type";
-            this.userTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // employeePhoto
-            // 
-            this.employeePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.employeePhoto.Location = new System.Drawing.Point(3, 3);
-            this.employeePhoto.Name = "employeePhoto";
-            this.employeePhoto.Size = new System.Drawing.Size(226, 121);
-            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.employeePhoto.TabIndex = 2;
-            this.employeePhoto.TabStop = false;
             // 
             // panel2
             // 
@@ -210,23 +132,24 @@
             this.panel2.Controls.Add(this.orders);
             this.panel2.Controls.Add(this.Dashboard);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(3, 216);
+            this.panel2.Location = new System.Drawing.Point(3, 219);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(232, 654);
+            this.panel2.Size = new System.Drawing.Size(232, 663);
             this.panel2.TabIndex = 3;
             // 
             // panelAnalytics
             // 
+            this.panelAnalytics.Controls.Add(this.userLogBtn);
             this.panelAnalytics.Controls.Add(this.salesChartBtn);
             this.panelAnalytics.Controls.Add(this.salesOverviewBtn);
             this.panelAnalytics.Controls.Add(this.topSellingBtn);
             this.panelAnalytics.Controls.Add(this.analyticsBtn);
             this.panelAnalytics.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAnalytics.Location = new System.Drawing.Point(0, 350);
-            this.panelAnalytics.MaximumSize = new System.Drawing.Size(238, 200);
+            this.panelAnalytics.MaximumSize = new System.Drawing.Size(238, 250);
             this.panelAnalytics.MinimumSize = new System.Drawing.Size(238, 50);
             this.panelAnalytics.Name = "panelAnalytics";
-            this.panelAnalytics.Size = new System.Drawing.Size(238, 200);
+            this.panelAnalytics.Size = new System.Drawing.Size(238, 250);
             this.panelAnalytics.TabIndex = 0;
             // 
             // salesChartBtn
@@ -456,6 +379,85 @@
             this.Dashboard.Click += new System.EventHandler(this.Dashboard_Click);
             this.Dashboard.MouseHover += new System.EventHandler(this.mouseHover_Event);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.tableLayoutPanel2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.MaximumSize = new System.Drawing.Size(232, 278);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(232, 207);
+            this.panel4.TabIndex = 2;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.userID, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.nameEmployeeLbl, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.userTypeLbl, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.employeePhoto, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(232, 207);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // userID
+            // 
+            this.userID.AutoSize = true;
+            this.userID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userID.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.userID.Location = new System.Drawing.Point(3, 187);
+            this.userID.Name = "userID";
+            this.userID.Size = new System.Drawing.Size(226, 20);
+            this.userID.TabIndex = 3;
+            this.userID.Text = "0";
+            this.userID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.userID.Visible = false;
+            // 
+            // nameEmployeeLbl
+            // 
+            this.nameEmployeeLbl.AutoSize = true;
+            this.nameEmployeeLbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nameEmployeeLbl.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameEmployeeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.nameEmployeeLbl.Location = new System.Drawing.Point(3, 127);
+            this.nameEmployeeLbl.Name = "nameEmployeeLbl";
+            this.nameEmployeeLbl.Size = new System.Drawing.Size(226, 30);
+            this.nameEmployeeLbl.TabIndex = 0;
+            this.nameEmployeeLbl.Text = "Name";
+            this.nameEmployeeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // userTypeLbl
+            // 
+            this.userTypeLbl.AutoSize = true;
+            this.userTypeLbl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userTypeLbl.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userTypeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.userTypeLbl.Location = new System.Drawing.Point(3, 157);
+            this.userTypeLbl.Name = "userTypeLbl";
+            this.userTypeLbl.Size = new System.Drawing.Size(226, 30);
+            this.userTypeLbl.TabIndex = 1;
+            this.userTypeLbl.Text = "User Type";
+            this.userTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // employeePhoto
+            // 
+            this.employeePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeePhoto.Location = new System.Drawing.Point(3, 3);
+            this.employeePhoto.Name = "employeePhoto";
+            this.employeePhoto.Size = new System.Drawing.Size(226, 121);
+            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.employeePhoto.TabIndex = 2;
+            this.employeePhoto.TabStop = false;
+            // 
             // logoutBtn
             // 
             this.logoutBtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -463,7 +465,7 @@
             this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logoutBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.logoutBtn.Location = new System.Drawing.Point(0, 550);
+            this.logoutBtn.Location = new System.Drawing.Point(0, 600);
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.logoutBtn.Size = new System.Drawing.Size(232, 50);
@@ -473,12 +475,29 @@
             this.logoutBtn.UseVisualStyleBackColor = true;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
+            // userLogBtn
+            // 
+            this.userLogBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userLogBtn.FlatAppearance.BorderSize = 0;
+            this.userLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userLogBtn.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userLogBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.userLogBtn.Location = new System.Drawing.Point(0, 200);
+            this.userLogBtn.Name = "userLogBtn";
+            this.userLogBtn.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.userLogBtn.Size = new System.Drawing.Size(238, 50);
+            this.userLogBtn.TabIndex = 13;
+            this.userLogBtn.Text = "User Log";
+            this.userLogBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userLogBtn.UseVisualStyleBackColor = true;
+            this.userLogBtn.Click += new System.EventHandler(this.userLogBtn_Click);
+            // 
             // IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1342, 873);
+            this.ClientSize = new System.Drawing.Size(1358, 885);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -490,13 +509,13 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panelAnalytics.ResumeLayout(false);
+            this.productsPanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panelAnalytics.ResumeLayout(false);
-            this.productsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -529,5 +548,6 @@
         public System.Windows.Forms.Label userTypeLbl;
         public System.Windows.Forms.PictureBox employeePhoto;
         public System.Windows.Forms.Button logoutBtn;
+        private System.Windows.Forms.Button userLogBtn;
     }
 }

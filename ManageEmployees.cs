@@ -35,13 +35,10 @@ namespace Login_Form
             InitializeComponent();
             con = new SqlConnection(dbCon.DBConnection());
             this.KeyPreview = true;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
         string photoLocation = "";
         string sex = "Undefined";
-            private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Insert_Click(object sender, EventArgs e)
         {

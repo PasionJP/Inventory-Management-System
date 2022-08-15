@@ -100,7 +100,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
             this.tableLayoutPanel1.Controls.Add(this.TransactNo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.TransactNumLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.BarcodeLabel, 0, 1);
@@ -171,7 +171,7 @@
             this.searchBox.Location = new System.Drawing.Point(179, 46);
             this.searchBox.Margin = new System.Windows.Forms.Padding(5, 5, 150, 5);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(542, 32);
+            this.searchBox.Size = new System.Drawing.Size(541, 32);
             this.searchBox.TabIndex = 12;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
@@ -181,9 +181,9 @@
             this.cashierName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cashierName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cashierName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.cashierName.Location = new System.Drawing.Point(874, 0);
+            this.cashierName.Location = new System.Drawing.Point(873, 0);
             this.cashierName.Name = "cashierName";
-            this.cashierName.Size = new System.Drawing.Size(135, 41);
+            this.cashierName.Size = new System.Drawing.Size(136, 41);
             this.cashierName.TabIndex = 16;
             this.cashierName.Text = "cashier";
             this.cashierName.Visible = false;
