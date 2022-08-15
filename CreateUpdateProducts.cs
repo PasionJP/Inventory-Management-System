@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Login_Form
 {
@@ -23,6 +24,7 @@ namespace Login_Form
         new bool MouseDown;
         private Point offset;
         public string pcodeNew = "";
+        string photoLocation = "";
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
@@ -79,7 +81,6 @@ namespace Login_Form
                 priceTB.Text = price;
             }
             categoryBoxFill();
-            GenerateNewPcode();
         }
 
         private void Insert_Click(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace Login_Form
             {
                 if (id > 0)
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @pName, barcode = @bCode, qty = @quantity, price = @price WHERE id = @id", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE Products SET productName = @pName, barcode = @bCode, qty = @quantity, price = @price, productPhoto = @productPhoto WHERE id = @id", con);
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@pCode", pcodeNew);
                     cmd.Parameters.AddWithValue("@pName", pNameTB.Text);
@@ -97,6 +98,16 @@ namespace Login_Form
                     cmd.Parameters.AddWithValue("@quantity", quantityTB.Text);
                     cmd.Parameters.AddWithValue("@price", priceTB.Text);
                     cmd.Parameters.AddWithValue("@id", id);
+
+                    if (string.IsNullOrEmpty(photoLocation))
+                    {
+                        photoLocation = Application.StartupPath + @"\images\no image available.jpg";
+                    }
+                    byte[] images = null;
+                    FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader brs = new BinaryReader(fstream);
+                    images = brs.ReadBytes((int)fstream.Length);
+                    cmd.Parameters.Add(new SqlParameter("@productPhoto", images));
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -107,7 +118,7 @@ namespace Login_Form
             {
                 GenerateNewPcode();
                 con.Open();
-                cmd = new SqlCommand("INSERT INTO Products (productName, pcode, barcode, category, qty, price) VALUES (@pName, @pcode, @bCode, @category, @quantity, @price)", con);
+                cmd = new SqlCommand("INSERT INTO Products (productName, pcode, barcode, category, qty, price, productPhoto) VALUES (@pName, @pcode, @bCode, @category, @quantity, @price, @productPhoto)", con);
                 cmd.Parameters.AddWithValue("@pName", pNameTB.Text);
                 cmd.Parameters.AddWithValue("@pcode", pcodeNew);
                 cmd.Parameters.AddWithValue("@bCode", bCodeTB.Text);
@@ -115,15 +126,20 @@ namespace Login_Form
                 cmd.Parameters.AddWithValue("@quantity", quantityTB.Text);
                 cmd.Parameters.AddWithValue("@price", priceTB.Text);
 
+                if (string.IsNullOrEmpty(photoLocation))
+                {
+                    photoLocation = Application.StartupPath + @"\images\no image available.jpg";
+                }
+                byte[] images = null;
+                FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
+                BinaryReader brs = new BinaryReader(fstream);
+                images = brs.ReadBytes((int)fstream.Length);
+                cmd.Parameters.Add(new SqlParameter("@productPhoto", images));
+
                 cmd.ExecuteNonQuery();
                 con.Close();
                 this.Close();
             }
-        }
-
-        private void pNameTB_TextChanged(object sender, EventArgs e)
-        {
-
         }
         public void categoryBoxFill()
         {
@@ -158,11 +174,41 @@ namespace Login_Form
             dr.Read();
             if (dr.HasRows)
             {
-                pID = int.Parse(dr[0].ToString());
-                pcodeNew = "P00" + (pID + 1).ToString();
+                if (string.IsNullOrEmpty(dr[0].ToString()))
+                {
+                    pcodeNew = "P001";
+                    MessageBox.Show(pcodeNew);
+                }
+                else
+                {
+                    pID = int.Parse(dr[0].ToString());
+                    pcodeNew = "P00" + (pID + 1).ToString();
+                }
             }
             con.Close();
             return pcodeNew;
+        }
+
+        private void Upload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                photoLocation = opf.FileName.ToString();
+                productPhoto.ImageLocation = photoLocation;
+            }
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            photoLocation = "";
+            productPhoto.Image = null;
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

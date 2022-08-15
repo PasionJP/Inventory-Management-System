@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
+using System.Drawing;
 
 namespace Login_Form
 {
@@ -122,11 +123,6 @@ namespace Login_Form
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
-
-
-
-
             string colName = productsDataGridView.Columns[e.ColumnIndex].Name;
             if (colName == "Remove")
             {
@@ -153,6 +149,11 @@ namespace Login_Form
                     CUPfrm.category = productsDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
                     CUPfrm.quantity = productsDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
                     CUPfrm.price = productsDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                    byte[] photoBytes = (byte[])productsDataGridView.SelectedRows[0].Cells[7].Value;
+                    MemoryStream ms = new MemoryStream(photoBytes);
+                    System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                    CUPfrm.productPhoto.Image = img;
                 }
                 CUPfrm.ShowDialog();
                 LoadProducts();

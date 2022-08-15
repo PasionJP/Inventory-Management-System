@@ -68,10 +68,10 @@
             this.userType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.password = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -82,9 +82,9 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -106,7 +106,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.92506F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(928, 506);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_Event);
             this.tableLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Event);
             this.tableLayoutPanel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp_Event);
@@ -128,7 +127,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(922, 193);
             this.tableLayoutPanel2.TabIndex = 1;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // tableLayoutPanel5
             // 
@@ -148,7 +146,6 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(174, 181);
             this.tableLayoutPanel5.TabIndex = 3;
-            this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
             // 
             // label14
             // 
@@ -177,7 +174,6 @@
             this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.employeePhoto.TabIndex = 0;
             this.employeePhoto.TabStop = false;
-            this.employeePhoto.Click += new System.EventHandler(this.employeePhoto_Click);
             // 
             // Upload
             // 
@@ -218,7 +214,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(362, 179);
             this.tableLayoutPanel4.TabIndex = 1;
-            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // contact
             // 
@@ -226,7 +221,6 @@
             this.contact.Name = "contact";
             this.contact.Size = new System.Drawing.Size(216, 26);
             this.contact.TabIndex = 11;
-            this.contact.TextChanged += new System.EventHandler(this.contact_TextChanged);
             // 
             // label7
             // 
@@ -242,7 +236,6 @@
             this.label7.Size = new System.Drawing.Size(132, 31);
             this.label7.TabIndex = 6;
             this.label7.Text = "Contact No.";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -258,7 +251,6 @@
             this.label6.Size = new System.Drawing.Size(132, 28);
             this.label6.TabIndex = 5;
             this.label6.Text = "Email";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -274,7 +266,6 @@
             this.label5.Size = new System.Drawing.Size(132, 28);
             this.label5.TabIndex = 4;
             this.label5.Text = "Address";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label8
             // 
@@ -290,7 +281,6 @@
             this.label8.Size = new System.Drawing.Size(132, 28);
             this.label8.TabIndex = 7;
             this.label8.Text = "Birthday";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // address
             // 
@@ -298,7 +288,6 @@
             this.address.Name = "address";
             this.address.Size = new System.Drawing.Size(216, 26);
             this.address.TabIndex = 9;
-            this.address.TextChanged += new System.EventHandler(this.address_TextChanged);
             // 
             // email
             // 
@@ -306,7 +295,6 @@
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(216, 26);
             this.email.TabIndex = 10;
-            this.email.TextChanged += new System.EventHandler(this.email_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -315,7 +303,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(216, 26);
             this.dateTimePicker1.TabIndex = 12;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -339,7 +326,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(362, 179);
             this.tableLayoutPanel3.TabIndex = 0;
-            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // lastName
             // 
@@ -348,7 +334,6 @@
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(218, 26);
             this.lastName.TabIndex = 9;
-            this.lastName.TextChanged += new System.EventHandler(this.lastName_TextChanged);
             // 
             // middleName
             // 
@@ -356,7 +341,6 @@
             this.middleName.Name = "middleName";
             this.middleName.Size = new System.Drawing.Size(218, 26);
             this.middleName.TabIndex = 8;
-            this.middleName.TextChanged += new System.EventHandler(this.middleName_TextChanged);
             // 
             // label9
             // 
@@ -372,7 +356,6 @@
             this.label9.Size = new System.Drawing.Size(130, 31);
             this.label9.TabIndex = 6;
             this.label9.Text = "Sex";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label2
             // 
@@ -388,7 +371,6 @@
             this.label2.Size = new System.Drawing.Size(130, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "First Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -404,7 +386,6 @@
             this.label3.Size = new System.Drawing.Size(130, 28);
             this.label3.TabIndex = 4;
             this.label3.Text = "Middle Name";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -420,7 +401,6 @@
             this.label4.Size = new System.Drawing.Size(130, 28);
             this.label4.TabIndex = 5;
             this.label4.Text = "Last Name";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // firstName
             // 
@@ -429,7 +409,6 @@
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(218, 26);
             this.firstName.TabIndex = 7;
-            this.firstName.TextChanged += new System.EventHandler(this.firstName_TextChanged);
             // 
             // tableLayoutPanel7
             // 
@@ -445,7 +424,6 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(218, 41);
             this.tableLayoutPanel7.TabIndex = 10;
-            this.tableLayoutPanel7.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel7_Paint);
             // 
             // FemaleRadioButton
             // 
@@ -489,7 +467,6 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(922, 66);
             this.tableLayoutPanel6.TabIndex = 2;
-            this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
             // Clear
             // 
@@ -545,7 +522,6 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(922, 169);
             this.tableLayoutPanel8.TabIndex = 3;
-            this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel8_Paint);
             // 
             // confirmPassword
             // 
@@ -554,7 +530,6 @@
             this.confirmPassword.PasswordChar = '*';
             this.confirmPassword.Size = new System.Drawing.Size(218, 26);
             this.confirmPassword.TabIndex = 11;
-            this.confirmPassword.TextChanged += new System.EventHandler(this.confirmPassword_TextChanged);
             // 
             // username
             // 
@@ -562,7 +537,6 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(218, 26);
             this.username.TabIndex = 9;
-            this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
             // label13
             // 
@@ -578,7 +552,6 @@
             this.label13.Size = new System.Drawing.Size(192, 27);
             this.label13.TabIndex = 7;
             this.label13.Text = "Confirm Password";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label10
             // 
@@ -594,7 +567,6 @@
             this.label10.Size = new System.Drawing.Size(192, 26);
             this.label10.TabIndex = 4;
             this.label10.Text = "User Type";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -610,7 +582,6 @@
             this.label11.Size = new System.Drawing.Size(192, 26);
             this.label11.TabIndex = 5;
             this.label11.Text = "Username";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -626,7 +597,6 @@
             this.label12.Size = new System.Drawing.Size(192, 26);
             this.label12.TabIndex = 6;
             this.label12.Text = "Password";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // userType
             // 
@@ -638,7 +608,6 @@
             this.userType.Name = "userType";
             this.userType.Size = new System.Drawing.Size(218, 28);
             this.userType.TabIndex = 12;
-            this.userType.SelectedIndexChanged += new System.EventHandler(this.userType_SelectedIndexChanged);
             // 
             // tableLayoutPanel10
             // 
@@ -662,6 +631,17 @@
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(218, 26);
             this.password.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Login_Form.Properties.Resources.eye_unshow;
+            this.pictureBox1.Location = new System.Drawing.Point(231, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(39, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tableLayoutPanel9
             // 
@@ -712,17 +692,6 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Login_Form.Properties.Resources.eye_unshow;
-            this.pictureBox1.Location = new System.Drawing.Point(231, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(39, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // ManageEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -754,10 +723,10 @@
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

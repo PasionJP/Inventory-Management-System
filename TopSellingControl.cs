@@ -20,6 +20,7 @@ namespace Login_Form
         private string _prodName;
         private string _price;
         private string _units;
+        private string _pcode;
 
         [Category("Custom Props")]
         public string ProdName
@@ -39,6 +40,13 @@ namespace Login_Form
         {
             get { return _units; }
             set { _units = value; unitsSoldLbl.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string Pcode
+        {
+            get { return _pcode; }
+            set { _pcode = value; }
         }
 
         private void prodNameLbl_Click(object sender, EventArgs e)

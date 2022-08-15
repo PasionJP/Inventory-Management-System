@@ -52,7 +52,7 @@ namespace Login_Form
                         cmd = new SqlCommand("INSERT INTO Employees (FirstName,MiddleName,LastName,Sex,Birthday,Address,Email,ContactNumber,EmployeePhoto,UserType,UserName,Password) VALUES (@FirstName,@MiddleName,@LastName,@Sex,@Birthday,@Address,@Email,@ContactNumber,@EmployeePhoto,@UserType,@UserName,@Password)", con);
                         if (string.IsNullOrEmpty(photoLocation))
                         {
-                            photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no profile.png";
+                            photoLocation = Application.StartupPath + @"\images\no profile.png";
                         }
 
                         byte[] images = null;
@@ -93,7 +93,7 @@ namespace Login_Form
                     cmd.CommandType = CommandType.Text;
                     if (string.IsNullOrEmpty(photoLocation))
                     {
-                        photoLocation = @"D:\JP\Software\Inventory Management System\Github\Login Form\image\no profile.png";
+                        photoLocation = Application.StartupPath + @"\images\no profile.png";
                     }
                     byte[] images = null;
                     FileStream fstream = new FileStream(photoLocation, FileMode.Open, FileAccess.Read);
@@ -175,177 +175,13 @@ namespace Login_Form
         private void Clear_Click(object sender, EventArgs e)
         {
             ClearFields();
+            this.Dispose();
         }
 
         private void label14_Click(object sender, EventArgs e)
         {
             photoLocation = "";
             employeePhoto.Image = null;
-        }
-
-        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void contact_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void address_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void email_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lastName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void middleName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void firstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void confirmPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void employeePhoto_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ManageEmployees_Load(object sender, EventArgs e)
