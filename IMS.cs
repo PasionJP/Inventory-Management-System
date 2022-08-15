@@ -33,7 +33,7 @@ namespace Login_Form
 
         private void Form2_Load(object sender, EventArgs e)
         {
-           
+            getDate();
         }
 
         private Form activeForm = null;
@@ -74,20 +74,6 @@ namespace Login_Form
             }
         }
 
-        private void prodInStock_Click_1(object sender, EventArgs e)
-        {
-            ProductsV1 products = new ProductsV1();
-            products.productsDataGridView.Columns["Remove"].Visible = false;
-            products.productsDataGridView.Columns["Edit"].Visible = false;
-            products.addProduct.Visible = false;
-            products.stockQty = 0;
-            products.TopLevel = false;
-            panelMenu.Controls.Add(products);
-            products.Dock = DockStyle.Fill;
-            products.BringToFront();
-            products.Show();
-        }
-
         private void prodCategories_Click(object sender, EventArgs e)
         {
             openNewWindow(new ViewCategories());
@@ -110,16 +96,6 @@ namespace Login_Form
         }
 
         private void salesOverviewBtn_Click(object sender, EventArgs e)
-        {
-            openNewWindow(new SalesAnalyticsForm());
-        }
-
-        private void topSellingBtn_Click_1(object sender, EventArgs e)
-        {
-            openNewWindow(new TopSellingForm());
-        }
-
-        private void salesOverviewBtn_Click_1(object sender, EventArgs e)
         {
             openNewWindow(new SalesAnalyticsForm());
         }
@@ -206,17 +182,6 @@ namespace Login_Form
             products.Show();
         }
 
-        private void allProducts_Click_1(object sender, EventArgs e)
-        {
-            ProductsV1 products = new ProductsV1();
-            products.stockQty = -1;
-            products.TopLevel = false;
-            panelMenu.Controls.Add(products);
-            products.Dock = DockStyle.Fill;
-            products.BringToFront();
-            products.Show();
-        }
-
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             f.dateLog = DateTime.Now.ToString("MM/dd/yyyy");
@@ -229,6 +194,24 @@ namespace Login_Form
         private void userLogBtn_Click(object sender, EventArgs e)
         {
             openNewWindow(new analyticsUserLog());
+        }
+
+        private void dateSelectBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void getDate()
+        {
+            DateTime currdate = DateTime.Now;
+            currdate = currdate.AddDays(-30);
+            DateTime currdate1 = DateTime.Now;
+            dateSelectBtn.Text = currdate.ToString("MM/dd/yyyy") + " - " + currdate1.ToString("MM/dd/yyyy");
+        }
+
+        private void datePicture_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

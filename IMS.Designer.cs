@@ -40,13 +40,11 @@
             this.salesChartBtn = new System.Windows.Forms.Button();
             this.salesOverviewBtn = new System.Windows.Forms.Button();
             this.topSellingBtn = new System.Windows.Forms.Button();
-            this.analyticsBtn = new System.Windows.Forms.Button();
             this.employeesBtn = new System.Windows.Forms.Button();
             this.productsPanel = new System.Windows.Forms.Panel();
             this.prodCategories = new System.Windows.Forms.Button();
             this.allProducts = new System.Windows.Forms.Button();
             this.prodInStock = new System.Windows.Forms.Button();
-            this.Products = new System.Windows.Forms.Button();
             this.orders = new System.Windows.Forms.Button();
             this.Dashboard = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -54,9 +52,16 @@
             this.userID = new System.Windows.Forms.Label();
             this.nameEmployeeLbl = new System.Windows.Forms.Label();
             this.userTypeLbl = new System.Windows.Forms.Label();
-            this.employeePhoto = new System.Windows.Forms.PictureBox();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.userLogBtn = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateSelectBtn = new System.Windows.Forms.Button();
+            this.datePicture = new System.Windows.Forms.PictureBox();
+            this.analyticsBtn = new System.Windows.Forms.Button();
+            this.Products = new System.Windows.Forms.Button();
+            this.employeePhoto = new System.Windows.Forms.PictureBox();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,25 +69,29 @@
             this.productsPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.panel3.Controls.Add(this.tableLayoutPanel3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(238, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1120, 48);
+            this.panel3.Size = new System.Drawing.Size(1120, 58);
             this.panel3.TabIndex = 1;
             // 
             // panelMenu
             // 
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenu.Location = new System.Drawing.Point(238, 48);
+            this.panelMenu.Location = new System.Drawing.Point(238, 58);
             this.panelMenu.MinimumSize = new System.Drawing.Size(800, 600);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1120, 837);
+            this.panelMenu.Size = new System.Drawing.Size(1120, 827);
             this.panelMenu.TabIndex = 2;
             // 
             // timer1
@@ -209,27 +218,6 @@
             this.topSellingBtn.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
             this.topSellingBtn.MouseHover += new System.EventHandler(this.mouseHover_Event);
             // 
-            // analyticsBtn
-            // 
-            this.analyticsBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.analyticsBtn.FlatAppearance.BorderSize = 0;
-            this.analyticsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.analyticsBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.analyticsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.analyticsBtn.Image = global::Login_Form.Properties.Resources.collapse_arrow;
-            this.analyticsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.analyticsBtn.Location = new System.Drawing.Point(0, 0);
-            this.analyticsBtn.Name = "analyticsBtn";
-            this.analyticsBtn.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.analyticsBtn.Size = new System.Drawing.Size(238, 50);
-            this.analyticsBtn.TabIndex = 6;
-            this.analyticsBtn.Text = "Analytics";
-            this.analyticsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.analyticsBtn.UseVisualStyleBackColor = true;
-            this.analyticsBtn.Click += new System.EventHandler(this.analyticsBtn_Click_1);
-            this.analyticsBtn.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
-            this.analyticsBtn.MouseHover += new System.EventHandler(this.mouseHover_Event);
-            // 
             // employeesBtn
             // 
             this.employeesBtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -297,7 +285,7 @@
             this.allProducts.Text = "All Products";
             this.allProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.allProducts.UseVisualStyleBackColor = true;
-            this.allProducts.Click += new System.EventHandler(this.allProducts_Click_1);
+            this.allProducts.Click += new System.EventHandler(this.allProducts_Click);
             this.allProducts.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
             this.allProducts.MouseHover += new System.EventHandler(this.mouseHover_Event);
             // 
@@ -319,27 +307,6 @@
             this.prodInStock.Click += new System.EventHandler(this.prodInStock_Click);
             this.prodInStock.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
             this.prodInStock.MouseHover += new System.EventHandler(this.mouseHover_Event);
-            // 
-            // Products
-            // 
-            this.Products.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Products.FlatAppearance.BorderSize = 0;
-            this.Products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Products.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Products.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.Products.Image = global::Login_Form.Properties.Resources.collapse_arrow;
-            this.Products.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Products.Location = new System.Drawing.Point(0, 0);
-            this.Products.Name = "Products";
-            this.Products.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.Products.Size = new System.Drawing.Size(238, 50);
-            this.Products.TabIndex = 7;
-            this.Products.Text = "Products";
-            this.Products.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Products.UseVisualStyleBackColor = true;
-            this.Products.Click += new System.EventHandler(this.Products_Click_1);
-            this.Products.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
-            this.Products.MouseHover += new System.EventHandler(this.mouseHover_Event);
             // 
             // orders
             // 
@@ -448,16 +415,6 @@
             this.userTypeLbl.Text = "User Type";
             this.userTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // employeePhoto
-            // 
-            this.employeePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.employeePhoto.Location = new System.Drawing.Point(3, 3);
-            this.employeePhoto.Name = "employeePhoto";
-            this.employeePhoto.Size = new System.Drawing.Size(226, 121);
-            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.employeePhoto.TabIndex = 2;
-            this.employeePhoto.TabStop = false;
-            // 
             // logoutBtn
             // 
             this.logoutBtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -492,6 +449,117 @@
             this.userLogBtn.UseVisualStyleBackColor = true;
             this.userLogBtn.Click += new System.EventHandler(this.userLogBtn_Click);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 330F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1120, 58);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
+            this.tableLayoutPanel4.Controls.Add(this.dateSelectBtn, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.datePicture, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(324, 52);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // dateSelectBtn
+            // 
+            this.dateSelectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateSelectBtn.FlatAppearance.BorderSize = 0;
+            this.dateSelectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dateSelectBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateSelectBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.dateSelectBtn.Image = global::Login_Form.Properties.Resources.collapse_arrow;
+            this.dateSelectBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dateSelectBtn.Location = new System.Drawing.Point(53, 0);
+            this.dateSelectBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.dateSelectBtn.MinimumSize = new System.Drawing.Size(266, 36);
+            this.dateSelectBtn.Name = "dateSelectBtn";
+            this.dateSelectBtn.Size = new System.Drawing.Size(271, 52);
+            this.dateSelectBtn.TabIndex = 8;
+            this.dateSelectBtn.Text = "10/08/9999 - 10/08/9999";
+            this.dateSelectBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dateSelectBtn.UseVisualStyleBackColor = true;
+            this.dateSelectBtn.Click += new System.EventHandler(this.dateSelectBtn_Click);
+            // 
+            // datePicture
+            // 
+            this.datePicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datePicture.Location = new System.Drawing.Point(3, 3);
+            this.datePicture.Name = "datePicture";
+            this.datePicture.Size = new System.Drawing.Size(47, 46);
+            this.datePicture.TabIndex = 9;
+            this.datePicture.TabStop = false;
+            this.datePicture.Click += new System.EventHandler(this.datePicture_Click);
+            // 
+            // analyticsBtn
+            // 
+            this.analyticsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.analyticsBtn.FlatAppearance.BorderSize = 0;
+            this.analyticsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.analyticsBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.analyticsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.analyticsBtn.Image = global::Login_Form.Properties.Resources.collapse_arrow;
+            this.analyticsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.analyticsBtn.Location = new System.Drawing.Point(0, 0);
+            this.analyticsBtn.Name = "analyticsBtn";
+            this.analyticsBtn.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.analyticsBtn.Size = new System.Drawing.Size(238, 50);
+            this.analyticsBtn.TabIndex = 6;
+            this.analyticsBtn.Text = "Analytics";
+            this.analyticsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.analyticsBtn.UseVisualStyleBackColor = true;
+            this.analyticsBtn.Click += new System.EventHandler(this.analyticsBtn_Click_1);
+            this.analyticsBtn.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
+            this.analyticsBtn.MouseHover += new System.EventHandler(this.mouseHover_Event);
+            // 
+            // Products
+            // 
+            this.Products.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Products.FlatAppearance.BorderSize = 0;
+            this.Products.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Products.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Products.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.Products.Image = global::Login_Form.Properties.Resources.collapse_arrow;
+            this.Products.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Products.Location = new System.Drawing.Point(0, 0);
+            this.Products.Name = "Products";
+            this.Products.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.Products.Size = new System.Drawing.Size(238, 50);
+            this.Products.TabIndex = 7;
+            this.Products.Text = "Products";
+            this.Products.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Products.UseVisualStyleBackColor = true;
+            this.Products.Click += new System.EventHandler(this.Products_Click_1);
+            this.Products.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
+            this.Products.MouseHover += new System.EventHandler(this.mouseHover_Event);
+            // 
+            // employeePhoto
+            // 
+            this.employeePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeePhoto.Location = new System.Drawing.Point(3, 3);
+            this.employeePhoto.Name = "employeePhoto";
+            this.employeePhoto.Size = new System.Drawing.Size(226, 121);
+            this.employeePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.employeePhoto.TabIndex = 2;
+            this.employeePhoto.TabStop = false;
+            // 
             // IMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -507,6 +575,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -515,6 +584,9 @@
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.datePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
             this.ResumeLayout(false);
 
@@ -549,5 +621,9 @@
         public System.Windows.Forms.PictureBox employeePhoto;
         public System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Button userLogBtn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button dateSelectBtn;
+        private System.Windows.Forms.PictureBox datePicture;
     }
 }
