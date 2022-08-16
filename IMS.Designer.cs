@@ -55,7 +55,7 @@
             this.logoutBtn = new System.Windows.Forms.Button();
             this.userLogBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateTLP = new System.Windows.Forms.TableLayoutPanel();
             this.dateSelectBtn = new System.Windows.Forms.Button();
             this.datePicture = new System.Windows.Forms.PictureBox();
             this.analyticsBtn = new System.Windows.Forms.Button();
@@ -70,7 +70,7 @@
             this.panel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
+            this.dateTLP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).BeginInit();
             this.SuspendLayout();
@@ -454,7 +454,7 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 330F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.dateTLP, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -463,20 +463,20 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1120, 58);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // tableLayoutPanel4
+            // dateTLP
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
-            this.tableLayoutPanel4.Controls.Add(this.dateSelectBtn, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.datePicture, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(324, 52);
-            this.tableLayoutPanel4.TabIndex = 1;
+            this.dateTLP.ColumnCount = 2;
+            this.dateTLP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.dateTLP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
+            this.dateTLP.Controls.Add(this.dateSelectBtn, 1, 0);
+            this.dateTLP.Controls.Add(this.datePicture, 0, 0);
+            this.dateTLP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTLP.Location = new System.Drawing.Point(3, 3);
+            this.dateTLP.Name = "dateTLP";
+            this.dateTLP.RowCount = 1;
+            this.dateTLP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.dateTLP.Size = new System.Drawing.Size(324, 52);
+            this.dateTLP.TabIndex = 1;
             // 
             // dateSelectBtn
             // 
@@ -585,7 +585,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
+            this.dateTLP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeePhoto)).EndInit();
             this.ResumeLayout(false);
@@ -622,7 +622,7 @@
         public System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.Button userLogBtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel dateTLP;
         private System.Windows.Forms.Button dateSelectBtn;
         private System.Windows.Forms.PictureBox datePicture;
     }

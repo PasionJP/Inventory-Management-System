@@ -18,7 +18,7 @@ namespace Login_Form
         DatabaseConnection dbCon = new DatabaseConnection();
         SqlDataReader dr;
         SqlCommand cmd = new SqlCommand();
-        string title = "Inventory Management System";
+        string title = "View Employees Form";
         public ViewEmployees()
         {
             InitializeComponent();

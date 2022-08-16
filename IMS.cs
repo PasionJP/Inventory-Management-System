@@ -145,31 +145,37 @@ namespace Login_Form
         }
         private void employeesBtn_Click(object sender, EventArgs e)
         {
+            dateTLP.Visible = false;
             openNewWindow(new ViewEmployees());
         }
 
         private void orders_Click_2(object sender, EventArgs e)
         {
+            dateTLP.Visible = false;
             openNewWindow(new POS(this));
         }
 
         private void Dashboard_Click(object sender, EventArgs e)
         {
+            dateTLP.Visible = true;
             openNewWindow(new Dashboard());
         }
 
         private void analyticsBtn_Click_1(object sender, EventArgs e)
         {
+            dateTLP.Visible = false;
             timer2.Start();
         }
 
         private void Products_Click_1(object sender, EventArgs e)
         {
+            dateTLP.Visible = false;
             timer1.Start();
         }
 
         private void prodInStock_Click(object sender, EventArgs e)
         {
+            dateTLP.Visible = false;
             ProductsV1 products = new ProductsV1();
             products.productsDataGridView.Columns["Remove"].Visible = false;
             products.productsDataGridView.Columns["Edit"].Visible = false;
@@ -193,6 +199,7 @@ namespace Login_Form
 
         private void userLogBtn_Click(object sender, EventArgs e)
         {
+            dateTLP.Visible = false;
             openNewWindow(new analyticsUserLog());
         }
 

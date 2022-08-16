@@ -20,6 +20,7 @@ namespace Login_Form
         string title = "POS System";
         new bool MouseDown;
         private Point offset;
+        public bool voidConfirmation = false;
         public voidForm()
         {
             InitializeComponent();
@@ -79,17 +80,23 @@ namespace Login_Form
             {
                 if ((restockCB.Text != String.Empty) && (cancelQtyTB.Text != String.Empty) && (reasonTB.Text != String.Empty))
                 {
-                    if (int.Parse(qtyTB.Text) >= int.Parse(cancelQtyTB.Text))
+                    voidConfirmationForm voidConf = new voidConfirmationForm(this);
+                    voidConf.ShowDialog();
+                    if (voidConfirmation == true)
                     {
-                        if (restockCB.Text == "Yes")
+                        if (int.Parse(qtyTB.Text) >= int.Parse(cancelQtyTB.Text))
                         {
-                            updateDatabase("UPDATE Products SET qty = qty + " + int.Parse(cancelQtyTB.Text) + " WHERE pcode = '" + pcodeTB.Text + "'");
+                            if (restockCB.Text == "Yes")
+                            {
+                                updateDatabase("UPDATE Products SET qty = qty + " + int.Parse(cancelQtyTB.Text) + " WHERE pcode = '" + pcodeTB.Text + "'");
+                            }
+                            updateDatabase("UPDATE cartTbl SET qty = qty - " + int.Parse(cancelQtyTB.Text) + " WHERE id like '" + idTB.Text + "'");
+                            saveVoidOrder();
+                            MessageBox.Show("Item void successful!", "Void Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Dispose();
                         }
-                        updateDatabase("UPDATE cartTbl SET qty = qty - " + int.Parse(cancelQtyTB.Text) + " WHERE id like '" + idTB.Text + "'");
-                        saveVoidOrder();
-                        MessageBox.Show("Item void successful!", "Void Order", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Dispose();
                     }
+                    
                 }
             }
             catch (Exception ex)

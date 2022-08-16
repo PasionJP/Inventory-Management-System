@@ -273,6 +273,12 @@
     <Compile Include="ViewEmployees.Designer.cs">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="voidConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="voidConfirmationForm.Designer.cs">
+      <DependentUpon>voidConfirmationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="voidForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployees.resx">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="voidConfirmationForm.resx">
+      <DependentUpon>voidConfirmationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="voidForm.resx">
       <DependentUpon>voidForm.cs</DependentUpon>
