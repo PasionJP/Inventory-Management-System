@@ -163,14 +163,14 @@ namespace Login_Form
                 double total = 0;
                 double disc = 0;
                 con.Open();
-                cmd = new SqlCommand("SELECT c.id, c.pcode, p.ProductName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "' AND status like 'Pending'", con);
+                cmd = new SqlCommand("SELECT c.id, c.pcode, p.productName, c.price, c.qty, c.disc, c.total FROM cartTbl as c inner join Products as p on c.pcode = p.pcode WHERE transno like '" + TransactNo.Text + "' AND status like 'Pending'", con);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     i++;
                     total += Double.Parse(dr["total"].ToString());
                     disc += Double.Parse(dr["disc"].ToString());
-                    dataGridView1.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["ProductName"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
+                    dataGridView1.Rows.Add(i, dr["id"].ToString(), dr["pcode"].ToString(), dr["productName"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), Double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
                     hasRecord = true;
                 }
                 dr.Close();

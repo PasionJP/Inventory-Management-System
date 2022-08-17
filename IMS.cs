@@ -22,18 +22,39 @@ namespace Login_Form
         private bool isCollapsed;
         public static string cashierFullname = "";
         Login f;
+        public DateTime currdate1;
+        public DateTime currdate2;
+        public int xLoc;
+        public int yLoc;
+        public string dateRange = "last 30 days";
         public IMS(Login frm)
         {
             InitializeComponent();
-            openNewWindow(new Dashboard());
+            openNewWindow(new Dashboard(this));
             con = new SqlConnection(dbCon.DBConnection());
             f = frm;
+
+            currdate1 = DateTime.Now;
+            currdate1 = currdate1.AddDays(-30);
+            currdate2 = DateTime.Now;
         }
 
 
         private void Form2_Load(object sender, EventArgs e)
         {
             getDate();
+            if (isCollapsed)
+            {
+                Products.Image = Resources.collapse_arrow;
+                analyticsBtn.Image = Resources.collapse_arrow;
+                isCollapsed = false;
+            }
+            else
+            {
+                Products.Image = Resources.expand_arrow;
+                analyticsBtn.Image = Resources.expand_arrow;
+                isCollapsed = true;
+            }
         }
 
         private Form activeForm = null;
@@ -158,7 +179,12 @@ namespace Login_Form
         private void Dashboard_Click(object sender, EventArgs e)
         {
             dateTLP.Visible = true;
-            openNewWindow(new Dashboard());
+            Dashboard dashB = new Dashboard(this);
+            dashB.TopLevel = false;
+            panelMenu.Controls.Add(dashB);
+            dashB.Dock = DockStyle.Fill;
+            dashB.BringToFront();
+            dashB.Show();
         }
 
         private void analyticsBtn_Click_1(object sender, EventArgs e)
@@ -203,22 +229,26 @@ namespace Login_Form
             openNewWindow(new analyticsUserLog());
         }
 
+        public void getDate()
+        {
+            dateSelectBtn.Text = currdate1.ToString("MM/dd/yyyy") + " - " + currdate2.ToString("MM/dd/yyyy");
+
+            Dashboard dashB = new Dashboard(this);
+            dashB.TopLevel = false;
+            panelMenu.Controls.Add(dashB);
+            dashB.Dock = DockStyle.Fill;
+            dashB.dateRangeLbl.Text = dateRange;
+            dashB.BringToFront();
+            dashB.Show();
+        }
+
         private void dateSelectBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void getDate()
-        {
-            DateTime currdate = DateTime.Now;
-            currdate = currdate.AddDays(-30);
-            DateTime currdate1 = DateTime.Now;
-            dateSelectBtn.Text = currdate.ToString("MM/dd/yyyy") + " - " + currdate1.ToString("MM/dd/yyyy");
-        }
-
-        private void datePicture_Click(object sender, EventArgs e)
-        {
-
+            Point location = PointToScreen(panel3.Location);
+            yLoc = Convert.ToInt32(location.Y);
+            xLoc = Convert.ToInt32(location.X);
+            dateSelectForm dateSel = new dateSelectForm(this);
+            dateSel.Show(this);
         }
     }
 }

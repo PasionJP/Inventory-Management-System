@@ -15,16 +15,18 @@ namespace Login_Form
 {
     public partial class Dashboard : Form
     {
+        IMS f;
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
         DatabaseConnection dbCon = new DatabaseConnection();
         string title = "POS System";
-        public Dashboard()
+        public Dashboard(IMS frm)
         {
             InitializeComponent();
             con = new SqlConnection(dbCon.DBConnection());
             this.KeyPreview = true;
+            f = frm;
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -47,7 +49,9 @@ namespace Login_Form
         }
         public void getTotalSales()
         {
-            var query = "SELECT ISNULL(SUM(CAST(total as decimal(18, 2))), 0) FROM cartTbl WHERE status = 'Sold'";
+            #pragma warning disable CS1690 // Accessing a member on a field of a marshal-by-reference class may cause a runtime exception
+            var query = "SELECT ISNULL(SUM(CAST(total as decimal(18, 2))), 0) FROM cartTbl WHERE status = 'Sold' AND sdate BETWEEN '" + f.currdate1.ToString("MM/dd/yyyy") + "' AND '" + f.currdate2.ToString("MM/dd/yyyy") + "'";
+            #pragma warning restore CS1690 // Accessing a member on a field of a marshal-by-reference class may cause a runtime exception
             con.Open();
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -101,7 +105,7 @@ namespace Login_Form
         {
 
         }
-        private void displayTopSellingItems()
+        public void displayTopSellingItems()
         {
             DateTime currdate = DateTime.Now;
             currdate = currdate.AddDays(-30);
@@ -109,7 +113,7 @@ namespace Login_Form
 
             int i = 0;
             con.Open();
-            cmd = new SqlCommand("SELECT TOP 10 pcode, productName, ISNULL(SUM(qty),0) AS qty, ISNULL(SUM(total),0) AS total, price FROM soldItemsView WHERE sdate BETWEEN '" + currdate.ToString("MM/dd/yyyy") + "' AND '" + currdate1.ToString("MM/dd/yyyy") + "' AND status like 'Sold' GROUP BY pcode, productName, price ORDER BY qty DESC", con);
+            cmd = new SqlCommand("SELECT TOP 10 pcode, productName, ISNULL(SUM(qty),0) AS qty, ISNULL(SUM(total),0) AS total, price FROM soldItemsView WHERE sdate BETWEEN '" + f.currdate1.ToString("MM/dd/yyyy") + "' AND '" + f.currdate2.ToString("MM/dd/yyyy") + "' AND status like 'Sold' GROUP BY pcode, productName, price ORDER BY qty DESC", con);
             dr = cmd.ExecuteReader();
             TopSellingControl[] tsControl = new TopSellingControl[10];
 

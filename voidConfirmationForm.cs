@@ -78,7 +78,7 @@ namespace Login_Form
             else
             {
                 con.Open();
-                cmd = new SqlCommand("SELECT * FROM Employees WHERE Username = @Username AND Password = @Password");
+                cmd = new SqlCommand("SELECT * FROM Employees WHERE Username = @Username AND Password = @Password AND UserType = 'Admin' OR UserType = 'Manager'", con);
                 cmd.Parameters.AddWithValue("@Username", usernameTB.Text);
                 cmd.Parameters.AddWithValue("@Password", passwordTB.Text);
                 dr = cmd.ExecuteReader();
@@ -86,6 +86,7 @@ namespace Login_Form
                 if (dr.HasRows)
                 {
                     v.voidConfirmation = true;
+                    this.Dispose();
                 }else
                 {
                     MessageBox.Show("Invalid username and/or password! Please try again.");

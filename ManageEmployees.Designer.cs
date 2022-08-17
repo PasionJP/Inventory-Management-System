@@ -603,7 +603,9 @@
             this.userType.FormattingEnabled = true;
             this.userType.Items.AddRange(new object[] {
             "Admin",
-            "Employee"});
+            "Cashier",
+            "Manager",
+            "Stock Clerk"});
             this.userType.Location = new System.Drawing.Point(203, 3);
             this.userType.Name = "userType";
             this.userType.Size = new System.Drawing.Size(218, 28);
