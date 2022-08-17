@@ -27,13 +27,12 @@ namespace Login_Form
         public int xLoc;
         public int yLoc;
         public string dateRange = "last 30 days";
+        public string userAccess;
         public IMS(Login frm)
         {
             InitializeComponent();
-            openNewWindow(new Dashboard(this));
             con = new SqlConnection(dbCon.DBConnection());
             f = frm;
-
             currdate1 = DateTime.Now;
             currdate1 = currdate1.AddDays(-30);
             currdate2 = DateTime.Now;
@@ -42,7 +41,27 @@ namespace Login_Form
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            getDate();
+            if (f.showDashB)
+            {
+                getDate();
+            } else if (userAccess == "Stock Clerk")
+            {
+                ProductsV1 products = new ProductsV1();
+                products.productsDataGridView.Columns["Remove"].Visible = false;
+                products.productsDataGridView.Columns["Edit"].Visible = false;
+                products.addProduct.Visible = false;
+                products.stockQty = 0;
+                products.TopLevel = false;
+                panelMenu.Controls.Add(products);
+                products.Dock = DockStyle.Fill;
+                products.BringToFront();
+                products.Show();
+            }
+            else if (userAccess == "Cashier")
+            {
+                openNewWindow(new POS(this));
+            }
+            
             if (isCollapsed)
             {
                 Products.Image = Resources.collapse_arrow;

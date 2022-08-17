@@ -628,11 +628,12 @@
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(3, 3);
+            this.password.Location = new System.Drawing.Point(0, 3);
+            this.password.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(218, 26);
-            this.password.TabIndex = 11;
+            this.password.TabIndex = 10;
             // 
             // pictureBox1
             // 

@@ -39,7 +39,7 @@
             this.userID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Dashboard = new System.Windows.Forms.Button();
-            this.orders = new System.Windows.Forms.Button();
+            this.posBtn = new System.Windows.Forms.Button();
             this.productsPanel = new System.Windows.Forms.Panel();
             this.Products = new System.Windows.Forms.Button();
             this.prodInStock = new System.Windows.Forms.Button();
@@ -178,7 +178,7 @@
             this.panel2.Controls.Add(this.panelAnalytics);
             this.panel2.Controls.Add(this.employeesBtn);
             this.panel2.Controls.Add(this.productsPanel);
-            this.panel2.Controls.Add(this.orders);
+            this.panel2.Controls.Add(this.posBtn);
             this.panel2.Controls.Add(this.Dashboard);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(3, 210);
@@ -205,24 +205,24 @@
             this.Dashboard.Click += new System.EventHandler(this.Dashboard_Click);
             this.Dashboard.MouseHover += new System.EventHandler(this.mouseHover_Event);
             // 
-            // orders
+            // posBtn
             // 
-            this.orders.Dock = System.Windows.Forms.DockStyle.Top;
-            this.orders.FlatAppearance.BorderSize = 0;
-            this.orders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orders.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.orders.Location = new System.Drawing.Point(0, 50);
-            this.orders.Name = "orders";
-            this.orders.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.orders.Size = new System.Drawing.Size(232, 50);
-            this.orders.TabIndex = 3;
-            this.orders.Text = "POS";
-            this.orders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.orders.UseVisualStyleBackColor = true;
-            this.orders.Click += new System.EventHandler(this.orders_Click_2);
-            this.orders.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
-            this.orders.MouseHover += new System.EventHandler(this.mouseHover_Event);
+            this.posBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.posBtn.FlatAppearance.BorderSize = 0;
+            this.posBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.posBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.posBtn.Location = new System.Drawing.Point(0, 50);
+            this.posBtn.Name = "posBtn";
+            this.posBtn.Padding = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.posBtn.Size = new System.Drawing.Size(232, 50);
+            this.posBtn.TabIndex = 3;
+            this.posBtn.Text = "POS";
+            this.posBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.posBtn.UseVisualStyleBackColor = true;
+            this.posBtn.Click += new System.EventHandler(this.orders_Click_2);
+            this.posBtn.MouseLeave += new System.EventHandler(this.mouseLeave_Event);
+            this.posBtn.MouseHover += new System.EventHandler(this.mouseHover_Event);
             // 
             // productsPanel
             // 
@@ -601,20 +601,16 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Button logoutBtn;
-        private System.Windows.Forms.Panel panelAnalytics;
         private System.Windows.Forms.Button userLogBtn;
         private System.Windows.Forms.Button salesChartBtn;
         private System.Windows.Forms.Button salesOverviewBtn;
         private System.Windows.Forms.Button topSellingBtn;
         private System.Windows.Forms.Button analyticsBtn;
         public System.Windows.Forms.Button employeesBtn;
-        private System.Windows.Forms.Panel productsPanel;
         private System.Windows.Forms.Button prodCategories;
         private System.Windows.Forms.Button allProducts;
         private System.Windows.Forms.Button prodInStock;
         private System.Windows.Forms.Button Products;
-        private System.Windows.Forms.Button orders;
-        private System.Windows.Forms.Button Dashboard;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         public System.Windows.Forms.Label userID;
@@ -624,11 +620,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panelMenu;
         public System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel dateTLP;
         public System.Windows.Forms.Button dateSelectBtn;
         private System.Windows.Forms.PictureBox datePicture;
+        public System.Windows.Forms.Panel panelAnalytics;
+        public System.Windows.Forms.Panel productsPanel;
+        public System.Windows.Forms.Button posBtn;
+        public System.Windows.Forms.Button Dashboard;
+        public System.Windows.Forms.Panel panelMenu;
+        public System.Windows.Forms.TableLayoutPanel dateTLP;
     }
 }

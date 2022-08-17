@@ -28,6 +28,7 @@ namespace Login_Form
         public string dateLog { get; set; }
         public string timeLog { get; set; }
         public string status { get; set; }
+        public bool showDashB = true;
         public Login()
         {
             InitializeComponent();
@@ -105,11 +106,33 @@ namespace Login_Form
 
                     if (dt.Rows[0]["Usertype"].ToString() == "Admin")
                     {
+                        showDashB = true;
                         ss.Show();
-                    } else if (dt.Rows[0]["Usertype"].ToString() == "Employee")
+                    } else if (dt.Rows[0]["Usertype"].ToString() == "Manager")
                     {
+                        showDashB = true;
                         ss.employeesBtn.Visible = false;
                         ss.Show();
+                    } else if (dt.Rows[0]["Usertype"].ToString() == "Stock Clerk")
+                    {
+                        ss.userAccess = "Stock Clerk";
+                        ss.dateTLP.Visible = false;
+                        ss.Dashboard.Visible = false;
+                        ss.posBtn.Visible = false;
+                        ss.employeesBtn.Visible = false;
+                        ss.panelAnalytics.Visible = false;
+                        ss.Show();
+                    } else if (dt.Rows[0]["Usertype"].ToString() == "Cashier")
+                    {
+                        ss.userAccess = "Cashier";
+                        ss.posBtn.Visible = false;
+                        ss.dateTLP.Visible = false;
+                        ss.Dashboard.Visible = false;
+                        ss.productsPanel.Visible = false;
+                        ss.employeesBtn.Visible = false;
+                        ss.panelAnalytics.Visible = false;
+                        showDashB = false;
+                        ss.Show(this);
                     }
                 }
                 else
